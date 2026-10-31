@@ -1,4 +1,13 @@
+import { existsSync, mkdirSync } from 'node:fs';
+import { join } from 'node:path';
 import { PGlite } from '@electric-sql/pglite';
+
+// git 不保存空目录：从仓库下载的数据库会缺这些 PostgreSQL 必需的空目录，启动前补上
+const PG_EMPTY_DIRS = ['pg_commit_ts', 'pg_dynshmem', 'pg_logical/mappings', 'pg_logical/snapshots', 'pg_notify', 'pg_replslot', 'pg_serial', 'pg_snapshots', 'pg_stat', 'pg_stat_tmp', 'pg_tblspc', 'pg_twophase', 'pg_wal/archive_status', 'pg_wal/summaries'];
+function ensurePgDirs(dataDir: string) {
+  if (dataDir.includes('://') || !existsSync(join(dataDir, 'PG_VERSION'))) return;
+  for (const dir of PG_EMPTY_DIRS) mkdirSync(join(dataDir, dir), { recursive: true });
+}
 import { Pool, type PoolClient } from 'pg';
 
 const policyNames:Record<string,string>={products:'products_tenant',units:'units_tenant',audit_events:'audits_tenant',processes:'processes_tenant',process_reporters:'process_reporters_tenant',process_routes:'process_routes_tenant',route_versions:'route_versions_tenant',route_steps:'route_steps_tenant',bom_definitions:'bom_definitions_tenant',bom_versions:'bom_versions_tenant',bom_items:'bom_items_tenant'};
@@ -24,7 +33,7 @@ export class Database {
   constructor(options: DatabaseOptions) {
     this.mode = options.mode;
     if (options.production && options.mode !== 'postgres') throw new Error('生产环境必须使用独立PostgreSQL服务');
-    if (options.mode === 'pglite') this.embedded = new PGlite(options.dataDir ?? 'memory://');
+    if (options.mode === 'pglite') { if (options.dataDir) ensurePgDirs(options.dataDir); this.embedded = new PGlite(options.dataDir ?? 'memory://'); }
     else {
       if (!options.url) throw new Error('缺少DATABASE_URL');
       this.pool = new Pool({ connectionString: options.url, max: 10, ...(options.production ? { ssl: { rejectUnauthorized: true } } : {}) });
