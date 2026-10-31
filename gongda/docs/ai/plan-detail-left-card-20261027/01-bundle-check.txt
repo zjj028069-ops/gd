@@ -1,0 +1,12 @@
+Asia/Shanghai
+
+/app/ → index-BxsRLap0.js + index-CqEvOEpH.css
+VERSION: SEDRIC01 v1.0.74 plan-detail-left-card 2026-10-27
+
+CSS:
+.kgd-progress-track{width:100%;min-width:64px;height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden}
+.plan-detail{display:grid;grid-template-columns:340px minmax(0,1fr);gap:16px;align-items:start}
+
+UI DOM JH20261027004:
+hasPlanDetail=1 hasPlanKv=1 tracks=3 grid=0 trackBox=191x6
+shots: 02-app-detail.png 03-app-left-card.png

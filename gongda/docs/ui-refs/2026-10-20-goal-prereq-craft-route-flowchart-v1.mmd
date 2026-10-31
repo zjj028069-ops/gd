@@ -1,0 +1,24 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#E8F1FF', 'primaryTextColor': '#1a2b4a', 'primaryBorderColor': '#4184F4', 'lineColor': '#6b7c93', 'secondaryColor': '#FFF6E8', 'tertiaryColor': '#EAFBF3', 'fontFamily': 'PingFang SC, Microsoft YaHei, sans-serif'}}}%%
+flowchart TB
+  G(["目标：创建工艺路线<br/>生产管理 → 工艺路线 → 新增"])
+  P1["① 必做<br/>工序管理 · 至少录入一道工序<br/>工序名 / 计价方式 / 工资单价"]
+  P2["② 建议<br/>工序勾选生产人员<br/>便于后续报工与问工资"]
+  P3["③ 建议<br/>若路线要挂商品/BOM<br/>先：商品管理 → 商品列表 → 新增"]
+  P4["④ 必做<br/>工艺路线 · 新增<br/>选工序 → 排顺序 → 保存"]
+  V["⑤ 验证<br/>加工单 · 从工艺路线中添加<br/>能一次带入整串工序"]
+
+  G --> P1
+  P1 --> P2
+  P2 --> P3
+  P3 --> P4
+  P4 --> V
+
+  classDef must fill:#E8F1FF,stroke:#4184F4,stroke-width:2px,color:#1a2b4a
+  classDef rec fill:#FFF8EC,stroke:#E0A24A,stroke-width:1.5px,color:#1a2b4a
+  classDef goal fill:#4184F4,stroke:#2F6AD4,stroke-width:2px,color:#fff
+  classDef ok fill:#EAFBF3,stroke:#2F9E6F,stroke-width:1.5px,color:#1a2b4a
+  classDef verify fill:#EAFBF3,stroke:#2F9E6F,stroke-width:2px,color:#1a2b4a
+  class G goal
+  class P1,P4 must
+  class P2,P3 rec
+  class V verify

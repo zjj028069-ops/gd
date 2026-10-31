@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>v1.0.23 · demo-cta-glass-c</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+    background: linear-gradient(160deg, #0b1f3a 0%, #1a3a6b 45%, #2a5088 100%);
+    min-height: 100vh;
+    padding: 48px 32px;
+    color: #1d1d1f;
+  }
+  h1 { color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+  .sub { color: rgba(255,255,255,0.7); font-size: 13px; margin-bottom: 24px; }
+  .bubble {
+    max-width: 420px;
+    background: rgba(232, 242, 255, 0.92);
+    border: 1px solid rgba(65, 132, 244, 0.28);
+    border-radius: 16px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 28px rgba(0,40,100,0.18);
+  }
+  .guide-demo-ask {
+    margin-top: 0;
+    padding: 12px 12px 10px;
+    border-radius: 12px;
+    background: rgba(65, 132, 244, 0.06);
+    border: 1px solid rgba(65, 132, 244, 0.2);
+  }
+  .guide-demo-ask-q {
+    font-size: 13px; font-weight: 600; color: #0f172a; margin-bottom: 8px;
+  }
+  .guide-demo-ask-btns {
+    display: flex; flex-direction: row; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .guide-demo-btn-yes, .guide-demo-btn-no {
+    appearance: none; cursor: pointer; font-family: inherit;
+    min-width: 112px; height: 34px; padding: 0 16px; border-radius: 10px;
+    font-size: 13px; display: inline-flex; align-items: center; justify-content: center;
+  }
+  .guide-demo-btn-yes {
+    border: 1px solid rgba(65,132,244,0.45); font-weight: 590; color: #fff;
+    background: linear-gradient(135deg, rgba(90,160,255,0.95), rgba(65,132,244,0.88));
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 14px rgba(65,132,244,0.35), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .guide-demo-btn-no {
+    border: 1px solid rgba(255,255,255,0.55); font-weight: 510; color: #2c4a7a;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+  }
+</style>
+</head>
+<body>
+  <h1>SEDRIC01 v1.0.23 · demo-cta-glass-c</h1>
+  <p class="sub">方案 C 毛玻璃横排 · 主色 #4184F4 · 「需要演示」「先看文字」</p>
+  <div class="bubble">
+    <div class="guide-demo-ask">
+      <div class="guide-demo-ask-q">需要我打开 MES 演示给你看吗？</div>
+      <div class="guide-demo-ask-btns">
+        <button type="button" class="guide-demo-btn-yes">需要演示</button>
+        <button type="button" class="guide-demo-btn-no">先看文字</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

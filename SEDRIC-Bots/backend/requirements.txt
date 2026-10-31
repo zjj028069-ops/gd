@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+httpx>=0.27
+croniter>=2.0
+python-multipart>=0.0.9
+# optional: PDF text extraction for attachments
+pypdf>=4.0

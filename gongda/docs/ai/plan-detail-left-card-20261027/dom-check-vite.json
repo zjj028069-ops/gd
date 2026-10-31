@@ -1,0 +1,14 @@
+{
+  "tag": "vite",
+  "hasPlanDetail": 1,
+  "hasPlanKv": 1,
+  "tracks": 3,
+  "grid": 0,
+  "trackBox": {
+    "x": 436,
+    "y": 245.125,
+    "width": 191,
+    "height": 6
+  },
+  "url": "http://127.0.0.1:5183/ProductionPlan/detail/8598b6be-6dd2-4a4c-b103-68c8290c4517"
+}

@@ -1,0 +1,31 @@
+{
+ "name": "jie",
+ "title": "Jie",
+ "description": "你的主力助手：什么都能聊，什么都能帮你安排，也负责协调其他队友。",
+ "avatar": {
+  "shape": "squircle",
+  "color": "#8b5cf6",
+  "image": null,
+  "custom": true
+ },
+ "tools": {
+  "terminal": true,
+  "files": true,
+  "web": true,
+  "memory": true,
+  "skills": true,
+  "message_agent": true,
+  "cronjob": true,
+  "clarify": true,
+  "mcp": true
+ },
+ "model": null,
+ "approval": "inherit",
+ "mcp_servers": [],
+ "skills_disabled": [],
+ "pinned": false,
+ "hidden": false,
+ "section": null,
+ "created": 1793172134702,
+ "previous_names": []
+}

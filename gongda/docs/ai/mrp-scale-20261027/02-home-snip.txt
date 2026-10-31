@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="zh-CN" data-kgd-theme="sky"><head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4184F4">
+    <title>赛德瑞科</title>
+    <meta name="description" content="企业工单协作平台，当前交付账号、企业边界、产品档案与操作审计。">
+  <style type="text/css" data-vite-dev-id="/opt/sedric01/apps/web/src/modules/ai/ai.css">/* 赛德瑞克小助手浮层 */
+.sedric-ai-fab {
+  position: fixed;
+  z-index: 40;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 0;
+  background: linear-gradient(135deg, #4184F4, #2f6de0);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(65, 132, 244, 0.4);
+  cursor: grab;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  touch-action: none;
+}
+.sedric-ai-fab:active { cursor: grabbing; }
+.sedric-ai-fab.is-open { box-shadow: 0 4px 12px rgba(65, 132, 244, 0.35); }
+
+.sedric-ai-panel {
+  position: fixed;
+  z-index: 41;
+  width: min(400px, calc(100vw - 24px));
+  height: min(560px, calc(100vh - 48px));
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.22);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e8ecf2;
+}
+.sedric-ai-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, #4184F4, #5b96f6);
+  color: #fff;
+}
+.sedric-ai-head h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  flex: 1;
+}
+.sedric-ai-head button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.sedric-ai-head button:hover { background: rgba(255,255,255,.15); }
+
+.sedric-ai-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eef1f6;
+  background: #f8fafc;
+}
+.sedric-ai-toolbar select {
+  border: 1px solid #d9e2ef;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #fff;
+}
+.sedric-ai-toolbar .muted { color: #8b95a7; font-size: 12px; margin-left: auto; }
+
+.sedric-ai-body {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 14px;
+  background: #f5f7fb;
+}
+.sedric-ai-msg {
+  margin-bottom: 12px;
+  max-width: 92%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.55;
+  font-size: 13px;
+}
+.sedric-ai-msg.bot {
+  background: #fff;
+  border: 1px solid #e8ecf2;
+  border-radius: 12px 12px 12px 4px;
+  padding: 10px 12px;
+  color: #1f2937;
+}
+.sedric-ai-msg.user {
+  margin-left: auto;
+  background: #4184F4;
+  color: #fff;
+  border-radius: 12px 12px 4px 12px;
+  padding: 10px 12px;
+}
+.sedric-ai-cite {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.sedric-ai-suggest { margin-t

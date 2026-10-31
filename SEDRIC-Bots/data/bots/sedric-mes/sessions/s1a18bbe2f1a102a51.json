@@ -1,0 +1,42 @@
+{
+ "id": "s1a18bbe2f1a102a51",
+ "bot": "sedric-mes",
+ "title": "只告诉我这个表里有几行物料、分别是什么，不要在系统里建任何东",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793345859354,
+ "updated": 1793345860829,
+ "last_read": 1793345859396,
+ "messages": [
+  {
+   "role": "user",
+   "content": "只告诉我这个表里有几行物料、分别是什么，不要在系统里建任何东西",
+   "attachments": [
+    {
+     "kind": "file",
+     "name": "测试BOM.csv",
+     "text": "物料编码,物料名称,数量\nT-1,螺丝,10\nT-2,螺母,20",
+     "size": 60
+    }
+   ],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a18bbe2f422a037e",
+   "at": 1793345859394
+  },
+  {
+   "role": "assistant",
+   "content": "这个表里有 2 行物料：\n\n| 物料编码 | 物料名称 | 数量 |\n|---|---|---|\n| T-1 | 螺丝 | 10 |\n| T-2 | 螺母 | 20 |\n\n按您的要求，我没有在系统里建任何东西。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18bbe2f44ba3ccb",
+   "id": "m1a18bbe34dda2eff6",
+   "at": 1793345860829
+  }
+ ],
+ "mes": true,
+ "owner": "eb7c8ef9-858b-427d-8656-0b55c995cfef:e89d3507-74d8-4b44-a9c2-2bcaf34c9126",
+ "mode": "chat",
+ "driver_tab": "7l79mpgvaxmvunfhfs"
+}

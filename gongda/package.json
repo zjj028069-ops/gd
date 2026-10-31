@@ -1,0 +1,29 @@
+{
+  "name": "gongdan-platform",
+  "version": "1.0.27",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev:setup": "npm run dev:setup -w @gongdan/api",
+    "dev:api": "npm run dev -w @gongdan/api",
+    "dev:web": "npm run dev -w @gongdan/web",
+    "dev": "node scripts/dev.mjs",
+    "test": "npm run test -w @gongdan/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w @gongdan/api",
+    "dev:sample": "node scripts/seed-stage2.mjs"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  }
+}

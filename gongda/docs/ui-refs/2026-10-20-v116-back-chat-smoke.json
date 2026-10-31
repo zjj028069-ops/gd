@@ -1,0 +1,58 @@
+{
+  "pass": true,
+  "base": "http://129.204.53.109",
+  "at": "2026-10-20T10:02:46.234Z",
+  "version": "SEDRIC01 v1.0.16",
+  "feature": "mes-back-to-chat-top",
+  "dist": {
+    "css": "index-GwvsIp7q.css",
+    "js": "index-CN2Q-UGL.js"
+  },
+  "results": [
+    {
+      "title": "公网 /chat/ 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "title": "聊天壳登录成功",
+      "ok": true,
+      "detail": "admin.local"
+    },
+    {
+      "title": "无 mes-header 白条",
+      "ok": true,
+      "detail": "headerVisible=false titleVisible=false"
+    },
+    {
+      "title": "MES 顶栏可见返回聊天",
+      "ok": true,
+      "detail": "text=← 返回聊天"
+    },
+    {
+      "title": "截图已保存",
+      "ok": true,
+      "detail": "/Users/allen/SEDRIC01-preview/docs/ui-refs/2026-10-20-v116-back-chat-smoke.png"
+    },
+    {
+      "title": "点返回聊天回到聊天壳",
+      "ok": true,
+      "detail": "mesHidden=true chatVisible=true appShown=true"
+    },
+    {
+      "title": "硬刷新后仍正确",
+      "ok": true,
+      "detail": "back=true noHeader=true"
+    },
+    {
+      "title": "公网 /app/ 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "title": "直接 /app/ 无返回聊天",
+      "ok": true,
+      "detail": "count=0"
+    }
+  ]
+}

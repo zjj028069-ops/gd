@@ -1,0 +1,52 @@
+{
+  "version": "SEDRIC01 v1.0.74 plan-detail-left-card 2026-10-27",
+  "dist_js": "index-BxsRLap0.js",
+  "dist_css": "index-CqEvOEpH.css",
+  "app_index_has_bundle": true,
+  "login": "demo-a / admin.local OK",
+  "plan": {
+    "id": "8598b6be-6dd2-4a4c-b103-68c8290c4517",
+    "code": "JH20261027004",
+    "name": "测试PRM",
+    "analysis_status": "analyzed",
+    "process_progress": {
+      "done": "0",
+      "total": "10"
+    },
+    "outsource_progress": {
+      "done": "0",
+      "total": "0"
+    },
+    "purchase_progress": {
+      "done": "0",
+      "total": "0"
+    },
+    "delivery_date": "2026-10-30",
+    "note": "无",
+    "creator_name": "本地管理员",
+    "created_at": "2026-10-27T02:04:19.923Z",
+    "lines_count": 1,
+    "analysis_lines_count": 1,
+    "has_work_orders_key": true
+  },
+  "ui_patch": {
+    "left_card_classes": [
+      "plan-detail",
+      "plan-detail-side",
+      "plan-kv"
+    ],
+    "progress_track_width_100": true,
+    "business_logic_unchanged": true
+  },
+  "backup": "/opt/sedric01/.bak-20261027-plan-detail-v174/",
+  "ui_dom": {
+    "hasPlanDetail": 1,
+    "hasPlanKv": 1,
+    "tracks": 3,
+    "grid": 0,
+    "trackBox": {
+      "width": 191,
+      "height": 6
+    }
+  }
+}

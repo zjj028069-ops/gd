@@ -1,0 +1,7277 @@
+{
+  "P001": {
+    "url": "/staging/area",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "全 屏",
+      "刷新",
+      "配置工作台"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "工作台",
+    "dialogs": []
+  },
+  "P002": {
+    "url": "/screen_management/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "序号",
+      "菜单名",
+      "布局",
+      "功能模块",
+      "描述",
+      "访问密码",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "+ 新增",
+      "列配置"
+    ],
+    "row_actions": [
+      "查看大屏",
+      "复制大屏链接",
+      "设计",
+      "修改",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "+ 新增",
+        "title": "新增大屏",
+        "fields": [
+          {
+            "label": "菜单名",
+            "required": true
+          },
+          {
+            "label": "布局",
+            "required": true
+          },
+          {
+            "label": "功能模块",
+            "required": true
+          },
+          {
+            "label": "描述",
+            "required": false
+          },
+          {
+            "label": "访问密码",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P003": {
+    "url": "/output_statistics_report",
+    "tab": null,
+    "filters": [
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品来源",
+      "商品类别",
+      "加工单号",
+      "工单状态",
+      "工序名",
+      "工序编号",
+      "生产人员",
+      "计价方式",
+      "质检人员",
+      "质检状态"
+    ],
+    "columns": [
+      "商品名",
+      "编号",
+      "规格",
+      "单位",
+      "商品来源",
+      "商品图片",
+      "商品类别",
+      "商品备注",
+      "商品库存"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "列配置",
+      "指标配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "产量报表",
+    "dialogs": []
+  },
+  "P004": {
+    "url": "/drilling_crew_statement/list",
+    "tab": null,
+    "filters": [
+      "机台",
+      "机台状态",
+      "机台类别",
+      "车间",
+      "产线"
+    ],
+    "columns": [
+      "机台编号",
+      "机台名称",
+      "机台规格",
+      "机台状态",
+      "机台类别",
+      "生产工序",
+      "车间",
+      "产线",
+      "报工数",
+      "良品数",
+      "不良品数",
+      "良品率(%)",
+      "标准工作时长",
+      "实际工作时长",
+      "稼动率(%)",
+      "标准效率",
+      "实际效率",
+      "达标率(%)"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P005": {
+    "url": "/articles_being_processed_report",
+    "tab": null,
+    "filters": [
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品来源",
+      "商品类别",
+      "加工单号",
+      "创建人",
+      "工单状态",
+      "优先级"
+    ],
+    "columns": [
+      "加工单号",
+      "工单状态",
+      "商品名",
+      "编号",
+      "规格",
+      "优先级",
+      "商品图片",
+      "计划数",
+      "良品数",
+      "待生产数",
+      "不良品数"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "工序配置",
+      "列配置",
+      "指标配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P006": {
+    "url": "/clock_in_report",
+    "tab": null,
+    "filters": [
+      "姓名",
+      "部门",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "加工单号",
+      "项目编号",
+      "项目名称",
+      "计划编号",
+      "计划名称",
+      "工序名",
+      "打卡时间起",
+      "打卡时间止",
+      "打卡类型"
+    ],
+    "columns": [
+      "姓名",
+      "部门",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "加工单号",
+      "项目编号",
+      "项目名称",
+      "计划编号",
+      "计划名称",
+      "工序名",
+      "打卡时间",
+      "下次打卡时间",
+      "打卡类型",
+      "下次打卡类型",
+      "区间类型",
+      "区间时长"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P007": {
+    "url": "/payroll_statement/list",
+    "tab": null,
+    "filters": [
+      "姓名",
+      "部门",
+      "质检状态",
+      "报工时间起",
+      "报工时间止",
+      "结算时间起",
+      "结算时间止",
+      "报工开始时间起",
+      "报工开始时间止",
+      "报工结束时间起",
+      "报工结束时间止"
+    ],
+    "columns": [
+      "姓名",
+      "部门",
+      "未结算报工数",
+      "已结算报工数",
+      "未结算工资(计件)",
+      "已结算工资(计件)",
+      "报工总数",
+      "良品数",
+      "不良品数",
+      "任务报工数",
+      "零活报工数",
+      "工资(元)",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "报工详情",
+      "个人工资报表"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "个人工资报表",
+        "title": "{姓名}-工资报表",
+        "fields": []
+      },
+      {
+        "trigger": "报工详情",
+        "title": "{姓名}-报工详情",
+        "fields": []
+      }
+    ]
+  },
+  "P008": {
+    "url": "/waste_analysis",
+    "tab": null,
+    "filters": [
+      "不良品项"
+    ],
+    "columns": [
+      "不良品项",
+      "占比",
+      "合计"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P009": {
+    "url": "/waste_key_analysis",
+    "tab": null,
+    "filters": [
+      "产品编号",
+      "产品名",
+      "工序名",
+      "不良品项",
+      "生产人员"
+    ],
+    "columns": [
+      "序号",
+      "工序编号",
+      "工序名称",
+      "报工数",
+      "良品数",
+      "不良品数",
+      "不良品率"
+    ],
+    "columns_mode": "exact",
+    "buttons": [],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P010": {
+    "url": "/waste_detail",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "序号",
+      "产品编号",
+      "产品名称",
+      "产品规格",
+      "产品单位",
+      "加工单号",
+      "计划数",
+      "加工单计划开始",
+      "加工单计划结束",
+      "工序名称",
+      "工序编号",
+      "单位关系",
+      "任务状态",
+      "任务计划开始",
+      "任务计划结束",
+      "生产人员",
+      "标准工时",
+      "报工数",
+      "良品数",
+      "不良品数",
+      "不良品率",
+      "质检时间",
+      "单位",
+      "报工开始时间",
+      "报工结束时间",
+      "报工时长",
+      "计价方式",
+      "工资单价",
+      "结算状态",
+      "结算人"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "导出",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P011": {
+    "url": "/material_test_report",
+    "tab": null,
+    "filters": [
+      "商品名",
+      "商品编号",
+      "商品规格"
+    ],
+    "columns": [
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "商品类别",
+      "单位",
+      "采购数量",
+      "送检数量",
+      "已检数量",
+      "合格数",
+      "不合格数",
+      "不合格率(%)",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "采购检验分析",
+    "dialogs": []
+  },
+  "P012": {
+    "url": "/spot_check_report",
+    "tab": null,
+    "filters": [
+      "工序名"
+    ],
+    "columns": [
+      "工序名",
+      "工序编号",
+      "车间",
+      "产线",
+      "抽检数量",
+      "良品数",
+      "不良品数",
+      "不良品率(%)"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "生产抽检分析",
+    "dialogs": []
+  },
+  "P013": {
+    "url": "/scrap_rework_statistics_report",
+    "tab": null,
+    "filters": [
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "类别"
+    ],
+    "columns": [
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "类别",
+      "报工数",
+      "良品数",
+      "不良品数",
+      "报废数",
+      "报废率(%)",
+      "报废占不良比(%)",
+      "返工数",
+      "返工率(%)",
+      "返工占不良比(%)"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "报废返工统计",
+    "dialogs": []
+  },
+  "P014": {
+    "url": "/device_maintenance_analysis",
+    "tab": null,
+    "filters": [
+      "团队"
+    ],
+    "columns": [
+      "团队",
+      "总台数",
+      "故障台数",
+      "总维修次数",
+      "故障率",
+      "总停机时长",
+      "总维修费用",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [],
+    "row_actions": [
+      "设备详情"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P015": {
+    "url": "/maintenance_workload_statistics",
+    "tab": null,
+    "filters": [
+      "团队"
+    ],
+    "columns": [
+      "团队",
+      "人员数量",
+      "完成工单数",
+      "超时工单数",
+      "累计维修时间(h)",
+      "人均工时(h)",
+      "总维修费用",
+      "人均费用",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [],
+    "row_actions": [
+      "人员详情"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P016": {
+    "url": "/maintenance_plan_statistics",
+    "tab": null,
+    "filters": [
+      "团队",
+      "执行人"
+    ],
+    "columns": [
+      "计划名称",
+      "计划分类",
+      "计划周期",
+      "循环周期",
+      "执行人/执行团队",
+      "设备数量",
+      "计划完成率(%)",
+      "应执行次数",
+      "实际执行次数",
+      "漏执行次数"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P017": {
+    "url": "/purchase_statement",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "采购对账单",
+    "dialogs": []
+  },
+  "P018": {
+    "url": "/sales_statement",
+    "tab": null,
+    "filters": [
+      "客户编号",
+      "客户名",
+      "联系人",
+      "联系人电话",
+      "地址",
+      "启用/禁用",
+      "客户标签",
+      "负责人"
+    ],
+    "columns": [
+      "客户编号",
+      "客户",
+      "客户标签",
+      "联系人",
+      "联系人电话",
+      "地址",
+      "启用/禁用",
+      "负责人",
+      "收款进度",
+      "出库进度",
+      "合同数量",
+      "商品总数",
+      "出库数",
+      "未出库数",
+      "退货数",
+      "合同金额（元）",
+      "已收款（元）",
+      "欠款（元）",
+      "出库金额（元）",
+      "退货金额（元）",
+      "未开票（元）",
+      "累计开票（元）",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "管理打印模板",
+      "统计数值",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "出库明细",
+      "退货明细",
+      "打印"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "销售对账单",
+    "dialogs": []
+  },
+  "P019": {
+    "url": "/contract_report",
+    "tab": null,
+    "filters": [
+      "客户",
+      "合同编号",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "单位",
+      "商品类别",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "合同编号",
+      "客户",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "单位",
+      "商品图片",
+      "商品类别",
+      "商品单价",
+      "销售数量",
+      "折扣",
+      "优惠金额",
+      "折后金额",
+      "商品备注",
+      "商品附件",
+      "已出库数量",
+      "未出库数量",
+      "合同交货日期",
+      "创建时间"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "合同报表",
+    "dialogs": []
+  },
+  "P020": {
+    "url": "/produce_bill_cost",
+    "tab": null,
+    "filters": [
+      "加工单号",
+      "生产计划",
+      "商品",
+      "商品类别",
+      "合同编号",
+      "项目编号",
+      "交货日期起",
+      "交货日期止",
+      "创建人"
+    ],
+    "columns": [
+      "加工单号",
+      "项目编号",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品类别",
+      "商品图片",
+      "生产计划编号",
+      "生产计划名称",
+      "合同编号",
+      "业务员",
+      "计划数",
+      "交货日期",
+      "优先级",
+      "加工单总工时",
+      "备注",
+      "附件",
+      "计划开始",
+      "计划结束",
+      "实际生产数",
+      "人工费用",
+      "材料费用(估算)",
+      "外协费用",
+      "合计成本",
+      "生产总值",
+      "毛利润",
+      "成本分摊金额",
+      "创建人",
+      "开始时间",
+      "完成时间"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "批量操作",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "成本报表",
+    "dialogs": []
+  },
+  "P021": {
+    "url": "/inventory_summary",
+    "tab": null,
+    "filters": [
+      "仓库",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "单位",
+      "商品类别"
+    ],
+    "columns": [
+      "商品编号",
+      "商品名",
+      "商品规格",
+      "类别",
+      "单位",
+      "商品来源",
+      "备注",
+      "库存数量",
+      "期初数量",
+      "本期入库",
+      "本期出库",
+      "期末数量"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "进销存汇总",
+    "dialogs": []
+  },
+  "P022": {
+    "url": "/ai_inventory/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品类别",
+      "商品来源",
+      "采购单",
+      "备料建议"
+    ],
+    "columns": [
+      "商品名",
+      "编号",
+      "规格",
+      "商品来源",
+      "商品类别",
+      "期初库存",
+      "预测库存",
+      "备料建议",
+      "采购单",
+      "趋势图"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "批量创建采购单",
+      "查看库存预测图",
+      "导出"
+    ],
+    "row_actions": [],
+    "page_size": "10 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P023": {
+    "url": "/smart/form_core_list",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P024": {
+    "url": "/customer/list",
+    "tab": null,
+    "filters": [
+      "客户编号",
+      "客户",
+      "客户标签",
+      "联系人",
+      "负责人",
+      "地址",
+      "联系人电话",
+      "创建时间起",
+      "创建时间止",
+      "是否启用",
+      "是否关注"
+    ],
+    "columns": [
+      "客户编号",
+      "客户",
+      "客户标签",
+      "联系人",
+      "联系人电话",
+      "地址",
+      "启用/禁用",
+      "负责人",
+      "创建人",
+      "创建时间",
+      "更新时间",
+      "距离",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "地图视图",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "更多"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增客户",
+        "fields": [
+          {
+            "label": "名称",
+            "required": true
+          },
+          {
+            "label": "编号",
+            "required": false
+          },
+          {
+            "label": "地区",
+            "required": false
+          },
+          {
+            "label": "详细地址",
+            "required": false
+          },
+          {
+            "label": "客户标签",
+            "required": false
+          },
+          {
+            "label": "联系人",
+            "required": true
+          },
+          {
+            "label": "联系人电话",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P025": {
+    "url": "/linkman/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "客户",
+      "联系人",
+      "联系人电话",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "+ 新增",
+      "扩展字段",
+      "列配置"
+    ],
+    "row_actions": [
+      "设为默认",
+      "修改",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "+ 新增",
+        "title": "新增客户联系人",
+        "fields": [
+          {
+            "label": "客户",
+            "required": true
+          },
+          {
+            "label": "联系人",
+            "required": true
+          },
+          {
+            "label": "联系人电话",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "高级查询",
+        "title": "高级查询",
+        "fields": []
+      },
+      {
+        "trigger": "扩展字段",
+        "title": "【客户联系人】扩展字段管理",
+        "fields": []
+      },
+      {
+        "trigger": "列配置",
+        "title": "列配置(0/50)",
+        "fields": []
+      }
+    ]
+  },
+  "P026": {
+    "url": "/follow/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "联系人",
+      "联系电话",
+      "跟单类型",
+      "跟单内容",
+      "下次跟单时间",
+      "跟单人",
+      "跟单时间",
+      "客户",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增客户跟单",
+        "fields": [
+          {
+            "label": "客户",
+            "required": true
+          },
+          {
+            "label": "跟单类型",
+            "required": true
+          },
+          {
+            "label": "联系人",
+            "required": true
+          },
+          {
+            "label": "跟单内容",
+            "required": true
+          },
+          {
+            "label": "下次跟单时间",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P027": {
+    "url": "/contract_quotation_bill/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "报价单号",
+      "客户",
+      "联系人",
+      "联系人电话",
+      "地址",
+      "审核状态",
+      "审核详情",
+      "报价状态",
+      "客户签字",
+      "合同订单",
+      "报价金额",
+      "商品总数",
+      "交货日期",
+      "报价日期",
+      "业务员",
+      "备注",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "商品类别",
+      "商品图片",
+      "销售单价",
+      "销售数量",
+      "库存",
+      "折扣",
+      "优惠金额",
+      "折后金额",
+      "商品备注",
+      "商品附件",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "生成合同",
+      "复制",
+      "分享",
+      "更多"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增合同报价单",
+        "fields": [
+          {
+            "label": "报价单号",
+            "required": false
+          },
+          {
+            "label": "客户",
+            "required": true
+          },
+          {
+            "label": "联系人",
+            "required": true
+          },
+          {
+            "label": "客户地址",
+            "required": false
+          },
+          {
+            "label": "报价金额",
+            "required": true
+          },
+          {
+            "label": "商品总数",
+            "required": false
+          },
+          {
+            "label": "交货日期",
+            "required": false
+          },
+          {
+            "label": "报价日期",
+            "required": false
+          },
+          {
+            "label": "业务员",
+            "required": true
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P028": {
+    "url": "/customer_contract/list",
+    "tab": null,
+    "filters": [
+      "合同编号",
+      "客户",
+      "客户编号",
+      "联系人",
+      "商品",
+      "商品类别",
+      "出库进度",
+      "收款进度",
+      "采购进度",
+      "交货日期起",
+      "交货日期止",
+      "收款日期起",
+      "收款日期止",
+      "是否含税",
+      "交货逾期",
+      "收款逾期",
+      "欠款",
+      "备注",
+      "业务员",
+      "创建人",
+      "创建时间起",
+      "创建时间止",
+      "完成时间起",
+      "完成时间止",
+      "审核状态",
+      "业务状态",
+      "审核通过时间起",
+      "审核通过时间止",
+      "商品备注"
+    ],
+    "columns": [
+      "合同编号",
+      "客户",
+      "客户编号",
+      "联系人",
+      "关联项目",
+      "客户地址",
+      "销售费用(元)",
+      "审核状态",
+      "业务状态",
+      "审核通过时间",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "商品类别",
+      "单价",
+      "金额",
+      "单位",
+      "销售数量",
+      "库存",
+      "折扣",
+      "优惠金额",
+      "折后金额",
+      "投产进度",
+      "分析进度",
+      "出库进度",
+      "采购进度",
+      "商品备注",
+      "商品附件",
+      "合同金额",
+      "销售总数",
+      "预付款",
+      "累计收款",
+      "收款进度",
+      "累计支出",
+      "已开票金额",
+      "欠款",
+      "交货日期",
+      "收款日期",
+      "是否含税",
+      "备注",
+      "销售退货",
+      "销售出库",
+      "审核详情",
+      "业务员",
+      "创建人",
+      "出库完成日期",
+      "完成时间",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "收款",
+      "支出",
+      "完成",
+      "终止",
+      "更多"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增 › 直接创建",
+        "title": "新增合同",
+        "fields": [
+          {
+            "label": "合同编号",
+            "required": false
+          },
+          {
+            "label": "客户",
+            "required": true
+          },
+          {
+            "label": "联系人",
+            "required": false
+          },
+          {
+            "label": "客户地址",
+            "required": false
+          },
+          {
+            "label": "预付款",
+            "required": false
+          },
+          {
+            "label": "销售总数",
+            "required": false
+          },
+          {
+            "label": "合同金额",
+            "required": true
+          },
+          {
+            "label": "交货日期",
+            "required": false
+          },
+          {
+            "label": "收款日期",
+            "required": false
+          },
+          {
+            "label": "业务员",
+            "required": true
+          },
+          {
+            "label": "是否含税",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "收款",
+        "title": "合同收款【客户名】合同编号",
+        "fields": [
+          {
+            "label": "欠款(元)",
+            "required": false
+          },
+          {
+            "label": "金额",
+            "required": true
+          },
+          {
+            "label": "附件",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "支出",
+        "title": "合同支出【客户名】合同编号",
+        "fields": [
+          {
+            "label": "金额",
+            "required": true
+          },
+          {
+            "label": "附件",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "新增 › 报价单创建",
+        "title": "选择报价单",
+        "fields": []
+      },
+      {
+        "trigger": "批量操作 › 批量收款",
+        "title": "批量收款",
+        "fields": [
+          {
+            "label": "本次收款总额",
+            "required": true
+          },
+          {
+            "label": "分配方式",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P029": {
+    "url": "/customer_contract/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "完 成",
+      "终 止"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P030": {
+    "url": "/customer_financier/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "客户",
+      "合同编号",
+      "收/支",
+      "金额",
+      "附件",
+      "收款详情",
+      "备注",
+      "审核状态",
+      "审核详情",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "+收款",
+      "批量操作",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "+收款",
+        "title": "新增收款",
+        "fields": [
+          {
+            "label": "客户",
+            "required": true
+          },
+          {
+            "label": "已发货(元)",
+            "required": false
+          },
+          {
+            "label": "已收款(元)",
+            "required": false
+          },
+          {
+            "label": "待收款(元)",
+            "required": false
+          },
+          {
+            "label": "收款",
+            "required": true
+          },
+          {
+            "label": "附件",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P031": {
+    "url": "/customer_invoice/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "客户",
+      "合同编号",
+      "开票金额",
+      "申请备注",
+      "开票状态",
+      "开票备注",
+      "开票人",
+      "开票时间",
+      "申请人",
+      "申请时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "申请开票",
+        "fields": [
+          {
+            "label": "合同",
+            "required": true
+          },
+          {
+            "label": "合同金额 (元)",
+            "required": false
+          },
+          {
+            "label": "已开票金额",
+            "required": false
+          },
+          {
+            "label": "开票金额 (元)",
+            "required": true
+          },
+          {
+            "label": "附件",
+            "required": false
+          },
+          {
+            "label": "申请备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P032": {
+    "url": "/selling_expenses/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "客户",
+      "合同编号",
+      "支出日期",
+      "支出类别",
+      "金额",
+      "备注",
+      "附件",
+      "创建人",
+      "审核",
+      "审核详情",
+      "结算",
+      "结算附件",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增销售费用",
+        "fields": [
+          {
+            "label": "客户",
+            "required": true
+          },
+          {
+            "label": "合同",
+            "required": false
+          },
+          {
+            "label": "支出日期",
+            "required": true
+          },
+          {
+            "label": "支出类别",
+            "required": true
+          },
+          {
+            "label": "金额",
+            "required": true
+          },
+          {
+            "label": "备注",
+            "required": false
+          },
+          {
+            "label": "附件",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P033": {
+    "url": "/customer_sea/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "客户编号",
+      "客户",
+      "客户标签",
+      "联系人",
+      "联系人电话",
+      "地址",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "移动端卡片配置",
+      "列配置"
+    ],
+    "row_actions": [
+      "领用"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P034": {
+    "url": "/customer/setting/base_setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P035": {
+    "url": "/customer/setting/audit_setting",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "审核流程名称",
+      "审核对象",
+      "启用/禁用",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "+新增"
+    ],
+    "row_actions": [
+      "修改",
+      "复制",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "审核设置",
+    "dialogs": [
+      {
+        "trigger": "+新增",
+        "title": "新增审核流程",
+        "fields": [
+          {
+            "label": "审核流程名称",
+            "required": true
+          },
+          {
+            "label": "审核对象",
+            "required": true
+          },
+          {
+            "label": "允许撤回",
+            "required": true
+          },
+          {
+            "label": "第1级审核",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P036": {
+    "url": "/customer/salesPriceTrack",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "客户",
+      "商品编号",
+      "商品名",
+      "商品规格",
+      "单价",
+      "上一次的销售单价",
+      "历史平均销售单价",
+      "历史最高销售单价",
+      "历史最低销售单价",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "+ 新增",
+      "价格规则",
+      "更多操作",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "销售价格追踪",
+    "dialogs": [
+      {
+        "trigger": "+ 新增",
+        "title": "创建新价格规则",
+        "fields": [
+          {
+            "label": "客户",
+            "required": true
+          },
+          {
+            "label": "商品",
+            "required": true
+          },
+          {
+            "label": "单价",
+            "required": true
+          }
+        ]
+      },
+      {
+        "trigger": "价格规则",
+        "title": "价格填写规则",
+        "fields": [
+          {
+            "label": "销售价格填写规则",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P037": {
+    "url": "/LeanProductionReportChart/ReportChart",
+    "tab": null,
+    "filters": [
+      "部门"
+    ],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "报表",
+    "dialogs": []
+  },
+  "P038": {
+    "url": "/lean_production_todo/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "责任部门",
+      "责任人",
+      "问题分类",
+      "问题描述",
+      "现场照片",
+      "状态",
+      "设计问题",
+      "物料问题",
+      "巡查人",
+      "巡查时间",
+      "驳回人",
+      "驳回原因"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P039": {
+    "url": "/meeting/list",
+    "tab": null,
+    "filters": [
+      "参会人员",
+      "会议主题",
+      "会议时间起",
+      "会议时间止",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "会议主题",
+      "会议内容",
+      "会议时间",
+      "会议形式",
+      "参会人员",
+      "会议地点",
+      "落地进度",
+      "创建人",
+      "创建时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "新建会议",
+      "扩展字段",
+      "会议议程字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新建会议",
+        "title": "新增会议",
+        "fields": [
+          {
+            "label": "会议主题",
+            "required": true
+          },
+          {
+            "label": "会议内容",
+            "required": false
+          },
+          {
+            "label": "会议时间",
+            "required": true
+          },
+          {
+            "label": "会议形式",
+            "required": true
+          },
+          {
+            "label": "参会人员",
+            "required": true
+          },
+          {
+            "label": "会议地点",
+            "required": false
+          },
+          {
+            "label": "关联问题",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P040": {
+    "url": "/meeting/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "删除"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "详情",
+    "dialogs": []
+  },
+  "P041": {
+    "url": "/meetingTodo/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "会议主题",
+      "会议时间",
+      "参会人员",
+      "会议地点",
+      "关联案例",
+      "问题描述",
+      "问题分析",
+      "问题附件",
+      "负责人",
+      "状态",
+      "预计完成日期",
+      "落地附件",
+      "落地详情"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P042": {
+    "url": "/onsite_inspection/list",
+    "tab": null,
+    "filters": [
+      "责任部门",
+      "责任人",
+      "问题分类",
+      "巡查人",
+      "巡查时间起",
+      "巡查时间止"
+    ],
+    "columns": [
+      "责任部门",
+      "责任人",
+      "问题分类",
+      "问题描述",
+      "现场照片",
+      "状态",
+      "巡查人",
+      "巡查时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "新增",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "质量分析",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "现场巡查",
+        "fields": [
+          {
+            "label": "巡查人员",
+            "required": true
+          },
+          {
+            "label": "责任部门",
+            "required": true
+          },
+          {
+            "label": "责任人",
+            "required": false
+          },
+          {
+            "label": "问题分类",
+            "required": true
+          },
+          {
+            "label": "问题描述",
+            "required": true
+          },
+          {
+            "label": "现场照片",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P043": {
+    "url": "/setting/lean_production",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "精益生产设置",
+    "dialogs": []
+  },
+  "P044": {
+    "url": "/production_project/list",
+    "tab": null,
+    "filters": [
+      "项目编号",
+      "项目名称",
+      "创建人",
+      "更新人",
+      "关联合同",
+      "创建时间起",
+      "创建时间止",
+      "更新时间起",
+      "更新时间止"
+    ],
+    "columns": [
+      "项目编号",
+      "项目名称",
+      "项目类别",
+      "项目状态",
+      "关联合同",
+      "工单数",
+      "已完成工单",
+      "计划数",
+      "生产进度",
+      "项目进度",
+      "入库进度",
+      "创建时间",
+      "更新时间",
+      "创建人",
+      "更新人",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "创建记录",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "复制",
+      "打印",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "查询区齿轮（tooltip「配置查询条件」）",
+        "title": "配置查询条件",
+        "fields": []
+      }
+    ]
+  },
+  "P045": {
+    "url": "/production_project/edit",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "层级编号",
+      "工单编号",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "合同编号",
+      "商品来源",
+      "单位",
+      "单位用量",
+      "计划数",
+      "状态",
+      "交货日期",
+      "优先级",
+      "生产进度",
+      "任务进度",
+      "BOM",
+      "工序流程",
+      "用料清单",
+      "计划开始",
+      "计划结束",
+      "备注",
+      "图纸",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "新增",
+    "dialogs": []
+  },
+  "P046": {
+    "url": "/ProductionPlan/list",
+    "tab": null,
+    "filters": [
+      "计划编号",
+      "计划名称",
+      "创建人",
+      "物料分析状态",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "计划编号",
+      "计划名称",
+      "物料分析状态",
+      "加工投产进度",
+      "外协投产进度",
+      "采购进度",
+      "交货日期",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "物料分析",
+      "修改",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "生产计划列表",
+    "dialogs": []
+  },
+  "P047": {
+    "url": "/ProductionPlan/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "打印生产计划"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P048": {
+    "url": "/ProductionPlan/add",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "序号",
+      "商品名",
+      "编号",
+      "规格",
+      "合同编号",
+      "客户名",
+      "商品来源",
+      "商品图片",
+      "计划数量",
+      "商品BOM",
+      "单位",
+      "备注",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "创建生产计划"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "创建生产计划",
+    "dialogs": []
+  },
+  "P049": {
+    "url": "/MaterialAnalysis/list",
+    "tab": null,
+    "filters": [
+      "生产计划",
+      "分析状态",
+      "加工单",
+      "外协工单",
+      "采购单",
+      "分析人",
+      "分析时间起",
+      "分析时间止"
+    ],
+    "columns": [
+      "计划编号",
+      "计划名称",
+      "分析状态",
+      "加工单",
+      "外协工单",
+      "采购单",
+      "备注",
+      "分析人",
+      "分析时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "列配置",
+      "创建记录",
+      "更多操作"
+    ],
+    "row_actions": [
+      "创建加工单",
+      "创建外协工单",
+      "创建采购单",
+      "修改",
+      "详情",
+      "作废"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "物料分析列表",
+    "dialogs": []
+  },
+  "P050": {
+    "url": "/MaterialAnalysis/add",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "序号",
+      "商品名",
+      "编号",
+      "规格",
+      "合同编号",
+      "客户名",
+      "商品来源",
+      "商品图片",
+      "计划数量",
+      "商品BOM",
+      "单位",
+      "备注"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "列配置",
+      "开始分析"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "新增物料分析",
+    "dialogs": []
+  },
+  "P051": {
+    "url": "/inside_produce_bill/list",
+    "tab": null,
+    "filters": [
+      "加工单号",
+      "合同编号",
+      "生产计划",
+      "项目编号",
+      "项目名称",
+      "业务员",
+      "商品编号",
+      "商品",
+      "BOM",
+      "商品类别",
+      "当前工序",
+      "暂停原因",
+      "优先级",
+      "领料状态",
+      "计划数",
+      "实际生产数",
+      "计划开始起",
+      "计划开始止",
+      "计划结束起",
+      "计划结束止",
+      "创建人",
+      "取消原因",
+      "创建时间起",
+      "创建时间止",
+      "开始时间起",
+      "开始时间止",
+      "完成时间起",
+      "完成时间止",
+      "交货日期起",
+      "交货日期止",
+      "备注"
+    ],
+    "columns": [
+      "排单序号",
+      "加工单号",
+      "商品",
+      "计划数",
+      "库存",
+      "状态",
+      "优先级",
+      "工序进度详情",
+      "商品编号",
+      "商品类别",
+      "商品图片",
+      "商品规格",
+      "实际生产数",
+      "领料状态",
+      "交货日期",
+      "交货倒计时",
+      "当前工序",
+      "工序进度",
+      "加工单总工时",
+      "任务进度",
+      "工序流程",
+      "图纸",
+      "计划开始",
+      "计划结束",
+      "开始时间",
+      "完成时间",
+      "暂停原因",
+      "取消原因",
+      "生产出库",
+      "成品入库",
+      "半成品入库",
+      "生产退料",
+      "备注",
+      "入库进度",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "展开子单",
+      "排单",
+      "导出/打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "工资单",
+      "打印",
+      "更多"
+    ],
+    "page_size": "10 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "更多 › 选父单 / 选子单",
+        "title": "选择加工单",
+        "fields": []
+      },
+      {
+        "trigger": "更多 › 甘特图",
+        "title": "加工单工序甘特图",
+        "fields": []
+      },
+      {
+        "trigger": "排单",
+        "title": "加工单排单",
+        "fields": []
+      }
+    ]
+  },
+  "P052": {
+    "url": "/inside_produce_bill/add",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "取 消",
+      "创建加工单"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "创建加工单",
+    "dialogs": []
+  },
+  "P053": {
+    "url": "/inside_produce_bill/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "复制",
+      "删除",
+      "分享加工单进度",
+      "拆单",
+      "选父单",
+      "选子单",
+      "打印加工单"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "详情",
+    "dialogs": [
+      {
+        "trigger": "分享加工单进度",
+        "title": "分享加工单进度",
+        "fields": []
+      }
+    ]
+  },
+  "P054": {
+    "url": "/inside_produce_bill/split/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "序号",
+      "加工单类型",
+      "计划数",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "计划开始",
+      "计划结束",
+      "项目编号",
+      "生产计划编号",
+      "生产计划名",
+      "合同编号"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "确认拆分",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P055": {
+    "url": "/ProductionScheduling/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "序号",
+      "加工单号",
+      "计划开始",
+      "计划结束",
+      "优先级",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "当前工序",
+      "已开工时间"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "今天",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": "10 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P056": {
+    "url": "/productionTask/list",
+    "tab": null,
+    "filters": [
+      "工序",
+      "加工单",
+      "工序编号",
+      "商品",
+      "车间",
+      "产线",
+      "计价方式",
+      "工资单价",
+      "机台",
+      "当前工序",
+      "报工附加组件",
+      "质检附加组件",
+      "生产人员",
+      "生产派工",
+      "质检派工",
+      "质检人员",
+      "不良品项",
+      "报工单位",
+      "供应商",
+      "任务开始时间起",
+      "任务开始时间止",
+      "任务结束时间起",
+      "任务结束时间止",
+      "计划数",
+      "加工单状态",
+      "良品总数",
+      "不良品数",
+      "返工数",
+      "报废数",
+      "任务暂停原因"
+    ],
+    "columns": [
+      "工序",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "商品类别",
+      "加工单",
+      "任务类型",
+      "工序编号",
+      "工序计划开始",
+      "工序计划结束",
+      "生产数量",
+      "生产进度",
+      "验收进度",
+      "外协验收",
+      "任务状态",
+      "任务暂停原因",
+      "车间",
+      "产线",
+      "计价方式",
+      "工资单价",
+      "标准工时",
+      "标准总工时",
+      "任务开始时间",
+      "任务结束时间",
+      "用时",
+      "机台",
+      "生产人员",
+      "生产派工",
+      "质检人员",
+      "质检派工",
+      "不良品项",
+      "报工单位",
+      "报工附加组件",
+      "质检附加组件",
+      "单位关系",
+      "生产任务计时",
+      "检验方案",
+      "物料清单",
+      "任务附件",
+      "任务备注",
+      "供应商",
+      "联系人",
+      "地址",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "批量操作",
+      "管理打印模板",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "详情",
+      "报工",
+      "出库",
+      "更多"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P057": {
+    "url": "/work_repoty_record/list",
+    "tab": null,
+    "filters": [
+      "工资单价",
+      "不良品数",
+      "良品数",
+      "报工数",
+      "报工单位",
+      "工资",
+      "返工数",
+      "报废数",
+      "加工单号",
+      "加工单状态",
+      "商品",
+      "客户",
+      "工序名",
+      "车间",
+      "产线",
+      "机台",
+      "报工附加组件",
+      "质检附加组件",
+      "质检备注",
+      "溯源码编号",
+      "报工生产人员",
+      "报工备注",
+      "报工质检人",
+      "结算人",
+      "结算时间起",
+      "结算时间止",
+      "报工人",
+      "报工时间起",
+      "报工时间止",
+      "质检时间起",
+      "质检时间止",
+      "报工开始时间起",
+      "报工开始时间止",
+      "报工结束时间起",
+      "报工结束时间止",
+      "计划数"
+    ],
+    "columns": [
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "工序计划开始",
+      "工序计划结束",
+      "工序名",
+      "车间",
+      "产线",
+      "计价方式",
+      "结算状态",
+      "结算人",
+      "结算时间",
+      "报工附加组件",
+      "加工单号",
+      "加工单状态",
+      "溯源码编号",
+      "溯源码数量",
+      "报工类型",
+      "机台",
+      "工资单价",
+      "报工生产人员",
+      "报工数量",
+      "良品数",
+      "标准效率",
+      "实际效率",
+      "达标率",
+      "不良品数",
+      "不良品项",
+      "不良品项数",
+      "报工单位",
+      "工资(元)",
+      "报工开始时间",
+      "报工结束时间",
+      "报工时长",
+      "报工备注",
+      "附件",
+      "报工质检人",
+      "报工人",
+      "返工数",
+      "报废数",
+      "返工任务",
+      "质检状态",
+      "质检时间",
+      "质检附加组件",
+      "质检备注",
+      "报工时间"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "批量操作",
+      "表单设计器",
+      "批量报工设置",
+      "管理打印模板",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "结算",
+      "修改",
+      "打印",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "修改",
+        "title": "报工 [工序名]",
+        "fields": []
+      },
+      {
+        "trigger": "批量操作 › 刷新绩效",
+        "title": "刷新绩效",
+        "fields": []
+      },
+      {
+        "trigger": "结算",
+        "title": "工资结算",
+        "fields": []
+      }
+    ]
+  },
+  "P058": {
+    "url": "/work_quality_testing/list",
+    "tab": null,
+    "filters": [
+      "加工单",
+      "商品",
+      "工序名",
+      "工序编号",
+      "车间",
+      "产线",
+      "机台",
+      "报工附加组件",
+      "质检附加组件",
+      "溯源码编号",
+      "生产人员",
+      "质检人员",
+      "质检人",
+      "报工时间起",
+      "报工时间止"
+    ],
+    "columns": [
+      "商品编号",
+      "商品名",
+      "商品规格",
+      "工序名",
+      "工序编号",
+      "报工单位",
+      "车间",
+      "产线",
+      "质检人员",
+      "工序计划开始",
+      "工序计划结束",
+      "加工单",
+      "优先级",
+      "交货日期",
+      "溯源码编号",
+      "报工数",
+      "良品数",
+      "不良品数",
+      "不良品项",
+      "报工附加组件",
+      "机台",
+      "生产人员",
+      "报工人",
+      "报工时间",
+      "返工数",
+      "报废数",
+      "返工任务",
+      "质检状态",
+      "已返工",
+      "质检附加组件",
+      "质检人",
+      "质检备注",
+      "质检时间"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "批量操作",
+      "表单设计器",
+      "管理打印模板",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "质检"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P059": {
+    "url": "/spot_check/list",
+    "tab": null,
+    "filters": [
+      "质检单号",
+      "加工单号",
+      "工序名",
+      "工序编号",
+      "商品名",
+      "商品规格",
+      "商品类别",
+      "车间",
+      "产线",
+      "生产人员",
+      "质检人员",
+      "质检人",
+      "质检状态",
+      "质检时间起",
+      "质检时间止",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "质检单号",
+      "加工单号",
+      "工序名",
+      "工序编号",
+      "商品编号",
+      "商品",
+      "商品规格",
+      "商品类别",
+      "车间",
+      "产线",
+      "抽检方案",
+      "生产人员",
+      "抽检数量",
+      "良品数",
+      "不良品数",
+      "不良品项",
+      "备注",
+      "质检明细",
+      "质检人员",
+      "质检状态",
+      "质检人",
+      "质检时间",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增",
+        "fields": [
+          {
+            "label": "质检单号",
+            "required": false
+          },
+          {
+            "label": "抽检数量",
+            "required": true
+          },
+          {
+            "label": "工序",
+            "required": true
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P060": {
+    "url": "/spot_check_item/list",
+    "tab": null,
+    "filters": [
+      "质检附加组件"
+    ],
+    "columns": [
+      "质检单号",
+      "加工单",
+      "工序名",
+      "工序编号",
+      "商品编号",
+      "商品",
+      "商品规格",
+      "商品类别",
+      "车间",
+      "产线",
+      "抽检方案",
+      "生产人员",
+      "抽检数量",
+      "良品数",
+      "不良品数",
+      "不良品项",
+      "备注",
+      "质检人员",
+      "质检状态",
+      "质检人",
+      "质检时间",
+      "创建人",
+      "创建时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P061": {
+    "url": "/OutWorkOrder/list",
+    "tab": null,
+    "filters": [
+      "外协工单号",
+      "生产计划",
+      "合同编号",
+      "生产项目",
+      "商品",
+      "供应商",
+      "联系人",
+      "计划数",
+      "外协单价",
+      "暂停原因",
+      "优先级",
+      "计划开始起",
+      "计划开始止",
+      "计划结束起",
+      "计划结束止",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "外协工单号",
+      "计划数",
+      "状态",
+      "商品",
+      "商品编号",
+      "商品图片",
+      "商品规格",
+      "供应商",
+      "联系人",
+      "地址",
+      "外协单价(元)",
+      "交货日期",
+      "优先级",
+      "图纸",
+      "计划开始",
+      "计划结束",
+      "生产出库",
+      "成品入库",
+      "生产退料",
+      "备注",
+      "验收进度",
+      "入库进度",
+      "取消原因",
+      "暂停原因",
+      "开始时间",
+      "完成时间",
+      "创建人",
+      "创建时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "开始",
+      "完成",
+      "打印",
+      "更多"
+    ],
+    "page_size": "10 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "外协工单列表",
+    "dialogs": []
+  },
+  "P062": {
+    "url": "/OutWorkOrder/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "复制",
+      "删除",
+      "分享外协工单进度",
+      "撤回",
+      "取消",
+      "打印外协工单"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "外协工单详情",
+    "dialogs": []
+  },
+  "P063": {
+    "url": "/OutWorkOrder/edit/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "取消",
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P064": {
+    "url": "/outsourcing_receipt/list",
+    "tab": null,
+    "filters": [
+      "加工单/外协工单",
+      "工序",
+      "商品",
+      "供应商",
+      "联系人",
+      "验收人",
+      "验收时间起",
+      "验收时间止"
+    ],
+    "columns": [
+      "加工单/外协工单",
+      "工序",
+      "外协类型",
+      "结算状态",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "供应商",
+      "联系人",
+      "地址",
+      "验收数量",
+      "合格数量",
+      "不合格数量",
+      "不良品项",
+      "成品入库",
+      "备注",
+      "附件",
+      "验收人",
+      "验收内容",
+      "验收时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "外协验收",
+    "dialogs": []
+  },
+  "P065": {
+    "url": "/Outsourcing_settlement/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "供应商",
+      "联系人",
+      "地址",
+      "外协类型",
+      "结算状态",
+      "加工单号/外协工单号",
+      "工序",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "验收数量",
+      "合格数量",
+      "不合格数量",
+      "验收人",
+      "单价",
+      "结算金额",
+      "结算人",
+      "附件",
+      "备注",
+      "结算时间",
+      "验收内容",
+      "验收时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "批量操作",
+      "管理打印模板",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "结算",
+      "打印"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "外协结算",
+    "dialogs": []
+  },
+  "P066": {
+    "url": "/outsourcing_content/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "标题",
+      "检查项",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "扩展字段",
+      "列配置"
+    ],
+    "row_actions": [
+      "修改",
+      "复制",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P067": {
+    "url": "/apportioned_cost/list",
+    "tab": null,
+    "filters": [
+      "分摊单号",
+      "分摊日期起",
+      "分摊日期止",
+      "分摊类别",
+      "审核状态",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "分摊单号",
+      "分摊日期",
+      "分摊金额(元)",
+      "分摊方案",
+      "分摊类别",
+      "审核状态",
+      "审核备注",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增成本分摊",
+        "fields": [
+          {
+            "label": "分摊单号",
+            "required": false
+          },
+          {
+            "label": "分摊日期",
+            "required": true
+          },
+          {
+            "label": "分摊金额(元)",
+            "required": true
+          },
+          {
+            "label": "分摊方案",
+            "required": false
+          },
+          {
+            "label": "分摊类别",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "新增成本分摊 › + 选择加工单",
+        "title": "选择加工单",
+        "fields": []
+      }
+    ]
+  },
+  "P068": {
+    "url": "/machine_platform/list",
+    "tab": null,
+    "filters": [
+      "机台编号",
+      "机台名称",
+      "生产工序",
+      "机台类别",
+      "车间",
+      "产线",
+      "机台状态",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "机台编号",
+      "机台名称",
+      "机台规格",
+      "机台图片",
+      "机台状态",
+      "机台类别",
+      "单日运行时长",
+      "标准效率",
+      "生产工序",
+      "车间",
+      "产线",
+      "启用/禁用",
+      "创建时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P069": {
+    "url": "/public_craft/list",
+    "tab": null,
+    "filters": [
+      "工序",
+      "工序编号",
+      "车间",
+      "产线",
+      "生产人员",
+      "质检人员",
+      "不良品项",
+      "机台",
+      "报工附加组件",
+      "质检附加组件",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "工序",
+      "工序编号",
+      "车间",
+      "产线",
+      "计价方式",
+      "工资单价",
+      "机台",
+      "生产人员",
+      "质检人员",
+      "不良品项",
+      "报工单位",
+      "单位关系",
+      "标准工时",
+      "生产任务计时",
+      "检验方案",
+      "需返工 / 报废",
+      "需外协",
+      "状态",
+      "附件",
+      "报工附加组件",
+      "质检附加组件",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增工序",
+        "fields": [
+          {
+            "label": "工序名",
+            "required": true
+          },
+          {
+            "label": "工序编号",
+            "required": false
+          },
+          {
+            "label": "车间",
+            "required": false
+          },
+          {
+            "label": "产线",
+            "required": false
+          },
+          {
+            "label": "报工单位",
+            "required": false
+          },
+          {
+            "label": "单位关系",
+            "required": false
+          },
+          {
+            "label": "计价方式",
+            "required": true
+          },
+          {
+            "label": "工资单价",
+            "required": false
+          },
+          {
+            "label": "标准工时",
+            "required": false
+          },
+          {
+            "label": "附件",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          },
+          {
+            "label": "生产人员",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P070": {
+    "url": "/station/list",
+    "tab": null,
+    "filters": [
+      "姓名",
+      "部门",
+      "角色",
+      "生产工序",
+      "质检工序"
+    ],
+    "columns": [
+      "姓名",
+      "部门",
+      "角色",
+      "状态",
+      "生产工序",
+      "质检工序",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "修改",
+        "title": "修改岗位安排",
+        "fields": [
+          {
+            "label": "生产工序",
+            "required": false
+          },
+          {
+            "label": "质检工序",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P071": {
+    "url": "/waste_item/list",
+    "tab": null,
+    "filters": [
+      "编号",
+      "名称",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "不良品项编号",
+      "不良品项名称",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增不良品项",
+        "fields": [
+          {
+            "label": "不良品项编号",
+            "required": false
+          },
+          {
+            "label": "不良品项名称",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P072": {
+    "url": "/process_additional_component/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "标题",
+      "字段",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增工序附加组件",
+        "fields": [
+          {
+            "label": "标题",
+            "required": true
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "+ 添加字段",
+        "title": "新增字段",
+        "fields": [
+          {
+            "label": "字段",
+            "required": true
+          },
+          {
+            "label": "检查项说明",
+            "required": false
+          },
+          {
+            "label": "是否必填",
+            "required": true
+          },
+          {
+            "label": "字段类型",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P073": {
+    "url": "/product_traceability/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "产品",
+      "是否关联产品"
+    ],
+    "columns": [
+      "编号",
+      "生产信息",
+      "加工单",
+      "商品",
+      "商品规格",
+      "商品图片",
+      "商品编号",
+      "关联产品",
+      "产品编号",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "生成",
+      "批量操作",
+      "移动端卡片配置",
+      "生成历史"
+    ],
+    "row_actions": [
+      "查看二维码",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "生成",
+        "title": "生成生产溯源二维码",
+        "fields": [
+          {
+            "label": "生成方式",
+            "required": true
+          },
+          {
+            "label": "生成二维码数量",
+            "required": true
+          }
+        ]
+      },
+      {
+        "trigger": "生产信息 › 查看",
+        "title": "生产信息",
+        "fields": []
+      },
+      {
+        "trigger": "查看二维码",
+        "title": "查看二维码",
+        "fields": []
+      }
+    ]
+  },
+  "P074": {
+    "url": "/work_report_workbench",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "序号",
+      "加工单号",
+      "商品名",
+      "工序名",
+      "良品数",
+      "不良品数",
+      "报工时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "清 空",
+      "报 工",
+      "报工并完成工序"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P075": {
+    "url": "/setting/produce/dictionary",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "保 存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P076": {
+    "url": "/setting/PerformancePay/list",
+    "tab": null,
+    "filters": [
+      "工序",
+      "商品",
+      "创建人",
+      "更新人",
+      "创建时间起",
+      "创建时间止",
+      "更新时间起",
+      "更新时间止"
+    ],
+    "columns": [
+      "商品",
+      "商品编号",
+      "商品规格",
+      "工序名",
+      "计价方式",
+      "姓名",
+      "编号",
+      "工资单价(元)",
+      "标准产出",
+      "标准工时",
+      "参数1",
+      "参数2",
+      "参数3",
+      "参数4",
+      "参数5",
+      "创建人",
+      "更新人",
+      "更新时间",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "+ 新增",
+      "绩效工资匹配规则",
+      "设置工资计算公式",
+      "批量操作",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "绩效工资列表",
+    "dialogs": [
+      {
+        "trigger": "设置工资计算公式",
+        "title": "设置工资计算公式",
+        "fields": [
+          {
+            "label": "计算公式",
+            "required": true
+          },
+          {
+            "label": "小数位数",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P077": {
+    "url": "/setting/PerformancePay/edit",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P078": {
+    "url": "/setting/PerformancePay/rule",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "退 出"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P079": {
+    "url": "/setting/auto_stock_manage",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "事件名称",
+      "触发方式",
+      "执行事件",
+      "事件内容",
+      "启用/禁用",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "+ 新增",
+      "执行日志"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "自动出入库设置",
+    "dialogs": [
+      {
+        "trigger": "+ 新增",
+        "title": "自定义事件模板",
+        "fields": []
+      }
+    ]
+  },
+  "P080": {
+    "url": "/setting/produce/station",
+    "tab": null,
+    "filters": [
+      "工作站名称",
+      "车间",
+      "产线",
+      "工作人员",
+      "维保设备"
+    ],
+    "columns": [
+      "工作站名称",
+      "车间",
+      "产线",
+      "生产人员",
+      "维保设备",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "保存",
+      "查询",
+      "重置",
+      "新增",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "工作站管理配置",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增工作站",
+        "fields": [
+          {
+            "label": "工作站名称",
+            "required": true
+          },
+          {
+            "label": "车间",
+            "required": false
+          },
+          {
+            "label": "产线",
+            "required": false
+          },
+          {
+            "label": "工作人员",
+            "required": true
+          },
+          {
+            "label": "维保设备",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P081": {
+    "url": "/inspection_plan/list",
+    "tab": null,
+    "filters": [
+      "计划名称",
+      "计划分类",
+      "维保设备",
+      "维保设备编号",
+      "执行人/执行团队",
+      "团队",
+      "开始时间起",
+      "开始时间止",
+      "执行时间",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "计划名称",
+      "计划分类",
+      "设备",
+      "设备数量",
+      "计划周期",
+      "计划剩余天数",
+      "循环周期",
+      "执行时间",
+      "备注",
+      "执行人/执行团队",
+      "团队",
+      "月执行概况",
+      "启用/禁用",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "延期",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "设备列「查看(n)」",
+        "title": "维保计划设备",
+        "fields": [
+          {
+            "label": "关键字",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P082": {
+    "url": "/inspection_task/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "维保计划",
+      "任务日期",
+      "任务时间段",
+      "执行人/执行团队",
+      "团队",
+      "状态",
+      "设备",
+      "设备数",
+      "签字状态"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P083": {
+    "url": "/inspection_record/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "维保计划",
+      "设备",
+      "设备规格",
+      "设备编号",
+      "设备类别",
+      "核验状态",
+      "签字状态",
+      "设备状态",
+      "物料清单",
+      "设备二维码",
+      "设备负责人",
+      "车间",
+      "产线",
+      "执行人",
+      "执行团队",
+      "执行时间",
+      "维保内容",
+      "备件使用",
+      "维修工单",
+      "首次核验时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "批量操作",
+      "管理打印模板",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "更多"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P084": {
+    "url": "/inspection_breakdown/list",
+    "tab": null,
+    "filters": [
+      "维保内容"
+    ],
+    "columns": [
+      "维保计划",
+      "设备类别",
+      "设备",
+      "设备编号",
+      "设备规格",
+      "执行人",
+      "团队",
+      "执行时间"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P085": {
+    "url": "/inspection_content/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "标题",
+      "检查项",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "扩展字段",
+      "列配置"
+    ],
+    "row_actions": [
+      "修改",
+      "复制",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增维保内容",
+        "fields": [
+          {
+            "label": "标题",
+            "required": true
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P086": {
+    "url": "/point_inspection_plan/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "设备编号",
+      "设备名称",
+      "运行状态",
+      "设备类别",
+      "执行人/执行团队",
+      "团队",
+      "维保内容",
+      "启用/禁用",
+      "上次点检时间",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "批量操作",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [
+      "设备名称",
+      "设备编号",
+      "设备类别",
+      "执行人/执行团队",
+      "团队",
+      "上次点检时间",
+      "创建时间"
+    ],
+    "adv_buttons": [
+      "搜 索",
+      "清空筛选值"
+    ],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P087": {
+    "url": "/point_inspection_record/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "设备",
+      "设备编号",
+      "设备类别",
+      "点检人",
+      "团队",
+      "维保内容",
+      "备件使用",
+      "正常项",
+      "异常项",
+      "点检时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "批量操作",
+      "管理打印模板",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "更多"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [
+      "设备名称",
+      "设备编号",
+      "设备类别",
+      "点检人",
+      "团队",
+      "点检时间",
+      "维保内容"
+    ],
+    "adv_buttons": [
+      "搜 索",
+      "清空筛选值"
+    ],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P088": {
+    "url": "/device_order/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "工单编号",
+      "设备名称",
+      "处理人",
+      "团队",
+      "接单时间",
+      "处理时间",
+      "维修总用时",
+      "工单总用时",
+      "故障类别",
+      "故障描述",
+      "维保异常项",
+      "状态",
+      "签字状态",
+      "暂停原因",
+      "取消原因",
+      "报修人",
+      "审核人",
+      "审核时间",
+      "来源",
+      "是否解决问题",
+      "处理结果",
+      "报修时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "更多"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [
+      "工单编号",
+      "设备名称",
+      "设备编号",
+      "处理人",
+      "团队",
+      "接单时间",
+      "处理时间",
+      "报修人",
+      "报修时间",
+      "审核人",
+      "审核时间",
+      "设备类别",
+      "车间",
+      "产线",
+      "故障类别",
+      "故障描述",
+      "签字状态"
+    ],
+    "adv_buttons": [
+      "搜 索",
+      "清空筛选值"
+    ],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增维修工单",
+        "fields": [
+          {
+            "label": "工单编号",
+            "required": false
+          },
+          {
+            "label": "维修设备",
+            "required": true
+          },
+          {
+            "label": "团队",
+            "required": true
+          },
+          {
+            "label": "派单方式",
+            "required": false
+          },
+          {
+            "label": "处理人",
+            "required": true
+          },
+          {
+            "label": "故障类别",
+            "required": false
+          },
+          {
+            "label": "故障描述",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P089": {
+    "url": "/device/list",
+    "tab": null,
+    "filters": [
+      "设备编号",
+      "设备名称",
+      "设备规格",
+      "设备状态",
+      "设备类别",
+      "设备二维码",
+      "设备负责人",
+      "车间",
+      "产线",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "设备编号",
+      "设备名称",
+      "设备规格",
+      "设备图片",
+      "设备状态",
+      "设备类别",
+      "物料清单",
+      "设备二维码",
+      "有无维保计划",
+      "设备负责人",
+      "团队",
+      "车间",
+      "产线",
+      "启用/禁用",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增维保设备",
+        "fields": [
+          {
+            "label": "设备图片",
+            "required": false
+          },
+          {
+            "label": "设备编号",
+            "required": false
+          },
+          {
+            "label": "设备名称",
+            "required": true
+          },
+          {
+            "label": "设备规格",
+            "required": false
+          },
+          {
+            "label": "设备状态",
+            "required": true
+          },
+          {
+            "label": "设备类别",
+            "required": true
+          },
+          {
+            "label": "同步创建机台",
+            "required": true
+          },
+          {
+            "label": "团队",
+            "required": true
+          },
+          {
+            "label": "设备负责人",
+            "required": true
+          },
+          {
+            "label": "车间",
+            "required": false
+          },
+          {
+            "label": "产线",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P090": {
+    "url": "/device_qr_code/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "二维码编号",
+      "设备名称",
+      "设备规格",
+      "设备编号",
+      "生成时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "生成",
+      "批量操作",
+      "管理打印模板",
+      "生成历史",
+      "列配置"
+    ],
+    "row_actions": [
+      "打印",
+      "解绑",
+      "查看二维码",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [
+      "二维码编号",
+      "设备名称",
+      "设备编号",
+      "设备规格",
+      "生成时间"
+    ],
+    "adv_buttons": [
+      "搜 索",
+      "清空筛选值"
+    ],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "生成",
+        "title": "生成设备二维码",
+        "fields": [
+          {
+            "label": "生成二维码数量",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P091": {
+    "url": "/setting/inspection/setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "基础设置",
+    "dialogs": []
+  },
+  "P092": {
+    "url": "/supplier/list",
+    "tab": null,
+    "filters": [
+      "供应商编号",
+      "供应商名称",
+      "企业名称",
+      "统一社会信用代码",
+      "联系人",
+      "联系人电话",
+      "负责人",
+      "供应商标签",
+      "地址",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "供应商编号",
+      "供应商名称",
+      "企业名称",
+      "统一社会信用代码",
+      "联系人",
+      "联系人电话",
+      "负责人",
+      "地址",
+      "供应商标签",
+      "级别",
+      "备注",
+      "生命阶段",
+      "附件",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "关联采购商品",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增供应商",
+        "fields": [
+          {
+            "label": "供应商编号",
+            "required": false
+          },
+          {
+            "label": "供应商名称",
+            "required": true
+          },
+          {
+            "label": "企业名称",
+            "required": false
+          },
+          {
+            "label": "统一社会信用代码",
+            "required": false
+          },
+          {
+            "label": "负责人",
+            "required": false
+          },
+          {
+            "label": "联系人",
+            "required": false
+          },
+          {
+            "label": "联系人电话",
+            "required": false
+          },
+          {
+            "label": "地区",
+            "required": false
+          },
+          {
+            "label": "详细地址",
+            "required": false
+          },
+          {
+            "label": "供应商标签",
+            "required": false
+          },
+          {
+            "label": "级别",
+            "required": false
+          },
+          {
+            "label": "附件",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P093": {
+    "url": "/produce_plan/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "计划编号",
+      "交货日期起",
+      "交货日期止",
+      "计划名称",
+      "供应商",
+      "创建人",
+      "审核状态",
+      "创建时间起",
+      "创建时间止",
+      "是否逾期"
+    ],
+    "columns": [
+      "计划编号",
+      "计划名称",
+      "金额",
+      "采购数量",
+      "供应商",
+      "采购进度",
+      "入库进度",
+      "交货日期",
+      "审核状态",
+      "审核详情",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "采购明细",
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增采购计划",
+        "fields": [
+          {
+            "label": "计划编号",
+            "required": false
+          },
+          {
+            "label": "计划名称",
+            "required": true
+          },
+          {
+            "label": "供应商",
+            "required": false
+          },
+          {
+            "label": "金额",
+            "required": false
+          },
+          {
+            "label": "交货日期",
+            "required": false
+          },
+          {
+            "label": "采购数量",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P094": {
+    "url": "/purchase_order/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "采购单号",
+      "生产计划",
+      "采购计划编号",
+      "采购计划名称",
+      "合同编号",
+      "供应商",
+      "采购人",
+      "审核状态",
+      "创建人",
+      "创建时间起",
+      "创建时间止",
+      "是否逾期",
+      "备注"
+    ],
+    "columns": [
+      "采购单号",
+      "生产计划编号",
+      "生产计划名",
+      "供应商",
+      "金额",
+      "采购数量",
+      "入库金额(元)",
+      "退货金额(元)",
+      "已付款(元)",
+      "欠款(元)",
+      "入库进度",
+      "付款进度",
+      "开票进度",
+      "交货日期",
+      "审核状态",
+      "审核详情",
+      "备注",
+      "采购退货",
+      "采购入库",
+      "创建人",
+      "采购人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "采购明细",
+      "付款",
+      "打印",
+      "修改",
+      "复制",
+      "删除"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增采购单",
+        "fields": [
+          {
+            "label": "采购单号",
+            "required": false
+          },
+          {
+            "label": "供应商",
+            "required": false
+          },
+          {
+            "label": "商品金额",
+            "required": false
+          },
+          {
+            "label": "采购数量",
+            "required": false
+          },
+          {
+            "label": "采购人",
+            "required": false
+          },
+          {
+            "label": "交货日期",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "付款",
+        "title": "新增采购付款",
+        "fields": [
+          {
+            "label": "待付款(元)",
+            "required": false
+          },
+          {
+            "label": "供应商",
+            "required": false
+          },
+          {
+            "label": "付款金额",
+            "required": true
+          },
+          {
+            "label": "付款日期",
+            "required": true
+          },
+          {
+            "label": "附件",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P095": {
+    "url": "/purchase_order/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "删除",
+      "打印采购单"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P096": {
+    "url": "/purchase_pay_record/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "供应商",
+      "采购单号",
+      "付款金额(元)",
+      "附件",
+      "备注",
+      "审核状态",
+      "审核详情",
+      "付款日期",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "批量操作",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P097": {
+    "url": "/purchase_pay_invoice/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "采购单号",
+      "供应商",
+      "发票金额(元)",
+      "开票日期",
+      "备注"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P098": {
+    "url": "/material_test/list",
+    "tab": null,
+    "filters": [
+      "检验单号",
+      "采购单号",
+      "检验规范",
+      "采购人",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "商品类别",
+      "检验人员",
+      "创建人",
+      "完成日期起",
+      "完成日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "检验单号",
+      "检验规范",
+      "采购单号",
+      "采购人",
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "商品类别",
+      "商品单位",
+      "供应商",
+      "检验进度",
+      "采购数量",
+      "已入库数",
+      "送检数量",
+      "已检数量",
+      "合格数",
+      "不合格数",
+      "合格率(%)",
+      "完成日期",
+      "检验人员",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增检验单",
+        "fields": [
+          {
+            "label": "检验单号",
+            "required": false
+          },
+          {
+            "label": "采购单",
+            "required": true
+          },
+          {
+            "label": "商品",
+            "required": false
+          },
+          {
+            "label": "检验规范",
+            "required": false
+          },
+          {
+            "label": "送检数量",
+            "required": false
+          },
+          {
+            "label": "完成日期",
+            "required": false
+          },
+          {
+            "label": "检验人",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P099": {
+    "url": "/material_test_item_list/list",
+    "tab": null,
+    "filters": [
+      "检验规范"
+    ],
+    "columns": [
+      "检验单号",
+      "采购单号",
+      "采购人",
+      "商品名称",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "商品类别",
+      "单位",
+      "供应商",
+      "采购数量",
+      "检验人",
+      "检验数量",
+      "合格数",
+      "不合格数",
+      "检验时间",
+      "操作"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "高级查询"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P100": {
+    "url": "/material_test_content/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "检验规范",
+      "商品",
+      "检查项",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "扩展字段",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增检验规范",
+        "fields": [
+          {
+            "label": "检验规范",
+            "required": true
+          },
+          {
+            "label": "备注",
+            "required": false
+          },
+          {
+            "label": "商品",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P101": {
+    "url": "/setting/supplier_purchase/audit_setting",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "审核流程名称",
+      "审核对象",
+      "启用/禁用",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "+新增"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "审核设置",
+    "dialogs": []
+  },
+  "P102": {
+    "url": "/setting/purchase/setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "采购设置",
+    "dialogs": []
+  },
+  "P103": {
+    "url": "/setting/supplier/setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "供应商设置",
+    "dialogs": []
+  },
+  "P104": {
+    "url": "/setting/purchasePriceTrack",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "供应商",
+      "商品编号",
+      "商品名",
+      "商品规格",
+      "单价",
+      "上一次的采购单价",
+      "历史平均采购单价",
+      "历史最高采购单价",
+      "历史最低采购单价",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "高级查询",
+      "新增",
+      "价格规则",
+      "更多操作",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "采购价格追踪",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "创建新价格规则",
+        "fields": [
+          {
+            "label": "供应商",
+            "required": true
+          },
+          {
+            "label": "商品",
+            "required": true
+          },
+          {
+            "label": "单价",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P105": {
+    "url": "/goods_stock/list",
+    "tab": null,
+    "filters": [
+      "仓库",
+      "商品",
+      "商品类别"
+    ],
+    "columns": [
+      "仓库",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "商品类别",
+      "成本单价(元)",
+      "成本金额(元)",
+      "销售单价(元)",
+      "销售金额(元)",
+      "库存",
+      "商品单位",
+      "商品来源",
+      "下限警告值",
+      "上限警告值",
+      "呆滞警告值",
+      "在途数"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "批量操作",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P106": {
+    "url": "/goods_stock/list",
+    "tab": "商品库存",
+    "filters": [
+      "商品",
+      "商品类别"
+    ],
+    "columns": [
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品类别",
+      "商品单位",
+      "成本单价(元)",
+      "成本金额(元)",
+      "销售单价(元)",
+      "销售金额(元)",
+      "商品来源",
+      "库存分布",
+      "占用分布",
+      "总库存",
+      "占用库存",
+      "锁定库存",
+      "可用库存",
+      "在途数",
+      "待发货数",
+      "待领料数"
+    ],
+    "columns_mode": "exact",
+    "buttons": [],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P107": {
+    "url": "/stock_item/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "商品类别",
+      "流水编号",
+      "出入库单号",
+      "入库仓库",
+      "出库仓库",
+      "仓库",
+      "类别",
+      "库存类型",
+      "关联工单",
+      "单据类型",
+      "操作人",
+      "开始时间",
+      "结束时间",
+      "出入库日期起",
+      "出入库日期止"
+    ],
+    "columns": [
+      "流水编号",
+      "出入库单号",
+      "商品",
+      "商品编号",
+      "规格",
+      "商品类别",
+      "商品图片",
+      "类别",
+      "库存类型",
+      "单据类型",
+      "关联工单",
+      "数量",
+      "结余",
+      "成本单价(元)",
+      "成本金额(元)",
+      "销售单价(元)",
+      "销售金额(元)",
+      "单位",
+      "入库仓库",
+      "出库仓库",
+      "操作人",
+      "备注",
+      "出入库日期",
+      "操作时间"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P108": {
+    "url": "/purchase_stock_in_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "采购入库单号",
+      "采购单号",
+      "入库类型",
+      "入库仓库",
+      "供应商",
+      "收货人",
+      "审核状态",
+      "创建人",
+      "入库日期起",
+      "入库日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "采购入库单号",
+      "采购单号",
+      "商品图片",
+      "入库类型",
+      "入库仓库",
+      "审核状态",
+      "审核详情",
+      "成本总额(元)",
+      "入库日期",
+      "备注",
+      "收货人",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增采购入库单",
+        "fields": [
+          {
+            "label": "采购入库单号",
+            "required": false
+          },
+          {
+            "label": "入库仓库",
+            "required": true
+          },
+          {
+            "label": "入库类型",
+            "required": false
+          },
+          {
+            "label": "入库日期",
+            "required": true
+          },
+          {
+            "label": "收货人",
+            "required": true
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P109": {
+    "url": "/produce_stock_in_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "入库单号",
+      "入库类型",
+      "操作方式",
+      "入库工单",
+      "加工单/外协工单",
+      "入库仓库",
+      "更新人",
+      "更新时间起",
+      "更新时间止",
+      "审核状态",
+      "创建人",
+      "入库日期起",
+      "入库日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "入库单号",
+      "入库类型",
+      "入库仓库",
+      "审核状态",
+      "审核详情",
+      "成本总额(元)",
+      "入库日期",
+      "备注",
+      "操作方式",
+      "报工单据",
+      "AMR运输详情",
+      "更新人",
+      "更新时间",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增 › 加工单入库",
+        "title": "新增成品入库单",
+        "fields": [
+          {
+            "label": "成品入库单号",
+            "required": false
+          },
+          {
+            "label": "入库日期",
+            "required": true
+          },
+          {
+            "label": "入库仓库",
+            "required": true
+          },
+          {
+            "label": "入库类型",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P110": {
+    "url": "/semi_finished_products_stock_in_bill/list",
+    "tab": null,
+    "filters": [
+      "入库单号",
+      "加工单号",
+      "入库类型",
+      "入库方式",
+      "入库仓库",
+      "更新人",
+      "创建人",
+      "入库日期起",
+      "入库日期止",
+      "更新日期起",
+      "更新日期止",
+      "创建日期起",
+      "创建日期止"
+    ],
+    "columns": [
+      "入库单号",
+      "入库类型",
+      "入库方式",
+      "入库仓库",
+      "成本总额(元)",
+      "入库日期",
+      "审核状态",
+      "审核详情",
+      "备注",
+      "报工单据",
+      "更新人",
+      "更新时间",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P111": {
+    "url": "/produce_return_materiel_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "生产退料单号",
+      "操作方式",
+      "入库类型",
+      "审核状态",
+      "仓库",
+      "创建人",
+      "加工单/外协工单",
+      "退料日期起",
+      "退料日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "生产退料单号",
+      "加工单/外协工单",
+      "操作方式",
+      "入库类型",
+      "仓库",
+      "退料日期",
+      "退料总数",
+      "成本总额(元)",
+      "商品名",
+      "数量",
+      "单位",
+      "AMR运输详情",
+      "审核状态",
+      "审核详情",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P112": {
+    "url": "/salesReturnOrder/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "销售退货单号",
+      "入库类型",
+      "审核状态",
+      "仓库",
+      "创建人",
+      "客户名",
+      "地址",
+      "退货日期起",
+      "退货日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "销售退货单号",
+      "合同",
+      "客户",
+      "联系人",
+      "地址",
+      "入库类型",
+      "仓库",
+      "退货日期",
+      "审核状态",
+      "审核详情",
+      "退货总数",
+      "销售总额（元）",
+      "销售出库单号",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "数量",
+      "单位",
+      "销售单价(元)",
+      "销售金额(元)",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P113": {
+    "url": "/else_stock_in_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "其他入库单号",
+      "入库类型",
+      "供应商",
+      "仓库",
+      "收货人",
+      "审核状态",
+      "创建人",
+      "入库日期起",
+      "入库日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "其他入库单号",
+      "入库类型",
+      "供应商",
+      "仓库",
+      "入库日期",
+      "审核状态",
+      "审核详情",
+      "成本总额(元)",
+      "销售总额(元)",
+      "收货人",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "PDA卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P114": {
+    "url": "/sale_stock_out_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "销售出库单号",
+      "合同编号",
+      "业务员",
+      "客户名",
+      "联系人",
+      "地址",
+      "仓库",
+      "发货人",
+      "出库类型",
+      "出库方式",
+      "出库日期起",
+      "出库日期止",
+      "审核状态",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "销售出库单号",
+      "仓库",
+      "客户",
+      "客户联系人",
+      "客户地址",
+      "出库类型",
+      "出库方式",
+      "出库日期",
+      "审核状态",
+      "审核详情",
+      "出库数量",
+      "成本总额(元)",
+      "销售总额(元)",
+      "合同编号",
+      "业务员",
+      "发货人",
+      "备注",
+      "商品名称",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P115": {
+    "url": "/production_out_of_storage/list",
+    "tab": null,
+    "filters": [
+      "出库单号",
+      "加工单/外协工单",
+      "操作方式",
+      "出库工单",
+      "工序",
+      "仓库",
+      "商品",
+      "出库类型",
+      "出库日期起",
+      "出库日期止",
+      "更新人",
+      "更新时间起",
+      "更新时间止",
+      "审核状态",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "生产出库单号",
+      "加工单/外协工单",
+      "工序",
+      "操作方式",
+      "出库工单",
+      "仓库",
+      "出库类型",
+      "出库日期",
+      "审核状态",
+      "审核详情",
+      "报工单据",
+      "AMR运输详情",
+      "商品名称",
+      "更新人",
+      "更新时间",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P116": {
+    "url": "/purchase_return_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "采购退货单号",
+      "采购单号",
+      "出库类型",
+      "仓库",
+      "创建人",
+      "供应商",
+      "审核状态",
+      "退货日期起",
+      "退货日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "采购退货单号",
+      "采购单号",
+      "供应商",
+      "出库类型",
+      "仓库",
+      "退货日期",
+      "审核状态",
+      "审核详情",
+      "备注",
+      "商品名",
+      "商品备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P117": {
+    "url": "/else_stock_out_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "商品类别",
+      "其他出库单号",
+      "出库类型",
+      "仓库",
+      "发货人",
+      "审核状态",
+      "创建人",
+      "出库日期起",
+      "出库日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "其他出库单号",
+      "出库类型",
+      "仓库",
+      "出库日期",
+      "审核状态",
+      "审核详情",
+      "成本总额(元)",
+      "销售总额(元)",
+      "发货人",
+      "备注",
+      "商品类别",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "PDA卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "打印",
+      "修改",
+      "复制",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P118": {
+    "url": "/stock_allocate_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "调拨单号",
+      "发出仓库",
+      "收入仓库",
+      "调拨人",
+      "审核状态",
+      "我的审核",
+      "创建人",
+      "调拨日期起",
+      "调拨日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "调拨单号",
+      "发出仓库",
+      "收入仓库",
+      "调拨日期",
+      "审核状态",
+      "审核详情",
+      "成本总额(元)",
+      "销售总额(元)",
+      "调拨人",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "管理打印模板",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增库存调拨单",
+        "fields": [
+          {
+            "label": "调拨日期",
+            "required": true
+          },
+          {
+            "label": "调拨人",
+            "required": false
+          },
+          {
+            "label": "发出仓库",
+            "required": true
+          },
+          {
+            "label": "收入仓库",
+            "required": true
+          },
+          {
+            "label": "成本总额",
+            "required": false
+          },
+          {
+            "label": "销售总额",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P119": {
+    "url": "/stock_taking_bill/list",
+    "tab": null,
+    "filters": [
+      "商品",
+      "盘库单号",
+      "盘点人",
+      "盘点仓库",
+      "创建人",
+      "盘点日期起",
+      "盘点日期止",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "盘库单号",
+      "盘点日期",
+      "盘点人",
+      "盘点仓库",
+      "差异总数",
+      "备注",
+      "创建人",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "管理打印模板",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增 › 自定义盘库",
+        "title": "新增盘库单",
+        "fields": [
+          {
+            "label": "盘点日期",
+            "required": true
+          },
+          {
+            "label": "盘点人",
+            "required": true
+          },
+          {
+            "label": "盘点仓库",
+            "required": true
+          },
+          {
+            "label": "差异总数",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P120": {
+    "url": "/ware/list",
+    "tab": null,
+    "filters": [
+      "仓库名",
+      "管理员",
+      "仓库位置",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "仓库名",
+      "仓库位置",
+      "管理员",
+      "状态",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "列配置"
+    ],
+    "row_actions": [
+      "查看二维码",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增仓库",
+        "fields": [
+          {
+            "label": "仓库名",
+            "required": true
+          },
+          {
+            "label": "管理员",
+            "required": true
+          },
+          {
+            "label": "仓库位置",
+            "required": true
+          },
+          {
+            "label": "详细地址",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P121": {
+    "url": "/setting/stock/setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保 存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P122": {
+    "url": "/setting/stock/audit_setting",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "审核流程名称",
+      "审核对象",
+      "启用/禁用",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "审核设置",
+    "dialogs": []
+  },
+  "P123": {
+    "url": "/device_iot/list",
+    "tab": null,
+    "filters": [
+      "设备编号",
+      "设备名"
+    ],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "查询",
+      "新增"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增物联场景",
+        "fields": [
+          {
+            "label": "场景名",
+            "required": true
+          },
+          {
+            "label": "关联设备",
+            "required": false
+          },
+          {
+            "label": "车间",
+            "required": false
+          },
+          {
+            "label": "产线",
+            "required": false
+          },
+          {
+            "label": "上传图片",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P124": {
+    "url": "/device_sensor/list",
+    "tab": null,
+    "filters": [
+      "传感器类型",
+      "编号",
+      "网关",
+      "绑定场景",
+      "点位名称",
+      "绑定状态"
+    ],
+    "columns": [
+      "传感器类型",
+      "编号",
+      "网关",
+      "绑定状态",
+      "绑定场景",
+      "点位名称",
+      "采集间隔",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P125": {
+    "url": "/alarm_record/list",
+    "tab": null,
+    "filters": [
+      "场景名称",
+      "自动化名称",
+      "车间",
+      "产线",
+      "消警人",
+      "报警时间起",
+      "报警时间止"
+    ],
+    "columns": [
+      "场景名称",
+      "车间",
+      "产线",
+      "自动化名称",
+      "报警等级",
+      "传感器数值",
+      "通知人",
+      "处理结果",
+      "消警人",
+      "报警时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P126": {
+    "url": "/setting/smart_device/setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "添加"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "基础设置",
+    "dialogs": []
+  },
+  "P127": {
+    "url": "/goods/list",
+    "tab": null,
+    "filters": [
+      "商品名",
+      "商品编号",
+      "商品规格",
+      "检验规范",
+      "类别",
+      "商品来源",
+      "供应商",
+      "创建人",
+      "创建时间起",
+      "创建时间止",
+      "售后佣金",
+      "启用/禁用"
+    ],
+    "columns": [
+      "商品编号",
+      "商品名",
+      "类别",
+      "可用库存",
+      "总库存",
+      "规格"
+    ],
+    "columns_mode": "prefix",
+    "buttons": [
+      "查询",
+      "+ 新增",
+      "批量操作",
+      "批量插入工序",
+      "商品工序管理",
+      "管理打印模板",
+      "扩展字段",
+      "移动端卡片配置",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "查看二维码",
+      "修改",
+      "复制",
+      "打印",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P128": {
+    "url": "/goods/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "删除"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P129": {
+    "url": "/bom/list",
+    "tab": null,
+    "filters": [
+      "BOM编号",
+      "BOM名称",
+      "类别",
+      "商品",
+      "子商品",
+      "创建人",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "BOM编号",
+      "BOM名称",
+      "成本总额(元)",
+      "商品编号",
+      "商品",
+      "规格",
+      "类别",
+      "结构预览",
+      "启用/禁用",
+      "创建人",
+      "备注",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [
+      "修改",
+      "复制",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增BOM（独立页）",
+        "fields": [
+          {
+            "label": "BOM编号",
+            "required": false
+          },
+          {
+            "label": "BOM名称",
+            "required": true
+          },
+          {
+            "label": "类别",
+            "required": false
+          },
+          {
+            "label": "商品",
+            "required": false
+          },
+          {
+            "label": "设为默认BOM",
+            "required": false
+          },
+          {
+            "label": "备注",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P130": {
+    "url": "/setting/goods",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P131": {
+    "url": "/digitalEmployees/manager/setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "录入文档",
+      "开启新对话"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "训练中心",
+    "dialogs": []
+  },
+  "P132": {
+    "url": "/message/list",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "全部已读",
+      "清空"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P133": {
+    "url": "/knowledge/list",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "新增",
+      "管理分类",
+      "查询"
+    ],
+    "row_actions": [],
+    "page_size": "10 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P134": {
+    "url": "/knowledge/add",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P135": {
+    "url": "/notice/list",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "新增",
+      "查询"
+    ],
+    "row_actions": [],
+    "page_size": "10 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "列表",
+    "dialogs": []
+  },
+  "P136": {
+    "url": "/notice/add",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P137": {
+    "url": "/user/list",
+    "tab": null,
+    "filters": [
+      "用户名/姓名",
+      "团队",
+      "部门",
+      "手机号",
+      "角色",
+      "用户类型",
+      "席位",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "姓名",
+      "用户名",
+      "席位",
+      "用户类型",
+      "人脸头像",
+      "团队",
+      "部门",
+      "手机号",
+      "角色",
+      "启用/禁用",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "批量操作",
+      "扩展字段",
+      "列配置",
+      "更多操作"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "用户管理",
+    "dialogs": []
+  },
+  "P138": {
+    "url": "/user/add",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "用户添加",
+    "dialogs": []
+  },
+  "P139": {
+    "url": "/role/list",
+    "tab": null,
+    "filters": [
+      "角色名",
+      "创建时间起",
+      "创建时间止"
+    ],
+    "columns": [
+      "角色名",
+      "用户",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "新增",
+      "扩展字段",
+      "列配置"
+    ],
+    "row_actions": [
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P140": {
+    "url": "/role/add",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "添加",
+    "dialogs": []
+  },
+  "P141": {
+    "url": "/systemTeam/list",
+    "tab": null,
+    "filters": [
+      "团队名",
+      "团队人员",
+      "主管",
+      "地址"
+    ],
+    "columns": [
+      "团队名",
+      "主管",
+      "团队人员",
+      "地区",
+      "团队描述",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增团队",
+      "扩展字段",
+      "列配置"
+    ],
+    "row_actions": [
+      "添加下级",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增团队",
+        "title": "新增团队",
+        "fields": [
+          {
+            "label": "上级团队",
+            "required": false
+          },
+          {
+            "label": "团队名",
+            "required": true
+          },
+          {
+            "label": "团队主管",
+            "required": true
+          },
+          {
+            "label": "团队介绍",
+            "required": false
+          },
+          {
+            "label": "负责区域",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P142": {
+    "url": "/department/list",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "部门名称",
+      "创建时间",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "新增",
+      "全部展开",
+      "全部折叠",
+      "列配置"
+    ],
+    "row_actions": [
+      "新增下级部门",
+      "修改",
+      "删除"
+    ],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "新增",
+        "title": "新增部门信息",
+        "fields": [
+          {
+            "label": "上级部门",
+            "required": false
+          },
+          {
+            "label": "名称",
+            "required": true
+          }
+        ]
+      }
+    ]
+  },
+  "P143": {
+    "url": "/userLog",
+    "tab": null,
+    "filters": [
+      "操作端",
+      "操作人",
+      "操作",
+      "操作内容",
+      "操作时间起",
+      "操作时间止"
+    ],
+    "columns": [
+      "操作",
+      "操作内容",
+      "操作端",
+      "操作人",
+      "操作时间"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置"
+    ],
+    "row_actions": [],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": []
+  },
+  "P144": {
+    "url": "/account",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "个人中心",
+    "dialogs": []
+  },
+  "P145": {
+    "url": "/setting/basics",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "通用设置",
+    "dialogs": []
+  },
+  "P146": {
+    "url": "/setting/enterprise/setting",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "保 存"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "企业信息设置",
+    "dialogs": []
+  },
+  "P147": {
+    "url": "/setting/sms",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "短信设置",
+    "dialogs": []
+  },
+  "P148": {
+    "url": "/setting/customCodeRules",
+    "tab": null,
+    "filters": [
+      "编号名称"
+    ],
+    "columns": [
+      "编号",
+      "编号名称",
+      "编号规则",
+      "编号预览",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "查询",
+      "列配置"
+    ],
+    "row_actions": [
+      "修改"
+    ],
+    "page_size": "30 条/页",
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": null,
+    "dialogs": [
+      {
+        "trigger": "修改",
+        "title": "编辑编号规则",
+        "fields": []
+      }
+    ]
+  },
+  "P149": {
+    "url": "/contract_project_edit/edit",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "层级编号",
+      "工单编号",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "合同编号",
+      "商品来源",
+      "单位",
+      "单位用量",
+      "计划数",
+      "状态",
+      "交货日期",
+      "优先级",
+      "生产进度",
+      "任务进度",
+      "BOM",
+      "工序流程",
+      "用料清单",
+      "计划开始",
+      "计划结束",
+      "备注",
+      "图纸",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "新增",
+    "dialogs": []
+  },
+  "P150": {
+    "url": "/production_outsource_project/edit",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "层级编号",
+      "工单编号",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "合同编号",
+      "商品来源",
+      "单位",
+      "单位用量",
+      "计划数",
+      "状态",
+      "外协单价(元)",
+      "交货日期",
+      "优先级",
+      "供应商",
+      "联系人",
+      "地址",
+      "BOM",
+      "用料清单",
+      "计划开始",
+      "计划结束",
+      "备注",
+      "图纸",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "提交"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "新增",
+    "dialogs": []
+  },
+  "P151": {
+    "url": "/contract_project/detail/:id/:contractNo/:contractId",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "层级编号",
+      "工单编号",
+      "商品",
+      "商品编号",
+      "商品规格",
+      "商品图片",
+      "合同编号",
+      "商品来源",
+      "单位",
+      "单位用量",
+      "计划数",
+      "状态",
+      "交货日期",
+      "优先级",
+      "生产进度",
+      "任务进度",
+      "BOM",
+      "工序流程",
+      "用料清单",
+      "计划开始",
+      "计划结束",
+      "备注",
+      "图纸",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "分享项目进度",
+      "查 询",
+      "高级查询",
+      "列配置"
+    ],
+    "row_actions": [
+      "工资单",
+      "打印",
+      "更多"
+    ],
+    "page_size": null,
+    "adv_fields": [
+      "加工单状态",
+      "计划数"
+    ],
+    "adv_buttons": [
+      "搜 索",
+      "清空筛选值"
+    ],
+    "breadcrumb_tail": "详情",
+    "dialogs": []
+  },
+  "P152": {
+    "url": "/inspection_plan/add/1",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "新增",
+    "dialogs": [
+      {
+        "trigger": "+ 选择设备（第 2 步）",
+        "title": "选择设备",
+        "fields": [
+          {
+            "label": "设备名称",
+            "required": false
+          },
+          {
+            "label": "设备编号",
+            "required": false
+          },
+          {
+            "label": "设备状态",
+            "required": false
+          },
+          {
+            "label": "设备类别",
+            "required": false
+          },
+          {
+            "label": "车间",
+            "required": false
+          },
+          {
+            "label": "产线",
+            "required": false
+          }
+        ]
+      },
+      {
+        "trigger": "设备行「设置维保内容」/「+ 批量设置维保内容」（第 2 步）",
+        "title": "选择维保内容",
+        "fields": [
+          {
+            "label": "标题",
+            "required": false
+          }
+        ]
+      }
+    ]
+  },
+  "P153": {
+    "url": "/inspection_plan/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "删除"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "详情",
+    "dialogs": []
+  },
+  "P154": {
+    "url": "/device/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "删除"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "详情",
+    "dialogs": []
+  },
+  "P155": {
+    "url": "/point_inspection_plan/add/1",
+    "tab": null,
+    "filters": [],
+    "columns": [
+      "设备编号",
+      "设备名称",
+      "设备类别",
+      "团队",
+      "执行人/执行团队",
+      "维保内容",
+      "操作"
+    ],
+    "columns_mode": "exact",
+    "buttons": [
+      "返回",
+      "+ 选择设备",
+      "+ 批量设置维保内容",
+      "+ 批量设置执行人/执行团队",
+      "创建点检计划"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "新增",
+    "dialogs": []
+  },
+  "P156": {
+    "url": "/device_order/detail/:id",
+    "tab": null,
+    "filters": [],
+    "columns": [],
+    "columns_mode": null,
+    "buttons": [
+      "返回",
+      "修改",
+      "删除"
+    ],
+    "row_actions": [],
+    "page_size": null,
+    "adv_fields": [],
+    "adv_buttons": [],
+    "breadcrumb_tail": "详情",
+    "dialogs": []
+  }
+}

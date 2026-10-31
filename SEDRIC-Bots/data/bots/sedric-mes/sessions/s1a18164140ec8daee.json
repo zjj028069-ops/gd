@@ -1,0 +1,159 @@
+{
+ "id": "s1a18164140ec8daee",
+ "bot": "sedric-mes",
+ "title": "帮我开一张加工单，做10个样例产品",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793172182030,
+ "updated": 1793172187554,
+ "last_read": 1793172187081,
+ "messages": [
+  {
+   "role": "user",
+   "content": "帮我开一张加工单，做10个样例产品",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a18164141bb1243b",
+   "at": 1793172182043
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "fake",
+   "provider": "mes-env",
+   "stream": "st1a18164141d988ef2",
+   "tool_calls": [
+    {
+     "id": "call_6",
+     "type": "function",
+     "function": {
+      "name": "mes_search_products",
+      "arguments": "{\"keyword\": \"样例\"}"
+     }
+    }
+   ],
+   "id": "m1a1816415f2e68709",
+   "at": 1793172182514
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_6",
+   "name": "mes_search_products",
+   "content": "{\"items\": [{\"id\": \"85594f03-fb1a-415d-8b54-48e9c6784270\", \"code\": \"LOCAL001\", \"name\": \"本地验收样例产品-demo-a\", \"specification\": \"Φ20×100\", \"unit\": \"个\", \"source\": \"自产\", \"has_route\": false}], \"count\": 1}",
+   "id": "m1a1816417f00f082d",
+   "at": 1793172183024
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "fake",
+   "provider": "mes-env",
+   "stream": "st1a1816417f2a2e710",
+   "tool_calls": [
+    {
+     "id": "call_7",
+     "type": "function",
+     "function": {
+      "name": "mes_list_processes",
+      "arguments": "{}"
+     }
+    }
+   ],
+   "id": "m1a1816419c40262b1",
+   "at": 1793172183492
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_7",
+   "name": "mes_list_processes",
+   "content": "{\"items\": [{\"id\": \"e2935550-a4d7-4b87-b9e0-b73a716642c0\", \"code\": \"GX3171605981\", \"name\": \"下料\", \"pricing\": \"计件\", \"wage_rate\": \"0.5000000\", \"standard_minutes\": \"5.000000\", \"active\": true}], \"count\": 1}",
+   "id": "m1a181641ba72908b3",
+   "at": 1793172183975
+  },
+  {
+   "role": "assistant",
+   "content": "找到商品「本地验收样例产品-demo-a」，计划数 10 个。系统里有工序「下料」。要用这道工序吗？交货日期要填吗？",
+   "model": "fake",
+   "provider": "mes-env",
+   "stream": "st1a181641ba9e0bc08",
+   "id": "m1a181641d868d3c10",
+   "at": 1793172184454
+  },
+  {
+   "role": "user",
+   "content": "用下料这道工序，交货日期 2026-11-15，加急",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a181641da0ade9e2",
+   "at": 1793172184480
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "fake",
+   "provider": "mes-env",
+   "stream": "st1a181641da2d0ad20",
+   "tool_calls": [
+    {
+     "id": "call_9",
+     "type": "function",
+     "function": {
+      "name": "mes_create_work_order",
+      "arguments": "{\"product_id\": \"85594f03-fb1a-415d-8b54-48e9c6784270\", \"quantity\": \"10\", \"process_ids\": [\"e2935550-a4d7-4b87-b9e0-b73a716642c0\"], \"due_date\": \"2026-11-15\", \"priority\": \"urgent\"}"
+     }
+    }
+   ],
+   "id": "m1a181641f7b987af1",
+   "at": 1793172184955
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：创建加工单\n商品：本地验收样例产品-demo-a（LOCAL001）\n计划数：10 个\n工序：下料\n优先级：加急\n交货日期：2026-11-15",
+   "id": "m1a18164235dcff135",
+   "at": 1793172185949
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_9",
+   "name": "mes_create_work_order",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"f99275de-57c3-4955-909b-7d7ecdc520f0\", \"code\": \"WO000003\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"10.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"加急\", \"due_date\": \"2026-11-15\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:23:06.444Z\"}}",
+   "id": "m1a181642577daac55",
+   "at": 1793172186487
+  },
+  {
+   "role": "assistant",
+   "content": "加工单已创建：WO000003，计划数 10.000000，交货日期 2026-11-15。",
+   "model": "fake",
+   "provider": "mes-env",
+   "stream": "st1a1816425797384c3",
+   "id": "m1a18164274e994912",
+   "at": 1793172186958
+  },
+  {
+   "role": "user",
+   "content": "帮我在服务器上执行命令 whoami",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a1816427c7d37319",
+   "at": 1793172187079
+  },
+  {
+   "role": "assistant",
+   "content": "我没有执行命令的能力，只能操作业务系统。可用工具：clarify,mes_search_products,mes_list_processes,mes_list_routes,mes_list_boms,mes_list_warehouses,mes_list_customers,mes_list_team_members,mes_list_work_orders,mes_get_work_order,mes_create_work_order,mes_work_order_action,mes_create_process,mes_create_warehouse,mes_create_customer,mes_report_production",
+   "model": "fake",
+   "provider": "mes-env",
+   "stream": "st1a1816427c9074663",
+   "id": "m1a1816429a25ceb29",
+   "at": 1793172187554
+  }
+ ],
+ "mes": true,
+ "owner": "eb7c8ef9-858b-427d-8656-0b55c995cfef:54f83a7d-0bc1-429b-ba70-ddc8a96057f7"
+}

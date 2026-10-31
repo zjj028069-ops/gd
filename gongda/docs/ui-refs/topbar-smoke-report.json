@@ -1,0 +1,118 @@
+{
+  "pass": true,
+  "base": "http://129.204.53.109",
+  "at": "2026-10-20T10:24:25.570Z",
+  "version": "SEDRIC01 v1.0.17",
+  "feature": "topbar-text-actions+user-to-chat",
+  "dist": {
+    "css": "index-B2DVMnzp.css",
+    "js": "index-DrDamHXI.js"
+  },
+  "results": [
+    {
+      "title": "公网 /chat/ 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "title": "聊天壳版本 v1.0.17",
+      "ok": true,
+      "detail": "SEDRIC01 v1.0.17"
+    },
+    {
+      "title": "顶栏无帮助文档",
+      "ok": true,
+      "detail": "count=0"
+    },
+    {
+      "title": "嵌入时顶栏无用户头像",
+      "ok": true,
+      "detail": "count=0"
+    },
+    {
+      "title": "顶栏有外观文字链",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "title": "进入工作台路由",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "title": "顶栏文字链 全屏/刷新/配置",
+      "ok": true,
+      "detail": "fs=true rf=true cfg=true"
+    },
+    {
+      "title": "配置工作台非 Ant Button",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "title": "非编辑态无工作台四按钮条",
+      "ok": true,
+      "detail": "toolbarVis=false appear=0"
+    },
+    {
+      "title": "配置工作台进入编辑态",
+      "ok": true,
+      "detail": "class=wp-root  wp-editing btns=3"
+    },
+    {
+      "title": "截图已保存",
+      "ok": true,
+      "detail": "/Users/allen/SEDRIC01-preview/docs/ui-refs/2026-10-20-v117-topbar-smoke.png"
+    },
+    {
+      "title": "返回聊天成功",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "title": "再进 MES 仍正常",
+      "ok": true,
+      "detail": "back=true top=true"
+    },
+    {
+      "title": "用户菜单含信息与三项",
+      "ok": true,
+      "detail": "本地管理员 · 企业管理员 | 本地验收企业A"
+    },
+    {
+      "title": "个人中心进入 MES 页",
+      "ok": true,
+      "detail": "path=/app/account crumb=主页\n/\n系统管理\n/\n个人中心\n外观\n4\n← 返回聊天"
+    },
+    {
+      "title": "企业设置进入 MES 页",
+      "ok": true,
+      "detail": "path=/app/setting/enterprise/setting crumb=主页\n/\n系统管理\n/\n系统设置\n/\n企业信息设置\n外观\n4\n← 返回聊天"
+    },
+    {
+      "title": "退出按钮仍可用",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "title": "公网 /app/ 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "title": "直接 /app/ 有用户 Dropdown",
+      "ok": true,
+      "detail": "avatar=true"
+    },
+    {
+      "title": "直接 /app/ 无返回聊天",
+      "ok": true,
+      "detail": "count=0"
+    },
+    {
+      "title": "直接 /app/ 无帮助文档",
+      "ok": true,
+      "detail": "count=0"
+    }
+  ]
+}

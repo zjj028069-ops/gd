@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "title": "API 问应收",
+      "ok": true,
+      "reason": "{\"answer\":\"应收合计 ¥0.00，已收 ¥0.00，未收 ¥0.00；应付合计 ¥0.00，已付 ¥0.00，未付 ¥0.00。\",\"cards\":[{\"title\":\"应收合计\",\"value\":\"¥0.00\"},{\"title\":\"已收\",\"value\":\"¥0.00\"},{\"title\":\"未收\",\"value\":\"¥0.00\"},{\"title\":\"应付合计\",\"value\":\""
+    },
+    {
+      "title": "API 怎么报工引导",
+      "ok": true,
+      "reason": "{\"answer\":\"我是工厂助理，只做只读汇总：可问「今天生产进度怎么样」「应收还有多少未收」「工资待审多少」。不会创建或修改单据；产品用法请去「赛德瑞克小助手」。\",\"intent\":\"guide\",\"provider\":\"rules\",\"cards\":[{\"title\":\"可问进度\",\"value\":\"在产加工单 / 按状态\"},{\"title\":\"可问钱\",\"value\":\"应收应付概览\""
+    },
+    {
+      "title": "AI 中心可见工厂助理卡片",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "打开工厂助理页",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "推荐问进度有回答",
+      "ok": true,
+      "reason": "当前共有 0 张加工单，其中在产 0 张（生产中 0、暂停 0），未开始 0 张，已完成 0 张。"
+    },
+    {
+      "title": "截图",
+      "ok": true,
+      "reason": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai2-factory.png"
+    },
+    {
+      "title": "问答期无业务写 POST",
+      "ok": true,
+      "reason": "none"
+    }
+  ],
+  "shotPath": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai2-factory.png",
+  "businessWritePosts": []
+}

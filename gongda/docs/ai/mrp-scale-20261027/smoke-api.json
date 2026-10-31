@@ -1,0 +1,42 @@
+{
+  "version": "1.0.73",
+  "tag": "mrp-scale-fix",
+  "time_zone": "Asia/Shanghai",
+  "plan_JH20261027002": {
+    "before": {
+      "process_qty": "0.00003",
+      "purchase_qty": "0.00001",
+      "progress_total": "0.00001",
+      "bom_label_bug": "无"
+    },
+    "after_void_reanalyze": {
+      "process_qty": "30",
+      "purchase_qty": "10",
+      "outsource_qty": "0",
+      "process_progress": {
+        "done": "0",
+        "total": "10"
+      },
+      "bom_label": "BOM202610270001 测试PRM-BOM",
+      "bom_id": "5c0c198b-e95b-4998-bf48-f54be6863aec",
+      "note": "加工汇总30=成品计划行10 + BOM自制子件（针织面料/印花）各10；辅料2库存89净需求0；外购梭织面料采购10。投产进度分母取计划行加工需求=10。"
+    }
+  },
+  "plan_JH20261027003_new": {
+    "code": "JH20261027003",
+    "plan_qty": "10.000000",
+    "bom_label_on_create": "BOM202610270001 测试PRM-BOM",
+    "after_analyze_progress_total": "10",
+    "analysis_line_process_qty": "10"
+  },
+  "root_cause": "material-analysis.ts 用 Number 做人读运算后，又 formatDecimal(BigInt(Math.round(n)))；formatDecimal 按微单位(SCALE=1e6)格式化，导致 10→0.000010。",
+  "fix": "storeHumanQty: formatDecimal(BigInt(Math.round(n * Number(SCALE))))",
+  "bom_fix": "progress.ts 创建/更新写入 product_snapshot.bom_id/bom_code/bom_label；详情读 snapshot 或回落查默认 BOM，去掉硬编码「无」。",
+  "files": [
+    "apps/api/src/material-analysis.ts",
+    "apps/api/src/progress.ts"
+  ],
+  "backup": "/opt/sedric01/.bak-20261027-mrp-scale-v173/",
+  "dist_js": "index-BwEcxB6C.js (API-only, 前端 bundle 未变)",
+  "api_restart": "tsx watch 热加载已生效；Server listening :3011"
+}

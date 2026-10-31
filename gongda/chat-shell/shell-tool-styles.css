@@ -1,0 +1,130 @@
+/* P1 shell-tool-ops */
+.shell-tool-dock {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(80vh, 720px);
+  overflow: auto;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(65, 132, 244, 0.28);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(65, 132, 244, 0.18);
+  padding: 14px 16px 16px;
+}
+.shell-tool-dock[hidden] { display: none !important; }
+.shell-tool-dock-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.shell-tool-dock-head strong { color: #4184F4; font-size: 14px; }
+.shell-tool-dock-close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #667;
+}
+.shell-tool-title { font-size: 16px; font-weight: 600; color: #1f2a44; }
+.shell-tool-meta { font-size: 12px; color: #7a8499; margin: 4px 0 10px; }
+.shell-tool-display {
+  font-size: 42px;
+  font-weight: 650;
+  color: #4184F4;
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+  margin: 8px 0 12px;
+}
+.shell-tool-modes { display: flex; gap: 8px; margin-bottom: 8px; }
+.shell-tool-mode-btn, .shell-tool-btn {
+  border-radius: 10px;
+  border: 1px solid rgba(65, 132, 244, 0.35);
+  background: rgba(255,255,255,0.9);
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #2457c5;
+}
+.shell-tool-mode-btn.active, .shell-tool-btn.primary {
+  background: linear-gradient(135deg, #4184F4, #5b9bff);
+  color: #fff;
+  border-color: transparent;
+}
+.shell-tool-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.shell-tool-form { display: flex; gap: 8px; align-items: center; width: 100%; margin-bottom: 4px; flex-wrap: wrap; }
+.shell-tool-form input, .shell-tool-calc-expr {
+  width: 88px;
+  border-radius: 8px;
+  border: 1px solid #c9d7f5;
+  padding: 4px 8px;
+}
+.shell-tool-calc-expr { width: 100%; max-width: 280px; }
+.shell-tool-calc-label { font-weight: 600; color: #1f2a44; margin-bottom: 6px; }
+.shell-tool-calc-result { color: #4184F4; font-size: 28px; font-weight: 650; margin-top: 6px; }
+.shell-tool-table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 8px 0; }
+.shell-tool-table th, .shell-tool-table td { border: 1px solid #d9e4fb; padding: 4px; }
+.shell-tool-table input { width: 100%; border: 1px solid #c9d7f5; border-radius: 6px; padding: 2px 4px; }
+.shell-tool-downloads a { color: #4184F4; display: inline-block; margin: 4px 0; }
+.shell-tool-pdf-text {
+  margin-top: 8px;
+  max-height: 160px;
+  overflow: auto;
+  background: #f6f8fc;
+  padding: 8px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+.shell-tools-rail {
+  margin: 8px 10px 4px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(65, 132, 244, 0.06);
+  border: 1px solid rgba(65, 132, 244, 0.12);
+}
+.shell-tools-rail-title {
+  font-size: 12px;
+  color: #4184F4;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.shell-tools-rail button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 6px 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #1f2a44;
+  font-size: 13px;
+}
+.shell-tools-rail button:hover { background: rgba(65, 132, 244, 0.12); }
+
+.shell-tools-rail-hint {
+  font-size: 11px;
+  color: #6b7280;
+  padding: 0 8px 6px;
+  line-height: 1.35;
+}
+.shell-tool-pomo-hint {
+  font-size: 12px;
+  color: #4184F4;
+  margin: 4px 0 8px;
+}
+
+.shell-tool-field-result {
+  margin: 8px 0;
+  padding: 8px 10px;
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  background: #f8fbff;
+}
+.shell-tool-sandbox iframe {
+  box-shadow: 0 1px 2px rgba(65, 132, 244, 0.08);
+}

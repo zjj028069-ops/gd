@@ -1,0 +1,436 @@
+.kgd-progress-cell {
+  min-width: 96px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.kgd-progress-track {
+  width: 100%;
+  min-width: 64px;
+  height: 6px;
+  background: #e8e8e8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.kgd-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.2s ease;
+}
+.kgd-progress-fill.blue { background: #1890ff; }
+.kgd-progress-fill.green { background: #52c41a; }
+.kgd-progress-caption {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.45);
+}
+.kgd-progress-caption.green { color: #52c41a; }
+.kgd-progress-caption.blue { color: #1890ff; }
+
+.kgd-process-rings {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 320px;
+  overflow: hidden;
+}
+.kgd-ring-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  max-width: 72px;
+}
+.kgd-ring-wrap {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.kgd-ring-wrap svg {
+  display: block;
+}
+.kgd-ring-pct {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.45);
+}
+.kgd-ring-name {
+  margin-top: 2px;
+  font-size: 11px;
+  max-width: 68px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+}
+.kgd-ring-connector {
+  width: 12px;
+  height: 1px;
+  background: #d9d9d9;
+  margin-top: 20px;
+  flex: 0 0 auto;
+}
+
+.kgd-task-hover-card {
+  min-width: 220px;
+}
+.kgd-task-hover-card h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.kgd-task-hover-card dl {
+  margin: 0 0 8px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-size: 12px;
+}
+.kgd-task-hover-card dt { color: rgba(0, 0, 0, 0.45); }
+.kgd-task-hover-card .good { color: #52c41a; }
+.kgd-task-hover-card .bad { color: #ff4d4f; }
+
+.kgd-plan-tag-analyzed { color: #52c41a; border: 1px solid #b7eb8f; background: #f6ffed; padding: 0 7px; border-radius: 2px; font-size: 12px; }
+.kgd-plan-tag-pending { color: rgba(0, 0, 0, 0.45); border: 1px solid #d9d9d9; background: #fafafa; padding: 0 7px; border-radius: 2px; font-size: 12px; }
+
+.kgd-schedule-cards {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.kgd-schedule-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 12px;
+  text-align: center;
+}
+.kgd-schedule-card b { display: block; font-size: 22px; margin-top: 4px; }
+.kgd-schedule-charts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.kgd-schedule-chart { height: 220px; border: 1px solid #f0f0f0; border-radius: 4px; }
+.kgd-gantt-wrap {
+  display: flex;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.kgd-gantt-left { flex: 0 0 auto; max-width: 55%; overflow: auto; border-right: 1px solid #f0f0f0; }
+.kgd-gantt-right { flex: 1; overflow: auto; position: relative; min-height: 200px; }
+.kgd-gantt-bar {
+  position: absolute;
+  height: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #d9d9d9;
+  border-radius: 2px;
+  font-size: 11px;
+  line-height: 18px;
+  padding-left: 4px;
+  color: rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.kgd-gantt-tools {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.kgd-screen-root .kgd-ring-pct,
+.kgd-screen-root .kgd-ring-name {
+  color: #e6f4ff;
+}
+.kgd-screen-root .kgd-ring-connector {
+  background: rgba(230, 244, 255, 0.35);
+}
+
+.kgd-screen-root {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #e7f3ff;
+  padding: 8px 16px 12px;
+  box-sizing: border-box;
+  background-color: #071426;
+  background-image:
+    linear-gradient(rgba(70, 150, 220, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(70, 150, 220, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(18, 90, 160, 0.35), transparent 42%),
+    linear-gradient(180deg, #06101f 0%, #0a1c34 48%, #06101f 100%);
+  background-size: 28px 28px, 28px 28px, auto, auto;
+}
+.kgd-screen-body { flex: 1; min-height: 0; }
+.kgd-screen-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 64px;
+  margin-bottom: 8px;
+  flex: none;
+}
+.kgd-screen-header::before,
+.kgd-screen-header::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 18px;
+  height: 44px;
+  border: 2px solid rgba(70, 190, 255, 0.85);
+  box-shadow: 0 0 8px rgba(70, 190, 255, 0.45);
+  pointer-events: none;
+}
+.kgd-screen-header::before { left: 0; border-right: 0; }
+.kgd-screen-header::after { right: 0; border-left: 0; }
+.kgd-screen-time { font-size: 18px; letter-spacing: 0.5px; color: #d7ecff; font-variant-numeric: tabular-nums; }
+.kgd-screen-title-wrap { display: flex; align-items: center; justify-content: center; gap: 14px; position: relative; z-index: 1; }
+.kgd-screen-title {
+  margin: 0;
+  min-width: 220px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #f4fbff;
+  text-shadow: 0 0 12px rgba(80, 190, 255, 0.55);
+}
+.kgd-screen-wing { display: flex; align-items: flex-end; gap: 5px; height: 22px; }
+.kgd-screen-wing i {
+  display: block;
+  width: 8px;
+  transform: skewX(-32deg);
+  background: linear-gradient(180deg, #b8ffe0, #19e0a0 40%, #1ec8ff);
+  box-shadow: 0 0 8px rgba(30, 220, 170, 0.85);
+}
+.kgd-screen-wing i:nth-child(1) { height: 8px; opacity: 0.45; }
+.kgd-screen-wing i:nth-child(2) { height: 12px; opacity: 0.7; }
+.kgd-screen-wing i:nth-child(3) { height: 16px; opacity: 0.9; }
+.kgd-screen-wing i:nth-child(4) { height: 20px; }
+.kgd-screen-wing.is-right { transform: scaleX(-1); }
+.kgd-screen-actions { display: flex; gap: 14px; justify-content: flex-end; align-items: center; }
+.kgd-screen-actions button {
+  background: transparent;
+  border: 0;
+  color: #d7ecff;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.kgd-screen-actions button:hover { color: #7dffc3; }
+.kgd-screen-module-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  flex: none;
+}
+.kgd-screen-module-title .s-icon { flex: none; }
+.kgd-screen-module-title .sub { margin-left: 4px; font-size: 12px; color: rgba(214, 232, 255, 0.45); font-weight: normal; }
+.kgd-screen-panel,
+.kgd-screen-kpi {
+  position: relative;
+  background: rgba(5, 18, 38, 0.72);
+  border: 1px solid rgba(56, 168, 255, 0.38);
+  box-shadow: inset 0 0 24px rgba(20, 110, 200, 0.12), 0 0 10px rgba(16, 90, 170, 0.18);
+  padding: 8px 10px 10px;
+  min-height: 0;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.kgd-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #49d0ff;
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(73, 208, 255, 0.6);
+}
+.kgd-corner.tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.kgd-corner.tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
+.kgd-corner.bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
+.kgd-corner.br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+.kgd-screen-panel-body { flex: 1; min-height: 0; overflow: auto; display: flex; flex-direction: column; }
+.kgd-screen-panel-body.is-chart { overflow: hidden; }
+.kgd-screen-chart-host, .kgd-screen-chart { flex: 1; min-height: 0; height: 100%; width: 100%; }
+.kgd-screen-control {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.55fr) minmax(0, 1.05fr);
+  grid-template-rows: minmax(0, 0.96fr) minmax(0, 0.96fr) minmax(0, 1.08fr);
+  grid-template-areas:
+    "defect kpi trend"
+    "people reports stats"
+    "orders orders machines";
+  gap: 10px;
+}
+.kgd-screen-control [data-module="不良品项分布"] { grid-area: defect; }
+.kgd-screen-control [data-panel="kpi"] { grid-area: kpi; }
+.kgd-screen-control [data-module="员工产能趋势"] { grid-area: trend; }
+.kgd-screen-control [data-module="人员不良品率"] { grid-area: people; }
+.kgd-screen-control [data-module="实时报工数据"] { grid-area: reports; }
+.kgd-screen-control [data-module="人员生产统计"] { grid-area: stats; }
+.kgd-screen-control [data-module="工单执行进度"] { grid-area: orders; }
+.kgd-screen-control [data-module="机台状态详情"] { grid-area: machines; }
+.kgd-screen-workshop, .kgd-screen-defect {
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  min-height: 0;
+}
+.kgd-screen-workshop { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.kgd-screen-defect { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+.kgd-screen-single { height: 100%; min-height: 0; display: flex; }
+.kgd-screen-single > .kgd-screen-panel { flex: 1; }
+.kgd-screen-kpi {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 4px 8px;
+  padding: 10px 8px 8px;
+}
+.kgd-screen-metric { text-align: center; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.kgd-metric-wing { display: flex; gap: 3px; height: 8px; margin-bottom: 2px; }
+.kgd-metric-wing i { width: 7px; height: 8px; transform: skewX(-28deg); background: linear-gradient(180deg, #9dffd4, #14d6a4); box-shadow: 0 0 6px rgba(20, 214, 164, 0.7); }
+.kgd-screen-metric .label { font-size: 13px; color: rgba(230, 244, 255, 0.88); }
+.kgd-screen-metric .value-row { display: flex; align-items: flex-end; justify-content: center; gap: 6px; }
+.kgd-screen-metric .value { font-size: 28px; line-height: 1.15; font-weight: 700; margin-top: 2px; color: #e8f6ff; }
+.kgd-screen-metric.is-gold .value { color: #f5c518; }
+.kgd-screen-metric.is-cyan .value { color: #2ec8e6; }
+.kgd-screen-metric.is-green .value { color: #3dce7c; }
+.kgd-screen-metric.is-red .value { color: #ff4d4f; }
+.kgd-screen-metric.is-orange .value { color: #ff7a45; }
+.kgd-screen-metric .delta { font-size: 12px; color: rgba(214, 232, 255, 0.55); padding-bottom: 4px; }
+.kgd-screen-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.kgd-screen-table th, .kgd-screen-table td { border-bottom: 1px solid rgba(120, 180, 255, 0.12); padding: 6px 8px; text-align: left; white-space: nowrap; }
+.kgd-screen-table th { color: rgba(214, 232, 255, 0.72); font-weight: 500; }
+.kgd-screen-scroll { flex: 1; min-height: 0; overflow: auto; }
+.kgd-screen-empty { text-align: center; opacity: 0.6; }
+.is-good, .kgd-screen-table .is-good { color: #3dce7c; }
+.is-bad, .kgd-screen-table .is-bad { color: #ff4d4f; }
+.kgd-screen-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 360px;
+  margin-bottom: 8px;
+  padding: 0 10px;
+  height: 30px;
+  border: 1px solid rgba(120, 180, 255, 0.28);
+  background: rgba(4, 16, 34, 0.65);
+  color: rgba(214, 232, 255, 0.55);
+  flex: none;
+}
+.kgd-screen-search input { flex: 1; border: 0; outline: none; background: transparent; color: #e7f3ff; font-size: 12px; }
+.kgd-screen-search input::placeholder { color: rgba(214, 232, 255, 0.4); }
+.kgd-people { display: flex; flex-direction: column; min-height: 0; height: 100%; }
+.kgd-people-grid { flex: 1; min-height: 0; overflow: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; align-content: start; padding: 2px; }
+.kgd-people-card { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: rgba(10, 32, 64, 0.55); border: 1px solid rgba(120, 176, 230, 0.28); border-radius: 6px; font-size: 12px; line-height: 1.35; }
+.kgd-avatar { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 14px; flex: none; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
+.kgd-people-name { font-weight: 600; margin-bottom: 2px; color: #f4fbff; }
+.kgd-people-dots { display: flex; justify-content: center; gap: 6px; padding-top: 4px; }
+.kgd-people-dots button { width: 7px; height: 7px; border-radius: 50%; border: 0; padding: 0; background: rgba(255, 255, 255, 0.28); cursor: pointer; }
+.kgd-people-dots button.on { background: #3dce7c; }
+.kgd-status-dot { display: inline-flex; align-items: center; gap: 6px; }
+.kgd-status-dot::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #8aa0b8; box-shadow: 0 0 6px currentColor; }
+.kgd-status-dot.is-ok::before { background: #3dce7c; }
+.kgd-status-dot.is-warn::before { background: #f5c518; }
+.kgd-status-dot.is-run::before { background: #3aa0ff; }
+.kgd-pri { display: inline-block; min-width: 36px; text-align: center; padding: 1px 8px; border-radius: 10px; font-size: 12px; background: #5c6770; color: #fff; }
+.kgd-pri.is-urgent { background: #ff4d4f; }
+.kgd-pri.is-delayed { background: #fa8c16; }
+.kgd-screen-designer { height: 100%; min-height: 0; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 10px; }
+.kgd-screen-lib { overflow: auto; padding-right: 4px; }
+.kgd-screen-lib-item { width: 100%; text-align: left; margin-bottom: 6px; border: 1px solid rgba(80, 180, 255, 0.35); background: rgba(8, 28, 52, 0.8); color: #e7f3ff; padding: 8px 10px; cursor: grab; }
+.kgd-screen-lib-item:active { cursor: grabbing; }
+.kgd-screen-slot.is-over { outline: 2px solid #3dce7c; }
+.kgd-screen-designer-grid { min-height: 0; height: 100%; display: grid; gap: 10px; }
+.kgd-screen-pwd-gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a1628;
+}
+.kgd-screen-pwd-card {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 32px;
+  border-radius: 4px;
+  border: 1px solid rgba(24, 144, 255, 0.3);
+}
+
+.kgd-progress-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
+}
+.kgd-progress-circle .kgd-progress-caption {
+  text-align: center;
+}
+
+
+/* v1.0.74 plan-detail-left-card：生产计划详情左栏竖卡 + 右页签 */
+.plan-detail {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.plan-detail-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+.plan-kv {
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  border-top: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+  background: #fff;
+}
+.plan-kv b,
+.plan-kv span {
+  padding: 8px 10px;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.plan-kv b {
+  background: #fafafa;
+  font-weight: 400;
+  color: #666;
+}
+/* 避免 ProgressCell 内层 span 再套边框 */
+.plan-kv span span {
+  padding: 0;
+  border: 0;
+}
+.plan-kv .kgd-progress-cell {
+  min-width: 0;
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .plan-detail { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,179 @@
+{
+ "id": "s1a1816dc2ac859dd2",
+ "bot": "sedric-mes",
+ "title": "开一张加工单：样例产品 5 个，工序下料，其他都不填，直接建",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793172816556,
+ "updated": 1793172829513,
+ "last_read": 1793172825077,
+ "messages": [
+  {
+   "role": "user",
+   "content": "开一张加工单：样例产品 5 个，工序下料，其他都不填，直接建",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a1816dc2c377abe3",
+   "at": 1793172816579
+  },
+  {
+   "role": "assistant",
+   "content": "我先查一下商品、工序和仓库。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816dc2c488eaaf",
+   "tool_calls": [
+    {
+     "id": "call_00_M2ZZxLu6MYUgde8jBet93878",
+     "type": "function",
+     "function": {
+      "name": "mes_search_products",
+      "arguments": "{\"keyword\": \"样例产品\"}"
+     }
+    },
+    {
+     "id": "call_01_BDGNUXLenpCNYMYDLw445708",
+     "type": "function",
+     "function": {
+      "name": "mes_list_processes",
+      "arguments": "{\"keyword\": \"下料\"}"
+     }
+    },
+    {
+     "id": "call_02_ossVQtBYyGmaRA33AZOF6058",
+     "type": "function",
+     "function": {
+      "name": "mes_list_warehouses",
+      "arguments": "{}"
+     }
+    }
+   ],
+   "id": "m1a1816dc866e0bb08",
+   "at": 1793172818022
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_M2ZZxLu6MYUgde8jBet93878",
+   "name": "mes_search_products",
+   "content": "{\"items\": [{\"id\": \"85594f03-fb1a-415d-8b54-48e9c6784270\", \"code\": \"LOCAL001\", \"name\": \"本地验收样例产品-demo-a\", \"specification\": \"Φ20×100\", \"unit\": \"个\", \"source\": \"自产\", \"has_route\": false}], \"count\": 1}",
+   "id": "m1a1816dca485e5c48",
+   "at": 1793172818504
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_01_BDGNUXLenpCNYMYDLw445708",
+   "name": "mes_list_processes",
+   "content": "{\"items\": [{\"id\": \"e2935550-a4d7-4b87-b9e0-b73a716642c0\", \"code\": \"GX3171605981\", \"name\": \"下料\", \"pricing\": \"计件\", \"wage_rate\": \"0.5000000\", \"standard_minutes\": \"5.000000\", \"active\": true}], \"count\": 1}",
+   "id": "m1a1816dcc28130739",
+   "at": 1793172818984
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_02_ossVQtBYyGmaRA33AZOF6058",
+   "name": "mes_list_warehouses",
+   "content": "{\"items\": [{\"id\": \"035ff9fb-8023-450b-bd88-de0a6732bcc8\", \"code\": \"WH01\", \"name\": \"成品仓\", \"active\": true}]}",
+   "id": "m1a1816dcdf8a43f91",
+   "at": 1793172819448
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816dcdf98c87cd",
+   "tool_calls": [
+    {
+     "id": "call_00_TlKAkaaAPksObYJNPbeU2582",
+     "type": "function",
+     "function": {
+      "name": "mes_create_work_order",
+      "arguments": "{\"product_id\": \"85594f03-fb1a-415d-8b54-48e9c6784270\", \"quantity\": \"5\", \"process_ids\": [\"e2935550-a4d7-4b87-b9e0-b73a716642c0\"], \"warehouse_id\": \"035ff9fb-8023-450b-bd88-de0a6732bcc8\"}"
+     }
+    }
+   ],
+   "id": "m1a1816dd44944890d",
+   "at": 1793172821065
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：创建加工单\n商品：本地验收样例产品-demo-a（LOCAL001）\n计划数：5 个\n工序：下料\n仓库：成品仓",
+   "id": "m1a1816ddbba5efedf",
+   "at": 1793172822970
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_TlKAkaaAPksObYJNPbeU2582",
+   "name": "mes_create_work_order",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"c6a43acc-a8bc-49f2-b4fb-c996394151f1\", \"code\": \"WO000009\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"5.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": null, \"tasks\": 1, \"created_at\": \"2026-10-28T07:33:43.433Z\"}}",
+   "id": "m1a1816dddbe995308",
+   "at": 1793172823486
+  },
+  {
+   "role": "assistant",
+   "content": "加工单已建好：\n\n- 单号：WO000009\n- 商品：本地验收样例产品-demo-a（Φ20×100）\n- 计划数：5 个\n- 工序：下料 ×1\n- 仓库：WH01 成品仓\n- 状态：未开始\n\n需要再补交货日期、优先级或备注的话，跟我说一声，我直接改这张单。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816dddbfbf00cf",
+   "id": "m1a1816de36e31c151",
+   "at": 1793172824942
+  },
+  {
+   "role": "user",
+   "content": "对了，交货日期是 2026-12-01",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a1816de3f3c728e0",
+   "at": 1793172825075
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816de3f674bd48",
+   "tool_calls": [
+    {
+     "id": "call_00_4sHnV3KgFlgDYkipERou4844",
+     "type": "function",
+     "function": {
+      "name": "mes_update_work_order",
+      "arguments": "{\"work_order_id\": \"c6a43acc-a8bc-49f2-b4fb-c996394151f1\", \"due_date\": \"2026-12-01\"}"
+     }
+    }
+   ],
+   "id": "m1a1816de97da58562",
+   "at": 1793172826493
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：修改加工单\n加工单：WO000009（本地验收样例产品-demo-a）\n交货日期：未填 → 2026-12-01",
+   "id": "m1a1816ded48e4e290",
+   "at": 1793172827464
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_4sHnV3KgFlgDYkipERou4844",
+   "name": "mes_update_work_order",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"c6a43acc-a8bc-49f2-b4fb-c996394151f1\", \"code\": \"WO000009\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"5.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": \"2026-12-01\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:33:43.433Z\", \"planned_start\": null, \"planned_end\": null, \"note\": \"\"}}",
+   "id": "m1a1816def2f77055c",
+   "at": 1793172827951
+  },
+  {
+   "role": "assistant",
+   "content": "WO000009 的交货日期已改为 2026-12-01。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816def31d85be3",
+   "id": "m1a1816df549604c63",
+   "at": 1793172829513
+  }
+ ],
+ "mes": true,
+ "owner": "eb7c8ef9-858b-427d-8656-0b55c995cfef:54f83a7d-0bc1-429b-ba70-ddc8a96057f7"
+}

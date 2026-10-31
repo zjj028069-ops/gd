@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "title": "API parse 成功",
+      "ok": true,
+      "reason": "rows=2"
+    },
+    {
+      "title": "API cancel 成功",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "AI 中心可见 BOM 卡片",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "进入导入页",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "上传后出现预览",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "截图",
+      "ok": true,
+      "reason": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai3-bom.png"
+    },
+    {
+      "title": "确认前无 BOM 业务写 POST",
+      "ok": true,
+      "reason": "无"
+    }
+  ],
+  "shotPath": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai3-bom.png",
+  "at": "2026-10-17T02:34:55.353Z"
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>赛德瑞科 · 聊天壳</title>
+  <link rel="stylesheet" href="styles.20261022-mes-ready-shell.css" />
+</head>
+<body>
+  <!-- 登录页：MES 左右分栏 + 聊天壳毛玻璃 -->
+  <div id="login-page" class="login-page">
+    <div class="login-shell">
+      <aside class="login-brand-pane" aria-hidden="false">
+        <div class="login-brand-glass">
+          <div class="login-brand-top">
+            <div class="login-logo">赛</div>
+            <div class="login-brand-text">
+              <div class="login-brand-name">赛德瑞科</div>
+              <div class="login-brand-tag">企业生产协作</div>
+            </div>
+          </div>
+          <div class="login-brand-mid">
+            <p class="login-eyebrow">企业工作空间</p>
+            <h1 class="login-hero-title">让工作跟聊天一样简单。</h1>
+            <p class="login-hero-sub">以前我们让人适应系统，现在我们让系统适应人。</p>
+          </div>
+          <div class="login-brand-tags">
+            <span>数据沉淀</span>
+            <span>流程更优</span>
+            <span>智能决策</span>
+          </div>
+        </div>
+        <div class="login-geo" aria-hidden="true"></div>
+      </aside>
+
+      <section class="login-form-pane">
+        <form id="login-form" class="login-card" autocomplete="on">
+          <h2 class="login-welcome">欢迎回来</h2>
+          <label class="field">
+            <span>企业标识</span>
+            <input type="text" id="login-tenant" name="tenant_slug" value="demo-a" placeholder="请输入企业标识" autocomplete="organization" required />
+          </label>
+          <label class="field">
+            <span>账号</span>
+            <input type="text" id="login-username" name="username" placeholder="请输入账号" autocomplete="username" required />
+          </label>
+          <label class="field">
+            <span>密码</span>
+            <input type="password" id="login-password" name="password" placeholder="请输入密码" autocomplete="current-password" required />
+          </label>
+          <p id="login-error" class="login-error" hidden></p>
+          <button type="submit" class="btn-primary login-submit" id="btn-login">
+            <span>登录工作空间</span>
+            <svg class="login-submit-arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M5 12h12M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <p class="login-meta">MES · SEDRIC01 v1.0.49</p>
+          <p class="login-origin" id="login-origin">源站经本机同域代理</p>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <!-- 主聊天壳 -->
+  <div id="app" class="app" hidden>
+    <!-- 左栏：会话列表 -->
+    <aside class="sidebar glass-panel">
+      <div class="sidebar-header">
+        <div class="search-row">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input type="search" id="session-search" placeholder="搜索" autocomplete="off" />
+          </div>
+          <button type="button" class="btn-plus" id="btn-plus" title="新建" aria-label="新建" aria-expanded="false" aria-haspopup="true">
+            <span>+</span>
+          </button>
+          <div class="plus-menu glass-pop" id="plus-menu" hidden role="menu">
+            <button type="button" role="menuitem" data-action="add-friend">加好友</button>
+            <button type="button" role="menuitem" data-action="group-chat">发起群聊</button>
+            <button type="button" role="menuitem" data-action="new-chat">新对话</button>
+          </div>
+        </div>
+      </div>
+      <ul class="session-list" id="session-list" role="listbox" aria-label="会话列表"></ul>
+      <div class="sidebar-footer">
+        <div class="user-chip-wrap">
+          <button type="button" class="user-chip" id="user-chip" aria-haspopup="true" aria-expanded="false" title="用户菜单">
+            <span class="user-name" id="user-display-name">—</span>
+            <span class="user-ver">SEDRIC01 v1.0.49</span>
+          </button>
+          <div class="user-menu glass-pop" id="user-menu" hidden role="menu">
+            <div class="user-menu-info" id="user-menu-info" role="presentation">—</div>
+            <button type="button" role="menuitem" data-user-action="account">个人中心</button>
+            <button type="button" role="menuitem" data-user-action="enterprise">企业设置</button>
+            <button type="button" role="menuitem" data-user-action="logout" class="user-menu-danger">退出登录</button>
+          </div>
+        </div>
+        <button type="button" class="btn-logout" id="btn-logout" title="退出登录">退出</button>
+      </div>
+    </aside>
+
+    <!-- 右栏：对话区 -->
+    <main class="chat-pane glass-panel">
+      <header class="chat-header">
+        <h1 class="chat-title" id="chat-title">赛德瑞科助手</h1>
+        <div class="header-actions">
+          <span class="header-ver" title="产品版本">SEDRIC01 v1.0.49</span>
+          <button type="button" class="btn-mes" id="btn-mes" title="进入 MES 系统">进入MES</button>
+        </div>
+      </header>
+
+      <div class="chat-body" id="chat-body" role="log" aria-live="polite"></div>
+
+      <footer class="composer" id="composer">
+        <div class="composer-drop-hint" id="composer-drop-hint" hidden aria-hidden="true">松开以上传图片、Excel 或 PDF</div>
+        <div class="composer-row">
+          <input type="text" id="composer-input" class="composer-input" placeholder="输入消息，或拖入图片/Excel/PDF…" autocomplete="off" />
+          <button type="button" class="btn-send" id="btn-send">发送</button>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- MES 真页（同窗 iframe，经 /mes 代理） -->
+  <div id="mes-page" class="mes-page" hidden>
+    <div class="mes-frame-shell glass-panel">
+      <!-- mes-header 已移除以增加 MES 可视面积；关闭经 postMessage / 隐藏备用按钮 -->
+      <button type="button" class="btn-back" id="btn-mes-back" hidden aria-hidden="true">← 返回聊天</button>
+      <div class="mes-frame-wrap">
+        <iframe id="mes-iframe" class="mes-iframe" title="赛德瑞科 MES" src="about:blank"></iframe>
+        <div id="mes-loading" class="mes-loading" hidden aria-live="polite">
+          <div class="mes-skel" aria-hidden="true">
+            <aside class="mes-skel-side">
+              <div class="mes-skel-brand"></div>
+              <div class="mes-skel-nav"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </aside>
+            <div class="mes-skel-main">
+              <header class="mes-skel-top"><span></span><span></span></header>
+              <div class="mes-skel-body">
+                <div class="mes-skel-card"></div>
+                <div class="mes-skel-card"></div>
+                <div class="mes-skel-card wide"></div>
+                <div class="mes-skel-card"></div>
+              </div>
+              <div class="mes-skel-foot">
+                <div class="mes-skel-track"><div class="mes-skel-bar" id="mes-skel-bar"></div></div>
+                <div class="mes-loading-text" id="mes-loading-text">正在进入工作台…</div>
+                <div class="mes-skel-actions" id="mes-skel-actions" hidden>
+                  <button type="button" class="mes-skel-retry" id="mes-skel-retry">重试</button>
+                  <button type="button" class="mes-skel-force" id="mes-skel-force">强制进入</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="mes-fallback" class="mes-fallback" hidden>
+          <div class="mes-hero">
+            <div class="mes-logo">MES</div>
+            <h2>无法加载真实 MES</h2>
+            <p id="mes-fallback-msg">请确认已通过 <code>node server.mjs</code> 启动同域代理，并已登录。源站经 <code>/mes/</code> 反代。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 统一弹层（加好友 / 发起群聊） -->
+  <div id="overlay" class="overlay" hidden>
+    <div class="modal glass-panel" role="dialog" aria-labelledby="modal-title">
+      <header class="modal-header">
+        <h2 id="modal-title">加好友</h2>
+        <button type="button" class="btn-close" id="btn-modal-close" aria-label="关闭">×</button>
+      </header>
+      <div class="modal-body" id="modal-body">
+        <!-- 由 app.js 按 mode 重渲染：加好友 / 发起群聊 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 轻提示 -->
+  <div id="toast" class="toast" hidden></div>
+
+  <link rel="stylesheet" href="shell-tool-styles.css?v=20261021-plus-menu" />
+  <script src="guide/knowledge.js"></script>
+  <script src="guide/demos.js?v=20261021-plus-menu"></script>
+  <script src="guide/demo-player.js?v=20261021-plus-menu"></script>
+  <script src="shell-tool-runtime.js?v=20261021-plus-menu"></script>
+  <script src="app.20261022-mes-ready-shell.js"></script>
+</body>
+</html>

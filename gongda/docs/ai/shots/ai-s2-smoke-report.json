@@ -1,0 +1,104 @@
+{
+  "ok": true,
+  "version": "SEDRIC01 v1.0.26",
+  "base": "release/sedric-v1.0.23",
+  "feature": "ai-s2-chat-intake",
+  "mock_boundary": "无 OCR：认型与字段抽取靠文件名/文本线索确定性规则；写库走真实 money_contacts / money_contracts + ai_action_audit",
+  "api": "http://127.0.0.1:3011",
+  "web": "http://127.0.0.1:5183",
+  "shell": "http://127.0.0.1:5180",
+  "shots": {
+    "card": "/workspace/docs/ai/shots/ai-s2-card-confirm.png",
+    "order": "/workspace/docs/ai/shots/ai-s2-order-confirm.png",
+    "list": "/workspace/docs/ai/shots/ai-s2-contract-list.png"
+  },
+  "results": [
+    {
+      "title": "VERSION 为 v1.0.26",
+      "ok": true,
+      "reason": "SEDRIC01 v1.0.26"
+    },
+    {
+      "title": "chat-shell/version.json 为 1.0.26 / ai-s2-chat-intake",
+      "ok": true,
+      "reason": "{\"name\":\"SEDRIC01\",\"version\":\"1.0.26\",\"display\":\"SEDRIC01 v1.0.26\",\"feature\":\"ai-s2-chat-intake\",\"base\":\"release/sedric-v1.0.23\"}"
+    },
+    {
+      "title": "名片认型出确认卡且禁合同/加工单",
+      "ok": true,
+      "reason": "{\"kind\":\"business_card\",\"confidence\":0.86,\"reasons\":[\"命中名片关键词或电话+称谓线索\"],\"preview_id\":\"6a2b1f3a-5c45-47f5-a311-7fe2fb80c9d4\",\"confirm_card\":{\"title\":\"确认写入联系人（名片）\",\"summary\":\"冒烟名片人 · 13600136000 · S2冒烟客户。匹配到 1 个客户：S2冒烟客户\","
+    },
+    {
+      "title": "名片确认写入联系人且无合同",
+      "ok": "af062b4a-2f3b-4037-bda0-994fdf84b20c",
+      "reason": "{\"kind\":\"contact\",\"preview_id\":\"6a2b1f3a-5c45-47f5-a311-7fe2fb80c9d4\",\"audit_id\":\"af062b4a-2f3b-4037-bda0-994fdf84b20c\",\"data\":{\"kind\":\"contact\",\"party_kind\":\"customer\",\"contact_id\":\"e0fceff3-c2ac-4158-8a7a-627f9adc45c2\""
+    },
+    {
+      "title": "订单认型出合同确认卡",
+      "ok": true,
+      "reason": "{\"kind\":\"order_doc\",\"confidence\":0.78,\"reasons\":[\"命中单据类关键词\",\"命中单据类关键词；已生成合同预览（确定性文本解析，非 OCR）\"],\"preview_id\":\"fdb474b4-9d43-4e15-97f3-de66516c1110\",\"confirm_card\":{\"title\":\"确认写入合同订单\",\"summary\":\"客户：S2冒烟合同客户（AI05355598）；明细：本地验收样例产品-demo-a × 3 "
+    },
+    {
+      "title": "订单取消不写库且记审计",
+      "ok": "1da96b72-0126-43a0-8e72-bc74cd2331ab",
+      "reason": "{\"ok\":true,\"kind\":\"contract\",\"preview_id\":\"fdb474b4-9d43-4e15-97f3-de66516c1110\",\"audit_id\":\"1da96b72-0126-43a0-8e72-bc74cd2331ab\"}"
+    },
+    {
+      "title": "订单确认后库内有合同+审计",
+      "ok": "1dc8a02c-940e-4643-9c6e-ada6f7fcf300",
+      "reason": "{\"kind\":\"contract\",\"preview_id\":\"b09b0314-5f22-4691-b838-5d0de0582692\",\"audit_id\":\"1dc8a02c-940e-4643-9c6e-ada6f7fcf300\",\"data\":{\"kind\":\"contract\",\"contract_id\":\"ad322a3e-f155-425d-bd01-babe6237c73c\",\"contract_code\":\"HT20261020002\",\"contrac"
+    },
+    {
+      "title": "风景图追问不静默写库",
+      "ok": {
+        "question": "这看起来不是业务单据。要怎么处理？",
+        "options": [
+          {
+            "id": "keep_attachment",
+            "label": "存为附件"
+          },
+          {
+            "id": "ignore",
+            "label": "忽略"
+          },
+          {
+            "id": "force_order_doc",
+            "label": "强制当单据"
+          }
+        ]
+      },
+      "reason": "{\"kind\":\"other\",\"confidence\":0.7,\"reasons\":[\"命中非单据场景词\"],\"ask_id\":\"c5092c20-b0fe-49d0-a31d-58272f2ee0b7\",\"ask\":{\"question\":\"这看起来不是业务单据。要怎么处理？\",\"options\":[{\"id\":\"keep_attachment\",\"la"
+    },
+    {
+      "title": "unknown 追问不写库",
+      "ok": "2541014f-c4e2-4898-a6e4-225a3b7d9365",
+      "reason": "{\"kind\":\"unknown\",\"confidence\":0.35,\"reasons\":[\"线索不足，需人工选择用途\"],\"ask_id\":\"2541014f-c4e2-4898-a6e4-225a3b7d9365\",\"ask\":{\"question\":\"无法识别附件类型，请选择用途（不会自动写库）\",\"optio"
+    },
+    {
+      "title": "问应收仍走厂长助理只读",
+      "ok": true,
+      "reason": "{\"answer\":\"应收合计 ¥0.00，已收 ¥0.00，未收 ¥0.00；应付合计 ¥0.00，已付 ¥0.00，未付 ¥0.00。\",\"cards\":[{\"title\":\"应收合计\",\"value\":\"¥0.00\",\"action_"
+    },
+    {
+      "title": "现网毛玻璃侧栏 .kgd-sidebar-primary",
+      "ok": true,
+      "reason": "工作台▸|数据大屏▸|报表中心▸|客户管理▸|精益生产▸|生产管理▸"
+    },
+    {
+      "title": "聊天壳名片确认卡",
+      "ok": true,
+      "reason": "kind=contact"
+    },
+    {
+      "title": "聊天壳订单合同确认卡",
+      "ok": true,
+      "reason": "visible"
+    },
+    {
+      "title": "确认后合同列表页（毛玻璃壳）",
+      "ok": true,
+      "reason": "赛\n赛德瑞科\n工作台\n▸\n数据大屏\n▸\n报表中心\n▸\n客户管理\n▾\n客户管理\n客户联系人\n客户跟单\n合同报价单\n合同订单\n收支记录\n发票管理\n销售费用\n客户公海\n客户设置\n▸\n精益生产\n▸\n生产管理\n▸\n设备维保\n▸\n供应/采购\n▸\n仓库管"
+    }
+  ],
+  "at": "2026-10-20T14:10:02.468Z"
+}

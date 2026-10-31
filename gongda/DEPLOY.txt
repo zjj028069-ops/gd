@@ -1,0 +1,95 @@
+SEDRIC01 内测部署说明
+====================
+部署时间: 2026-10-15 (Asia/Shanghai)
+业务 tip: e3e2dd812e60575266b037a0117851e8518f5af8
+模式: 非生产预览 (DB_MODE=pglite，非 Postgres 生产)
+
+Public URL (需安全组放行 5184):
+  http://129.204.53.109:5184/
+
+端口:
+  - nginx 公网: 5184  -> SPA 127.0.0.1:5183 , /api + /health -> 127.0.0.1:3011
+  - API: 127.0.0.1:3011
+  - Vite: 127.0.0.1:5183
+
+安装目录: /opt/sedric01
+本地库: /opt/sedric01/.local/database
+凭证文件: /opt/sedric01/.local/dev-credentials.txt
+nginx 配置: /www/server/panel/vhost/nginx/sedric01-5184.conf
+PM2 进程名: sedric-api , sedric-web
+Node: nvm v24.13.0
+
+环境变量 (start-api.sh):
+  DB_MODE=pglite
+  LOCAL_DB_DIR=/opt/sedric01/.local/database
+  PORT=3011 HOST=127.0.0.1
+  PUBLIC_ORIGIN=http://129.204.53.109:5184
+  NODE_ENV 未设 production
+
+启停 (仅 sedric，勿动 garment-*):
+  export NVM_DIR=$HOME/.nvm; . $NVM_DIR/nvm.sh; nvm use 22.22.0
+  pm2 start sedric-api sedric-web
+  pm2 stop sedric-api sedric-web
+  pm2 restart sedric-api sedric-web
+  pm2 logs sedric-api --lines 100
+  pm2 logs sedric-web --lines 100
+
+登录 (demo 租户):
+  企业标识: demo-a 或 demo-b
+  账号见 /opt/sedric01/.local/dev-credentials.txt
+  (admin.local / planner.local / worker.local)
+
+隔离说明:
+  - 未停止/修改 /opt/garment-order-system
+  - garment PM2 (garment-*) 保持原 pid/端口
+  - 仅新增 nginx server listen 5184
+
+阻断项:
+  - 本机与 nginx 本地访问正常；外网 curl :5184 超时。
+    请在腾讯云轻量/安全组放行入站 TCP 5184（OS 防火墙未开）。
+  - 内存紧张 (~3.6G，部署后 available ~0.7G)，10 人内测可接受。
+
+非生产注意: PGlite 嵌入库，非 HTTPS，勿当正式生产。
+
+Public URL (fixed 2026-10-15): http://129.204.53.109/
+(Reason: Tencent SG blocked 5184; port 80 already open. Garment still :3090.)
+
+Mac sync restart 2026-10-16 11:11:39 +0800: pm2 restart sedric-api/web; garment untouched; creds preserved
+Mac full sync 2026-10-16 17:28 +0800: apps+scripts overlay from Mac working tree; DB/creds preserved; garment untouched
+
+AI tip overlay 2026-10-17 14:01:44 +0800 (Asia/Shanghai)
+  tip: 8914b9323074dcb3457a6d455f4464f58b4b7d84
+  commit: feat(ai) 赛德瑞克 AI 中心五项能力
+  mode: overlay apps+scripts from git archive (clean tip tree; Mac WIP not applied)
+  package: sedric-ai-20261017-135859-apps.tgz
+  migrate: npm run db:migrate OK (incl 117_ai_action_log)
+  pm2: restart sedric-api sedric-web only; garment-* untouched
+  note: restored VPS-local apps/web/vite.preview.config.ts after rsync --delete
+
+Mac workspace WIP full overlay 2026-10-17 14:26:52 +0800 (Asia/Shanghai)
+  base tip: 8914b93 + WIP workspace (dirty working tree)
+  mode: full overlay apps+scripts from Mac disk (NOT git archive tip)
+  package: sedric-mac-wip-20261017-142121-apps.tgz
+  primary color: #4184F4 blue (WIP); theme-color #4184F4; 05A67A cleared from kgd active/logo
+  fixes during sync:
+    - stripped 537 AppleDouble ._* files (broke migrate)
+    - masters.ts: removed accidental duplicate createRouteFromImport (Mac WIP paste)
+    - app.ts: restored registerAi() wiring accidentally dropped in dirty WIP
+  health paths (current code): /health/live /health/ready (not legacy /live /ready)
+  migrate: npm run db:migrate OK (append-only)
+  pm2: restart sedric-api sedric-web only; garment-* untouched
+  backup: /opt/sedric01/.local/sync-backups/apps-scripts-pre-20261017-142143.tgz
+  note: vite.preview.config.ts retained (content match Mac copy)
+
+
+## Restore + AI patch (2026-10-17 14:38:48 CST Asia/Shanghai)
+- Restored base from: apps-scripts-pre-20261017-135923.tgz (10-16 blue final, no tip AI overlay)
+- Pre-restore backup: apps-scripts-pre-restore-20261017-143528.tgz
+- AI overlay: cherry-pick from tip 8914b9323074dcb3457a6d455f4464f58b4b7d84
+  - added: apps/api/src/ai/, apps/web/src/modules/ai/, migrations/117_ai_action_log.sql, ai tests, ai*-smoke.mjs, docs/ai/
+  - deps on B package.json: @fastify/multipart, xlsx
+  - mounts (not whole-file tip overwrite): app.ts registerAi; database.ts ai_action_log (+keep print_templates); masters.ts append createBomFromImport/createRouteFromImport (+keep cost_price); Shell.tsx AiShell on RailIcon base; menu.ts AI中心五项+训练中心; round10/router.tsx /ai/* routes
+- db:migrate applied (117); pm2 restart sedric-api sedric-web only; garment untouched
+- State label: 20261016-blue-final+8914b93-ai-patch
+- Accept: kgd.css blue x23; RailIcon present; cost_price present; print_templates+ai_action_log; /health/live|/health/ready 200; /api/ai/* 401; public http://129.204.53.109/ 200; creds sha unchanged; garment pids unchanged
+

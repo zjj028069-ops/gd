@@ -1,0 +1,297 @@
+{
+ "id": "s1a1816987a301c70a",
+ "bot": "sedric-mes",
+ "title": "帮我开个加工单",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793172539299,
+ "updated": 1793172564860,
+ "last_read": 1793172553785,
+ "messages": [
+  {
+   "role": "user",
+   "content": "帮我开个加工单",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a1816987c138c08d",
+   "at": 1793172539329
+  },
+  {
+   "role": "assistant",
+   "content": "您好！我先帮您找商品。请问要生产什么产品？（告诉我名称、编号或规格都行）",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816987c3d34a81",
+   "id": "m1a181698e6a11d2c7",
+   "at": 1793172541034
+  },
+  {
+   "role": "user",
+   "content": "做样例产品，30个",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a181698fec2378ad",
+   "at": 1793172541420
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a181698fee9eeb6b",
+   "tool_calls": [
+    {
+     "id": "call_00_UlNhKl0vZID213okVvRr1973",
+     "type": "function",
+     "function": {
+      "name": "mes_search_products",
+      "arguments": "{\"keyword\": \"样例产品\"}"
+     }
+    }
+   ],
+   "id": "m1a181699553f21604",
+   "at": 1793172542803
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_UlNhKl0vZID213okVvRr1973",
+   "name": "mes_search_products",
+   "content": "{\"items\": [{\"id\": \"85594f03-fb1a-415d-8b54-48e9c6784270\", \"code\": \"LOCAL001\", \"name\": \"本地验收样例产品-demo-a\", \"specification\": \"Φ20×100\", \"unit\": \"个\", \"source\": \"自产\", \"has_route\": false}], \"count\": 1}",
+   "id": "m1a1816997387179c3",
+   "at": 1793172543288
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18169973a6e2d83",
+   "tool_calls": [
+    {
+     "id": "call_00_vWOmBFIMpafbaVPJlB4T5937",
+     "type": "function",
+     "function": {
+      "name": "mes_list_processes",
+      "arguments": "{}"
+     }
+    },
+    {
+     "id": "call_01_MCmJzwU7sEILoCHgQBca6565",
+     "type": "function",
+     "function": {
+      "name": "mes_list_warehouses",
+      "arguments": "{}"
+     }
+    }
+   ],
+   "id": "m1a181699bfb0a8752",
+   "at": 1793172544507
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_vWOmBFIMpafbaVPJlB4T5937",
+   "name": "mes_list_processes",
+   "content": "{\"items\": [{\"id\": \"e2935550-a4d7-4b87-b9e0-b73a716642c0\", \"code\": \"GX3171605981\", \"name\": \"下料\", \"pricing\": \"计件\", \"wage_rate\": \"0.5000000\", \"standard_minutes\": \"5.000000\", \"active\": true}], \"count\": 1}",
+   "id": "m1a181699dd61854b0",
+   "at": 1793172544982
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_01_MCmJzwU7sEILoCHgQBca6565",
+   "name": "mes_list_warehouses",
+   "content": "{\"items\": [{\"id\": \"035ff9fb-8023-450b-bd88-de0a6732bcc8\", \"code\": \"WH01\", \"name\": \"成品仓\", \"active\": true}]}",
+   "id": "m1a181699fafdbfb19",
+   "at": 1793172545455
+  },
+  {
+   "role": "assistant",
+   "content": "我找到了商品：**本地验收样例产品-demo-a**（LOCAL001，Φ20×100，单位：个）\n\n系统里目前只有一道工序：**下料**（计件，0.5 元/件）。它没有工艺路线，所以我就按只有这一道「下料」来建。\n\n另外，要不要再填交货日期、优先级、备注？如果不填，我就直接建了。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a181699fb1a84847",
+   "tool_calls": [
+    {
+     "id": "call_00_pXuuSZGClvLlupoFLMP04145",
+     "type": "function",
+     "function": {
+      "name": "clarify",
+      "arguments": "{\"question\": \"确认按「下料」这一道工序开 30 个的加工单吗？\", \"choices\": [\"直接建，不填其他信息\", \"我要补充交货日期/优先级/备注\", \"工序不对，我要调整\"]}"
+     }
+    }
+   ],
+   "id": "m1a18169a8bd0801b7",
+   "at": 1793172547773
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_pXuuSZGClvLlupoFLMP04145",
+   "name": "clarify",
+   "content": "直接建，不填其他信息",
+   "id": "m1a18169a9cc076b0a",
+   "at": 1793172548044
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18169a9ce5964cf",
+   "tool_calls": [
+    {
+     "id": "call_00_fHmNDu9HN3ZY3bmaUdUO1149",
+     "type": "function",
+     "function": {
+      "name": "mes_create_work_order",
+      "arguments": "{\"product_id\": \"85594f03-fb1a-415d-8b54-48e9c6784270\", \"quantity\": \"30\", \"process_ids\": [\"e2935550-a4d7-4b87-b9e0-b73a716642c0\"], \"warehouse_id\": \"035ff9fb-8023-450b-bd88-de0a6732bcc8\"}"
+     }
+    }
+   ],
+   "id": "m1a18169b05a0144f4",
+   "at": 1793172549722
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：创建加工单\n商品：本地验收样例产品-demo-a（LOCAL001）\n计划数：30 个\n工序：下料\n仓库：成品仓",
+   "id": "m1a18169b80588446f",
+   "at": 1793172551685
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_fHmNDu9HN3ZY3bmaUdUO1149",
+   "name": "mes_create_work_order",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"1c208ab2-57d0-4689-b88a-48c8c494432f\", \"code\": \"WO000005\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"30.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": null, \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:12.162Z\"}}",
+   "id": "m1a18169ba215533b8",
+   "at": 1793172552225
+  },
+  {
+   "role": "assistant",
+   "content": "加工单已创建 ✅\n\n- 单号：**WO000005**\n- 商品：本地验收样例产品-demo-a\n- 计划数：30\n- 工序：下料（1 道）\n- 状态：未开始\n\n需要开工的话跟我说一声。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18169ba2334d7bb",
+   "id": "m1a18169bfd5cabfb6",
+   "at": 1793172553685
+  },
+  {
+   "role": "user",
+   "content": "就用下料这道工序，交货日期下周五，其他不用填",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a18169c0384696c5",
+   "at": 1793172553784
+  },
+  {
+   "role": "assistant",
+   "content": "您说的下周五就是 2026-11-06。不过加工单 WO000005 已经建好了，交货日期需要在单子上补填或修改。\n\n我这边没有修改交货日期的功能，只能帮您新建一张带交货日期的单，或者您也可以到系统里直接改这张单。\n\n要怎么处理？",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18169c03a5e767d",
+   "tool_calls": [
+    {
+     "id": "call_00_g5LnIPaasNMOdn5I2B6M4830",
+     "type": "function",
+     "function": {
+      "name": "clarify",
+      "arguments": "{\"choices\": [\"取消 WO000005，重新建一张交货日期 2026-11-06 的\", \"保留 WO000005，我自己去系统里改日期\", \"不用了，就这样\"], \"question\": \"WO000005 已建好（下料，30 个），交货日期怎么处理？\"}"
+     }
+    }
+   ],
+   "id": "m1a18169c8a8c403ba",
+   "at": 1793172555944
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_g5LnIPaasNMOdn5I2B6M4830",
+   "name": "clarify",
+   "content": "取消 WO000005，重新建一张交货日期 2026-11-06 的",
+   "id": "m1a18169ca38fd48d8",
+   "at": 1793172556344
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18169ca3aba4ba6",
+   "tool_calls": [
+    {
+     "id": "call_00_mNabun2sbuKjlVX80p967462",
+     "type": "function",
+     "function": {
+      "name": "mes_work_order_action",
+      "arguments": "{\"work_order_id\": \"1c208ab2-57d0-4689-b88a-48c8c494432f\", \"action\": \"cancel\", \"reason\": \"交货日期需调整，取消后重建\"}"
+     }
+    }
+   ],
+   "id": "m1a18169cfd691a229",
+   "at": 1793172557782
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：取消加工单\n加工单：WO000005（本地验收样例产品-demo-a）\n当前状态：未开始\n操作：取消\n原因：交货日期需调整，取消后重建",
+   "id": "m1a18169d3b0266197",
+   "at": 1793172558768
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_mNabun2sbuKjlVX80p967462",
+   "name": "mes_work_order_action",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"1c208ab2-57d0-4689-b88a-48c8c494432f\", \"code\": \"WO000005\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"30.000000\", \"output_qty\": \"0.000000\", \"status\": \"已取消\", \"priority\": \"未设置\", \"due_date\": null, \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:12.162Z\"}}",
+   "id": "m1a18169d5b4ad46cd",
+   "at": 1793172559284
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18169d5b6c94a6c",
+   "tool_calls": [
+    {
+     "id": "call_00_JrWiNSzk7SNTr2bpifuI0291",
+     "type": "function",
+     "function": {
+      "name": "mes_create_work_order",
+      "arguments": "{\"product_id\": \"85594f03-fb1a-415d-8b54-48e9c6784270\", \"quantity\": \"30\", \"process_ids\": [\"e2935550-a4d7-4b87-b9e0-b73a716642c0\"], \"warehouse_id\": \"035ff9fb-8023-450b-bd88-de0a6732bcc8\", \"due_date\": \"2026-11-06\"}"
+     }
+    }
+   ],
+   "id": "m1a18169dc5a021e92",
+   "at": 1793172560986
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：创建加工单\n商品：本地验收样例产品-demo-a（LOCAL001）\n计划数：30 个\n工序：下料\n仓库：成品仓\n交货日期：2026-11-06",
+   "id": "m1a18169e3eb1e3f84",
+   "at": 1793172562923
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_JrWiNSzk7SNTr2bpifuI0291",
+   "name": "mes_create_work_order",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"14145c1d-5b54-43c8-a075-a79591aaee1d\", \"code\": \"WO000006\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"30.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": \"2026-11-06\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:23.398Z\"}}",
+   "id": "m1a18169e5ee3e6a5a",
+   "at": 1793172563438
+  },
+  {
+   "role": "assistant",
+   "content": "好了 ✅\n\n- 旧单 WO000005 已取消\n- 新单号：**WO000006**\n- 商品：本地验收样例产品-demo-a\n- 计划数：30\n- 工序：下料\n- 交货日期：2026-11-06（下周五）\n- 状态：未开始\n\n需要开工随时说。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18169e5f11c5d68",
+   "id": "m1a18169eb7c5ae53c",
+   "at": 1793172564860
+  }
+ ],
+ "mes": true,
+ "owner": "eb7c8ef9-858b-427d-8656-0b55c995cfef:54f83a7d-0bc1-429b-ba70-ddc8a96057f7"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "SEDRIC Bots",
+  "short_name": "SEDRIC Bots",
+  "description": "一个机器人就是一个独立的智能体：自己的人格、记忆、技能和聊天。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#e9edf5",
+  "theme_color": "#0c2f72",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

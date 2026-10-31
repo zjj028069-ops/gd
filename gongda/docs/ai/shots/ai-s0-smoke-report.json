@@ -1,0 +1,55 @@
+{
+  "ok": true,
+  "version": "SEDRIC01 v1.0.24",
+  "base": "release/sedric-v1.0.23",
+  "feature": "ai-s0-trust-base",
+  "api": "http://127.0.0.1:3011",
+  "web": "http://127.0.0.1:5183",
+  "shots": {
+    "sidebar": "/workspace/docs/ai/shots/ai-s0-sidebar.png",
+    "trust": "/workspace/docs/ai/shots/ai-s0-trust.png"
+  },
+  "results": [
+    {
+      "title": "VERSION 为 v1.0.24",
+      "ok": true,
+      "reason": "SEDRIC01 v1.0.24"
+    },
+    {
+      "title": "chat-shell/version.json 为 1.0.24 / ai-s0-trust-base",
+      "ok": true,
+      "reason": "{\"name\":\"SEDRIC01\",\"version\":\"1.0.24\",\"display\":\"SEDRIC01 v1.0.24\",\"feature\":\"ai-s0-trust-base\",\"base\":\"release/sedric-v1.0.23\"}"
+    },
+    {
+      "title": "名片认型出确认卡且禁止落合同/加工单",
+      "ok": true,
+      "reason": "{\"kind\":\"business_card\",\"confidence\":0.86,\"reasons\":[\"命中名片关键词或电话+称谓线索\"],\"preview_id\":\"0bf6da3d-41f0-4d06-aad3-3d4f85c3647a\",\"confirm_card\":{\"title\":\"确认写入联系人（名片）\",\"summary\":\"冒烟联系人 · 13700137000 · 演示客户。未匹配到现有客户，确认后将挂到选定对象或提示建档\",\"risk\":\"确认前不写库；名片只建/更新联系人，不会创建合同或加工单。\",\"actions\":[\"con"
+    },
+    {
+      "title": "writes/cancel 记审计且 ok",
+      "ok": true,
+      "reason": "{\"ok\":true,\"kind\":\"contact\",\"preview_id\":\"0bf6da3d-41f0-4d06-aad3-3d4f85c3647a\",\"audit_id\":\"43765900-6b6b-427e-8235-115c4de6ef46\"}"
+    },
+    {
+      "title": "writes/confirm 失败也记审计",
+      "ok": true,
+      "reason": "status=404"
+    },
+    {
+      "title": "工厂助理问应收只读",
+      "ok": true,
+      "reason": "{\"answer\":\"应收合计 ¥0.00，已收 ¥0.00，未收 ¥0.00；应付合计 ¥0.00，已付 ¥0.00，未付 ¥0.00。\",\"cards\":[{\"title\":\"应收合计\",\"value\":\"¥0.00\"},{\"title\":\"已收\",\"value\":\"¥0.00\"},{\"title\":\"未收\",\"value\":\"¥0.00\"},{\"title\":\"应付合计\",\"value\":\""
+    },
+    {
+      "title": "现网毛玻璃侧栏 .kgd-sidebar-primary（非旧壳主导航）",
+      "ok": true,
+      "reason": "primary=14 rail=0 labels=工作台▾|数据大屏▸|报表中心▸|客户管理▸|精益生产▸|生产管理▸|设备维保▸|供应/采购▸"
+    },
+    {
+      "title": "AI 中心提及统一 writes 协议",
+      "ok": true,
+      "reason": " AI 中心\n\n赛德瑞克 AI 能力入口（S0 可信执行底座）：客服答用法，工厂助理只读查数；BOM / 极速下单 / 图纸拆单 / 名片联系人统一走 preview → /api/ai/writes/confirm|cancel，确认前不写库，成败均记审计。\n\n 赛德瑞克小助手\n全站右下角浮标，解答报工、销售订单、加"
+    }
+  ],
+  "at": "2026-10-20T13:21:53.245Z"
+}

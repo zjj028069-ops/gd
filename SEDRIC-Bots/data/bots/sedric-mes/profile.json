@@ -1,0 +1,32 @@
+{
+ "name": "sedric-mes",
+ "title": "赛德瑞克业务助手",
+ "description": "MES 业务助手（只给赛德瑞克 MES 用户使用，不参与机器人协作）",
+ "avatar": {
+  "shape": "drop",
+  "color": "#a855f7",
+  "image": null,
+  "custom": false
+ },
+ "tools": {
+  "terminal": false,
+  "files": false,
+  "web": false,
+  "memory": false,
+  "skills": false,
+  "message_agent": false,
+  "cronjob": false,
+  "clarify": false,
+  "mcp": false
+ },
+ "model": null,
+ "approval": "inherit",
+ "mcp_servers": [],
+ "skills_disabled": [],
+ "pinned": false,
+ "hidden": true,
+ "section": null,
+ "created": 1793172134716,
+ "previous_names": [],
+ "screen_auto_open": false
+}

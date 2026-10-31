@@ -1,0 +1,79 @@
+{
+ "id": "s1a1816dad792809e6",
+ "bot": "sedric-mes",
+ "title": "WO000008 的数量改成 50",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793172811129,
+ "updated": 1793172816181,
+ "last_read": 1793172815036,
+ "messages": [
+  {
+   "role": "user",
+   "content": "WO000008 的数量改成 50",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a1816dad87a30e21",
+   "at": 1793172811143
+  },
+  {
+   "role": "assistant",
+   "content": "我先查一下这张加工单。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816dad883d4499",
+   "tool_calls": [
+    {
+     "id": "call_00_QcHiFGR8cnsDiuM68fbY4456",
+     "type": "function",
+     "function": {
+      "name": "mes_list_work_orders",
+      "arguments": "{\"keyword\": \"WO000008\"}"
+     }
+    }
+   ],
+   "id": "m1a1816db29acbd78d",
+   "at": 1793172812442
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_QcHiFGR8cnsDiuM68fbY4456",
+   "name": "mes_list_work_orders",
+   "content": "{\"items\": [{\"id\": \"c6883fa1-a067-4129-883d-a1aa5d8ac7a8\", \"code\": \"WO000008\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"12.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"加急\", \"due_date\": \"2026-11-06\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:48.722Z\"}], \"total\": 8, \"page\": 1}",
+   "id": "m1a1816db4b6c4f688",
+   "at": 1793172812982
+  },
+  {
+   "role": "assistant",
+   "content": "WO000008（本地验收样例产品-demo-a，计划数 12，状态未开始）的计划数不能改，传统界面也不行。\n\n这张单子还没开始，可以取消后重开一张计划数为 50 的。要我这么做吗？",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816db4b8c251ef",
+   "id": "m1a1816dbafefa5940",
+   "at": 1793172814590
+  },
+  {
+   "role": "user",
+   "content": "不用了",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a1816dbcbbbe7dae",
+   "at": 1793172815035
+  },
+  {
+   "role": "assistant",
+   "content": "好的，那这张单就保持原样不动。有其他需要随时说。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816dbcbce22e89",
+   "id": "m1a1816dc135ae22cd",
+   "at": 1793172816181
+  }
+ ],
+ "mes": true,
+ "owner": "eb7c8ef9-858b-427d-8656-0b55c995cfef:54f83a7d-0bc1-429b-ba70-ddc8a96057f7"
+}

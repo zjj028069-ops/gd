@@ -1,0 +1,47 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "title": "API parse 成功",
+      "ok": true,
+      "reason": "rows=1"
+    },
+    {
+      "title": "API cancel 成功",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "API quota 可读",
+      "ok": true,
+      "reason": "{\"used\":0,\"limit\":50,\"remaining\":50,\"day\":\"2026-10-17\",\"unlimited\":false}"
+    },
+    {
+      "title": "AI 中心可见",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "极速下单卡片可见",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "进入极速下单页",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "上传后出现预览明细",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "截图已保存",
+      "ok": true,
+      "reason": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai4-quick-order.png"
+    }
+  ],
+  "shotPath": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai4-quick-order.png",
+  "at": "2026-10-17T02:40:05.753Z"
+}

@@ -1,0 +1,19 @@
+{
+  "product": "SEDRIC01",
+  "version": "1.0.74",
+  "display": "SEDRIC01 v1.0.74",
+  "feature": "plan-detail-left-card",
+  "hotfix": "20261027-plan-detail-v174",
+  "primary": "#4184F4",
+  "released_at": "2026-10-27T10:35:15+08:00",
+  "features": [
+    "生产计划详情：恢复原版左侧竖卡信息区（计划编号/物料分析状态/加工·外协·采购进度/交货日期/备注/创建人/创建时间）",
+    "进度条轨道补足宽高，彩色填充与百分比可见；右侧页签与算料逻辑未改"
+  ],
+  "note": "热修：productionPlans + ProgressCell + progress.css；承 v1.0.73 mrp-scale-fix；未重建库、未改密码；前端 rebuild；进度轨道色 #e8e8e8 保证 0% 可见",
+  "dist_js": "index-BxsRLap0.js",
+  "vps_backup": ".bak-20261027-plan-detail-v174",
+  "prev": "1.0.73 mrp-scale-fix",
+  "tag": "plan-detail-left-card",
+  "dist_css": "index-CqEvOEpH.css"
+}

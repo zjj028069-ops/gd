@@ -1,0 +1,30 @@
+module.exports = {
+  apps: [
+    {
+      name: 'sedric-api',
+      cwd: '/opt/sedric01',
+      script: '/opt/sedric01/start-api.sh',
+      interpreter: 'bash',
+      instances: 1,
+      autorestart: true,
+      max_restarts: 20,
+      min_uptime: '5s',
+      out_file: '/opt/sedric01/.local/pm2-api-out.log',
+      error_file: '/opt/sedric01/.local/pm2-api-err.log',
+      time: true,
+    },
+    {
+      name: 'sedric-web',
+      cwd: '/opt/sedric01',
+      script: '/opt/sedric01/start-web.sh',
+      interpreter: 'bash',
+      instances: 1,
+      autorestart: true,
+      max_restarts: 20,
+      min_uptime: '5s',
+      out_file: '/opt/sedric01/.local/pm2-web-out.log',
+      error_file: '/opt/sedric01/.local/pm2-web-err.log',
+      time: true,
+    },
+  ],
+};

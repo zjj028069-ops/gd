@@ -1,0 +1,16 @@
+import type { EntityId, Session, Unit } from './api';
+export type MasterPage = 'units' | 'processes' | 'routes' | 'boms';
+export type MasterUnit = Unit & { active: boolean; version: number };
+export type TeamMember = { id: EntityId; display_name: string; role: string };
+export type Process = { id: EntityId; code: string; name: string; description: string; standard_minutes: string; reporter_ids: string[]; pricing_mode?: string; wage_rate?: string | null; inspection_scheme?: string; active: boolean; version: number };
+export type Route = { id: EntityId; code: string; name: string; active: boolean; version: number; current_version_id: string; current_revision: number; steps_count: number };
+export type VersionInfo = { id: string; revision: number; description: string | null; created_at: string; route_version_id?: string | null };
+export type RouteStep = { sequence: number; process_id: string; process_code: string; process_name: string; auto_inbound: boolean; standard_minutes: string; reporter_ids: string[] };
+export type RouteVersion = { version: VersionInfo & { route_id?: string }; steps: RouteStep[] };
+export type Bom = { id: EntityId; parent_product_id: string; parent_code: string; parent_name: string; version: number; current_version_id: string; current_revision: number; items_count: number };
+export type BomItem = { id: string; component_product_id: string; component_code: string; component_name: string; unit_name: string; quantity: string; loss_rate: string; feeding_process_id: string | null; feeding_process_name: string | null; auto_issue: boolean; component_bom_version_id: string | null };
+export type BomVersion = { version: VersionInfo; items: BomItem[] };
+export type Explosion = { version_id: string; quantity: string; requirements: { product_id: string; code: string; name: string; unit_name: string; quantity: string; paths: string[] }[]; warnings: string[] };
+export type MasterProps = { session: Session; revision: number; onExpired: () => void; onChanged: () => void };
+export const idText = (value: EntityId) => String(value);
+export const decimalPattern = /^\d+(?:\.\d{1,6})?$/;

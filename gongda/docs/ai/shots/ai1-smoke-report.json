@@ -1,0 +1,38 @@
+{
+  "API": "http://127.0.0.1:3011",
+  "WEB": "http://127.0.0.1:5183",
+  "shotPath": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai1-chat.png",
+  "businessWritePosts": [],
+  "results": [
+    {
+      "title": "调拨单页可见浮标",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "点开有问候与推荐问",
+      "ok": true,
+      "reason": "你好！我是赛德瑞克小助手。我可以帮你了解报工、销售订单、加工单等产品用法。下面是一些推荐问题，也可以直接输入你的问题。"
+    },
+    {
+      "title": "推荐问得非空中文",
+      "ok": true,
+      "reason": "【如何报工】\n\n入口\n- 菜单：生产管理 → 报工工作台（`/work_report_workbench`）\n- 或：生产管理 → 生产任务 → 行上「详情」打"
+    },
+    {
+      "title": "深度分析问如何报工有回复",
+      "ok": true,
+      "reason": "【如何报工】（深度说明）\n\n入口\n- 菜单：生产管理 → 报工工作台（`/work_report_workbench`）\n- 或：生产管理 → 生产任务 → 行"
+    },
+    {
+      "title": "截图落盘",
+      "ok": true,
+      "reason": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai1-chat.png"
+    },
+    {
+      "title": "无业务写接口 POST（除 chat）",
+      "ok": true,
+      "reason": ""
+    }
+  ]
+}

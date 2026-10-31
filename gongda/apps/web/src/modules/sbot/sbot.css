@@ -1,0 +1,104 @@
+/* MES 里的 Bot 界面：在 SEDRIC Bots 设计（ui/sbx.css）之上的少量适配 */
+
+/* 全屏 Bot 对话 */
+.sbx.sbot-full { position: fixed; inset: 0; z-index: 20; }
+.sbx.sbot-full .app { height: 100vh; }
+.sbx .sbot-side-mode { padding: 0 12px 10px; }
+.sbx .row .row-more { opacity: 0; }
+.sbx .row:hover .row-more { opacity: 1; }
+
+/* Bot 代操作：左侧停靠面板 */
+body.sbot-demo-on .kgd-app { padding-left: 392px; }
+.sbx.sbot-dock { position: fixed; left: 10px; top: 10px; bottom: 10px; width: 372px; z-index: 1100; /* 高于 antd 弹窗遮罩（1000），弹窗打开时也能点「允许」 */ display: flex; background: transparent; }
+/* 面板自带 SEDRIC Bots 的浅色彩斑底，不透出 MES 的深蓝背景 */
+.sbx.sbot-dock .sbot-dock-panel {
+  flex: 1; min-height: 0;
+  background:
+    radial-gradient(120% 60% at 0% 0%, color-mix(in srgb, var(--blob-1) 55%, transparent), transparent 60%),
+    radial-gradient(90% 50% at 100% 35%, color-mix(in srgb, var(--blob-2) 45%, transparent), transparent 60%),
+    radial-gradient(110% 55% at 20% 100%, color-mix(in srgb, var(--blob-3) 50%, transparent), transparent 60%),
+    rgba(250, 251, 255, 0.94);
+}
+.sbx.sbot-dock .chat-head { background: rgba(255, 255, 255, 0.55); }
+.sbx.sbot-dock .chat-foot { background: transparent; }
+.sbx.sbot-dock .chat-head { gap: 8px; }
+.sbx.sbot-dock .chat-inner { padding-left: 14px; padding-right: 14px; }
+.sbx.sbot-dock .chat-empty h2 { font-size: 19px; }
+.sbx.sbot-dock .chat-foot { padding: 8px 10px 10px; }
+.sbx .sbot-dock-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 6px 12px 0; flex: none; }
+.sbx .sbot-dock-tabs .pill { flex: none; display: block; white-space: nowrap; max-width: 140px; overflow: hidden; text-overflow: ellipsis; padding: 3px 10px; border-radius: 999px; font-size: 12px; background: var(--fill); }
+.sbx .sbot-dock-tabs .pill.on { background: var(--accent); color: #fff; }
+.sbx .sbot-allow { border-color: rgba(0, 122, 255, 0.45); }
+.sbx .sbot-dock-busy { position: absolute; right: 14px; top: 16px; }
+.sbx .notice { display: flex; gap: 8px; align-items: center; margin: 10px 0; padding: 10px 12px; border-radius: 12px; background: var(--accent-soft); font-size: 13px; }
+
+/* .sbx 根继承了 SEDRIC Bots 的 html/body 样式（铺满、隐藏溢出），嵌在 MES 里的小部件要还原 */
+.sbx.sbot-mode-switch, .sbx.sbot-dock { height: auto; min-height: 0; overflow: visible; background: transparent; }
+.sbx.sbot-mode-switch { display: inline-flex; flex: none; font-size: 12.5px; }
+.sbx.sbot-mode-switch .side-filters { background: rgba(118, 118, 128, 0.14); }
+.sbx.sbot-mode-switch .pill { flex: none; padding: 2px 11px; white-space: nowrap; }
+.sbx .sbot-side-mode .sbx.sbot-mode-switch, .sbx .sbot-side-mode .side-filters { width: 100%; }
+.sbx .sbot-side-mode .pill { flex: 1; }
+.sbx .composer textarea { scrollbar-width: none; min-height: 36px; }
+.sbx .composer textarea::placeholder { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* 代操作光标与高亮（在页面最上层，不挡点击） */
+#sbot-cursor { position: fixed; left: 0; top: 0; z-index: 2147483000; pointer-events: none; opacity: 0; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s; filter: drop-shadow(0 3px 6px rgba(20, 40, 90, 0.35)); }
+#sbot-cursor.is-on { opacity: 1; }
+#sbot-cursor svg { display: block; transition: transform 0.12s; }
+#sbot-cursor.press svg { transform: scale(0.82); }
+#sbot-cursor .sbot-cursor-tag { position: absolute; left: 20px; top: 18px; white-space: nowrap; padding: 3px 9px; border-radius: 999px; background: #4184F4; color: #fff; font-size: 12px; box-shadow: 0 4px 12px rgba(65, 132, 244, 0.35); }
+#sbot-cursor .sbot-cursor-tag:empty { display: none; }
+#sbot-ring { position: fixed; z-index: 2147482999; pointer-events: none; border-radius: 10px; border: 2px solid #4184F4; box-shadow: 0 0 0 4px rgba(65, 132, 244, 0.18); opacity: 0; transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+#sbot-ring.is-on { opacity: 1; }
+
+@media (max-width: 900px) {
+  body.sbot-demo-on .kgd-app { padding-left: 0; padding-bottom: 46vh; }
+  .sbx.sbot-dock { left: 6px; right: 6px; top: auto; width: auto; height: 44vh; }
+}
+
+/* 经验库面板（在聊天区顶部展开） */
+.sbx .sbot-mem { flex: none; max-height: 58%; display: flex; flex-direction: column; margin: 8px 12px 0; border-radius: 16px; background: var(--mat-thick); border: 0.5px solid var(--rim); box-shadow: var(--shadow-panel); overflow: hidden; animation: sbx-pane-in 0.26s var(--ease); }
+.sbx .sbot-mem-head { display: flex; gap: 10px; align-items: flex-start; padding: 12px 12px 8px 14px; color: var(--accent-2); }
+.sbx .sbot-mem-title { flex: 1; display: flex; flex-direction: column; gap: 2px; color: var(--text); }
+.sbx .sbot-mem-title span { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.sbx .sbot-mem-list { flex: 1; min-height: 0; overflow-y: auto; padding: 0 12px 8px; display: flex; flex-direction: column; gap: 6px; }
+.sbx .sbot-mem-item { padding: 9px 11px; border-radius: 12px; background: rgba(255, 255, 255, 0.72); border: 0.5px solid var(--rim); }
+.sbx .sbot-mem-text { font-size: 13px; line-height: 1.6; white-space: pre-wrap; }
+.sbx .sbot-mem-meta { display: flex; justify-content: space-between; gap: 8px; margin-top: 4px; font-size: 11.5px; color: var(--faint); }
+.sbx .sbot-mem-ops { display: flex; gap: 10px; }
+.sbx .sbot-mem-ops .link { color: var(--accent); font-size: 12px; }
+.sbx .sbot-mem-ops .link.danger { color: var(--danger); }
+.sbx .sbot-mem-item textarea { width: 100%; resize: vertical; font-size: 13px; }
+.sbx .sbot-mem-actions { display: flex; justify-content: flex-end; gap: 6px; margin-top: 6px; }
+.sbx .sbot-mem-empty { padding: 14px 4px; font-size: 13px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.sbx .sbot-mem-add { display: flex; gap: 6px; padding: 8px 12px 12px; border-top: 0.5px solid var(--sep); }
+.sbx .sbot-mem .event.error { margin: 0 12px 8px; }
+.sbx .event.memory { white-space: pre-wrap; text-align: left; background: rgba(94, 92, 230, 0.1); color: #3a38a8; border-radius: 12px; padding: 8px 12px; max-width: 92%; }
+
+/* 代操作时，MES 的弹窗、抽屉只在面板右边的区域里显示，不被面板盖住 */
+body.sbot-demo-on .ant-modal-wrap,
+body.sbot-demo-on .ant-image-preview-wrap { left: 392px !important; }
+body.sbot-demo-on .ant-modal-wrap .ant-modal { max-width: calc(100vw - 420px); }
+body.sbot-demo-on .ant-drawer-left .ant-drawer-content-wrapper { left: 392px !important; }
+body.sbot-demo-on .ant-drawer-right .ant-drawer-content-wrapper,
+body.sbot-demo-on .ant-drawer-top .ant-drawer-content-wrapper,
+body.sbot-demo-on .ant-drawer-bottom .ant-drawer-content-wrapper { max-width: calc(100vw - 392px); }
+body.sbot-demo-on .ant-message, body.sbot-demo-on .ant-notification-topLeft, body.sbot-demo-on .ant-notification-bottomLeft { margin-left: 196px; }
+@media (max-width: 900px) {
+  body.sbot-demo-on .ant-modal-wrap { left: 0 !important; bottom: 46vh; }
+  body.sbot-demo-on .ant-modal-wrap .ant-modal { max-width: calc(100vw - 16px); }
+}
+/* 嵌在主区域里的弹窗（如商品编辑器）本来就不会被面板挡住，保持原位 */
+body.sbot-demo-on .kgd-main .ant-modal-wrap { left: 0 !important; }
+
+/* 拖拽上传：附件卡片 */
+.sbx .att-row { display: flex; flex-wrap: wrap; gap: 6px; padding: 4px 4px 6px; }
+.sbx .att .att-name { max-width: 150px; }
+.sbx .att .att-size { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 170px; }
+.sbx .att.att-bad { background: color-mix(in srgb, #f5222d 10%, transparent); color: #cf1322; max-width: 100%; }
+.sbx .att.att-bad .att-size { color: #cf1322; max-width: 260px; }
+.sbx .composer.drag { box-shadow: 0 0 0 2px var(--accent), var(--shadow-float); }
+.sbx .composer-drop { font-size: 13px; text-align: center; padding: 0 8px; }
+.sbx .msg.user .msg-files { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px; margin-bottom: 4px; }
+.sbx .msg.user .msg-files .file-chip { background: rgba(255, 255, 255, 0.22); color: inherit; }

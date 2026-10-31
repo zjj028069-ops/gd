@@ -1,0 +1,62 @@
+{
+ "id": "s1a181af197519db4b",
+ "bot": "sedric-mes",
+ "title": "查一下最近的加工单",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793177098613,
+ "updated": 1793184069101,
+ "last_read": 1793184065795,
+ "messages": [
+  {
+   "role": "user",
+   "content": "查一下最近的加工单",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a182196902a04c0b",
+   "at": 1793184065794
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a182196906bc2449",
+   "tool_calls": [
+    {
+     "id": "call_00_AjnYxjn6iEKSzZDWThLi7540",
+     "type": "function",
+     "function": {
+      "name": "mes_list_work_orders",
+      "arguments": "{}"
+     }
+    }
+   ],
+   "id": "m1a182196d0e6d73a9",
+   "at": 1793184066830
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_AjnYxjn6iEKSzZDWThLi7540",
+   "name": "mes_list_work_orders",
+   "content": "{\"items\": [{\"id\": \"249d02db-6857-4c48-b6f6-a7cbf7547a22\", \"code\": \"JG261028-2\", \"product\": \"本地验收样例产品-demo-b\", \"plan_qty\": \"5.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": \"2026-11-26\", \"tasks\": 1, \"created_at\": \"2026-10-28T09:17:41.865Z\"}, {\"id\": \"e6a27388-2d9f-444b-a0e4-79ad68ee62c7\", \"code\": \"JG261028-1\", \"product\": \"本地验收样例产品-demo-b\", \"plan_qty\": \"100.000000\", \"output_qty\": \"5.000000\", \"status\": \"已完成\", \"priority\": \"正常\", \"due_date\": \"2026-11-05\", \"tasks\": 1, \"created_at\": \"2026-10-28T08:57:19.329Z\"}], \"total\": 2, \"page\": 1}",
+   "id": "m1a182196f07077868",
+   "at": 1793184067335
+  },
+  {
+   "role": "assistant",
+   "content": "最近只有 2 张加工单：\n\n**1. JG261028-2**\n- 商品：本地验收样例产品-demo-b\n- 计划 5，已产出 0\n- 状态：未开始｜优先级：未设置\n- 交货日期：2026-11-26\n- 工序 1 道\n\n**2. JG261028-1**\n- 商品：本地验收样例产品-demo-b\n- 计划 100，已产出 5\n- 状态：已完成｜优先级：正常\n- 交货日期：2026-11-05\n\n需要看某张的工序进度或用料详情吗？",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a182196f0868da87",
+   "id": "m1a1821975edfd718e",
+   "at": 1793184069101
+  }
+ ],
+ "mes": true,
+ "owner": "0100d848-490f-41f1-9c04-a62fc302483e:54f83a7d-0bc1-429b-ba70-ddc8a96057f7",
+ "mode": "chat",
+ "driver_tab": "s9bxvugtw0mvrzcmfq"
+}

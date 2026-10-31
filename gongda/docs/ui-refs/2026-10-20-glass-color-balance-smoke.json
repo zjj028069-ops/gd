@@ -1,0 +1,38 @@
+{
+  "ok": true,
+  "steps": [],
+  "inputs": [
+    {
+      "type": "text",
+      "ph": "请输入企业标识",
+      "name": "",
+      "id": ""
+    },
+    {
+      "type": "text",
+      "ph": "请输入账号",
+      "name": "",
+      "id": ""
+    },
+    {
+      "type": "password",
+      "ph": "请输入密码",
+      "name": "",
+      "id": ""
+    }
+  ],
+  "e": "企业",
+  "u": "账号",
+  "afterLogin": "http://129.204.53.109/app/staging/area",
+  "colors": {
+    "sidebarBg": "rgba(18, 52, 98, 0.42)",
+    "cardBg": "rgba(248, 250, 255, 0.86)",
+    "topBg": "rgba(248, 250, 255, 0.72)",
+    "activeBg": "rgb(65, 132, 244)",
+    "appBgHas071428": false,
+    "cssVarSidebar": "rgba(18, 52, 98, .42)",
+    "flyoutVisible": 0,
+    "url": "/app/supplier/list"
+  },
+  "shot": "/Users/allen/SEDRIC01-preview/docs/ui-refs/2026-10-20-glass-color-balance-smoke.png"
+}

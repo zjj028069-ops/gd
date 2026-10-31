@@ -1,0 +1,74 @@
+login inputs count=3
+input name=null type=null ph=请输入企业标识
+input name=null type=null ph=请输入账号
+input name=null type=password ph=请输入密码
+after login url=http://127.0.0.1:5183/staging/area
+OK 01-workplace url=http://127.0.0.1:5183/staging/area title=快工单 head=主页
+/
+工作台
+/
+工作台
+OK 02-customer-list url=http://127.0.0.1:5183/customer/list title=快工单 head=主页
+/
+客户管理
+/
+列表
+OK 03-goods-list url=http://127.0.0.1:5183/goods/list title=快工单 head=主页
+/
+商品管理
+/
+商品列表
+/
+列表
+OK 04-bom-list url=http://127.0.0.1:5183/bom/list title=快工单 head=主页
+/
+商品管理
+/
+BOM管理
+/
+列表
+OK 05-work-orders url=http://127.0.0.1:5183/inside_produce_bill/list title=快工单 head=主页
+/
+生产管理
+/
+加工单
+/
+列表
+OK 06-purchase url=http://127.0.0.1:5183/purchase_order/list title=快工单 head=主页
+/
+供应/采购
+/
+采购
+/
+采购单
+/
+列表
+OK 07-warehouse-stock url=http://127.0.0.1:5183/goods_stock/list title=快工单 head=主页
+/
+仓库管理
+/
+库存管理
+/
+列表
+OK 08-report-machine url=http://127.0.0.1:5183/drilling_crew_statement/list title=快工单 head=主页
+/
+报表中心
+/
+生产管理
+/
+机台报表
+/
+列表
+OK 09-screen-manage url=http://127.0.0.1:5183/screen_management/list title=快工单 head=主页
+/
+数据大屏
+/
+大屏管理
+/
+列表
+OK 10-system-org url=http://127.0.0.1:5183/staging/area title=快工单 head=主页
+/
+工作台
+/
+工作台
+no preview button on screen manage

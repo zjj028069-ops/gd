@@ -1,0 +1,52 @@
+/* 企业信息页底部按钮对齐 — 仅布局/样式，不改业务逻辑 */
+/* 主色 #4184F4（沿用全局 primary；本文件不改色语义） */
+
+.kgd-enterprise-page .kgd-enterprise-logo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.kgd-enterprise-page .kgd-enterprise-logo-col .kgd-logo-field {
+  margin-bottom: 0;
+}
+
+.kgd-enterprise-page .kgd-enterprise-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+}
+
+.kgd-enterprise-page .kgd-enterprise-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+/* 去掉「保存」原先 marginTop:12 造成的阶梯错位；保证同基线、等高 */
+.kgd-enterprise-page .kgd-enterprise-actions .ant-btn {
+  margin: 0 !important;
+  height: 32px;
+  line-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kgd-enterprise-page .kgd-enterprise-actions .ant-btn-primary {
+  background: #4184F4;
+  border-color: #4184F4;
+}
+
+.kgd-enterprise-page .kgd-enterprise-actions .ant-btn-primary:hover,
+.kgd-enterprise-page .kgd-enterprise-actions .ant-btn-primary:focus {
+  background: #3570d9;
+  border-color: #3570d9;
+}

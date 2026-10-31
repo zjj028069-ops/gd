@@ -1,0 +1,123 @@
+{
+ "id": "s1a182199c3bc4c771",
+ "bot": "sedric-mes",
+ "title": "把最新那张加工单的交货日期改到下周五",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793184078907,
+ "updated": 1793184096294,
+ "last_read": 1793184084297,
+ "messages": [
+  {
+   "role": "user",
+   "content": "把最新那张加工单的交货日期改到下周五",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a18219b1484f9f54",
+   "at": 1793184084296
+  },
+  {
+   "role": "assistant",
+   "content": "我先看一下最新的加工单。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18219b14a4ef405",
+   "tool_calls": [
+    {
+     "id": "call_00_H2MiiydfwEzrifacNdLD0049",
+     "type": "function",
+     "function": {
+      "name": "mes_list_work_orders",
+      "arguments": "{}"
+     }
+    }
+   ],
+   "id": "m1a18219b734880e8c",
+   "at": 1793184085812
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_H2MiiydfwEzrifacNdLD0049",
+   "name": "mes_list_work_orders",
+   "content": "{\"items\": [{\"id\": \"249d02db-6857-4c48-b6f6-a7cbf7547a22\", \"code\": \"JG261028-2\", \"product\": \"本地验收样例产品-demo-b\", \"plan_qty\": \"5.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": \"2026-11-26\", \"tasks\": 1, \"created_at\": \"2026-10-28T09:17:41.865Z\"}, {\"id\": \"e6a27388-2d9f-444b-a0e4-79ad68ee62c7\", \"code\": \"JG261028-1\", \"product\": \"本地验收样例产品-demo-b\", \"plan_qty\": \"100.000000\", \"output_qty\": \"5.000000\", \"status\": \"已完成\", \"priority\": \"正常\", \"due_date\": \"2026-11-05\", \"tasks\": 1, \"created_at\": \"2026-10-28T08:57:19.329Z\"}], \"total\": 2, \"page\": 1}",
+   "id": "m1a18219b91071c8d8",
+   "at": 1793184086288
+  },
+  {
+   "role": "assistant",
+   "content": "最新一张是 **JG261028-2**（本地验收样例产品-demo-b，计划数 5，未开始，现交货日期 2026-11-26）。\n\n本周是 10/28（周三），下周五是 **2026-11-06**。确认把 JG261028-2 的交货日期改成 2026-11-06 吗？",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18219b912c0786c",
+   "tool_calls": [
+    {
+     "id": "call_00_pXOF6JBvASpShR2BY2gw8638",
+     "type": "function",
+     "function": {
+      "name": "clarify",
+      "arguments": "{\"question\": \"把 JG261028-2 的交货日期改为 2026-11-06（下周五）？\", \"choices\": [\"确认，改为 2026-11-06\", \"不对，我指的是其他日期\"]}"
+     }
+    }
+   ],
+   "id": "m1a18219c09c631a1b",
+   "at": 1793184088220
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_pXOF6JBvASpShR2BY2gw8638",
+   "name": "clarify",
+   "content": "确认，改为 2026-11-06",
+   "id": "m1a18219c81fba3e3c",
+   "at": 1793184090143
+  },
+  {
+   "role": "assistant",
+   "content": "",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18219c821bdff8b",
+   "tool_calls": [
+    {
+     "id": "call_00_28eBs4MkzXNbajEqwLB30999",
+     "type": "function",
+     "function": {
+      "name": "mes_update_work_order",
+      "arguments": "{\"work_order_id\": \"249d02db-6857-4c48-b6f6-a7cbf7547a22\", \"due_date\": \"2026-11-06\"}"
+     }
+    }
+   ],
+   "id": "m1a18219cf192bbb2a",
+   "at": 1793184091929
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：修改加工单\n加工单：JG261028-2（本地验收样例产品-demo-b）\n交货日期：2026-11-26 → 2026-11-06",
+   "id": "m1a18219d7eaaeff36",
+   "at": 1793184094186
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_28eBs4MkzXNbajEqwLB30999",
+   "name": "mes_update_work_order",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"249d02db-6857-4c48-b6f6-a7cbf7547a22\", \"code\": \"JG261028-2\", \"product\": \"本地验收样例产品-demo-b\", \"plan_qty\": \"5.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": \"2026-11-06\", \"tasks\": 1, \"created_at\": \"2026-10-28T09:17:41.865Z\", \"planned_start\": null, \"planned_end\": null, \"note\": \"\"}}",
+   "id": "m1a18219d9dd1529de",
+   "at": 1793184094685
+  },
+  {
+   "role": "assistant",
+   "content": "改好了 ✅\n\n- 加工单：JG261028-2（本地验收样例产品-demo-b，计划数 5，未开始）\n- 交货日期：2026-11-26 → **2026-11-06**（下周五）\n\n还需要顺手设计划开始/结束日期或优先级吗？",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a18219d9dfe7f2d2",
+   "id": "m1a18219e026344d44",
+   "at": 1793184096294
+  }
+ ],
+ "mes": true,
+ "owner": "0100d848-490f-41f1-9c04-a62fc302483e:54f83a7d-0bc1-429b-ba70-ddc8a96057f7",
+ "mode": "chat",
+ "driver_tab": "s9bxvugtw0mvrzcmfq"
+}

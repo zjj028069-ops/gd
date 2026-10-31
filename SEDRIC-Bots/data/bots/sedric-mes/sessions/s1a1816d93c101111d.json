@@ -1,0 +1,94 @@
+{
+ "id": "s1a1816d93c101111d",
+ "bot": "sedric-mes",
+ "title": "把最新那张加工单的交货日期改到下周五，优先级改成加急",
+ "kind": "chat",
+ "hidden": true,
+ "created": 1793172804545,
+ "updated": 1793172811035,
+ "last_read": 1793172804566,
+ "messages": [
+  {
+   "role": "user",
+   "content": "把最新那张加工单的交货日期改到下周五，优先级改成加急",
+   "attachments": [],
+   "from": {
+    "kind": "user"
+   },
+   "id": "m1a1816d93d5de7197",
+   "at": 1793172804565
+  },
+  {
+   "role": "assistant",
+   "content": "我先查一下最新的加工单。",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816d93d9ceff18",
+   "tool_calls": [
+    {
+     "id": "call_00_6vC8EASGs5XqiV0ik4uW9656",
+     "type": "function",
+     "function": {
+      "name": "mes_list_work_orders",
+      "arguments": "{}"
+     }
+    }
+   ],
+   "id": "m1a1816d98e80b5ecf",
+   "at": 1793172805864
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_6vC8EASGs5XqiV0ik4uW9656",
+   "name": "mes_list_work_orders",
+   "content": "{\"items\": [{\"id\": \"c6883fa1-a067-4129-883d-a1aa5d8ac7a8\", \"code\": \"WO000008\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"12.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": null, \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:48.722Z\"}, {\"id\": \"67ba14f3-a543-47b5-8156-fcdb1f76c86b\", \"code\": \"WO000007\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"20.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"加急\", \"due_date\": \"2026-11-20\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:32.276Z\"}, {\"id\": \"14145c1d-5b54-43c8-a075-a79591aaee1d\", \"code\": \"WO000006\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"30.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": \"2026-11-06\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:23.398Z\"}, {\"id\": \"1c208ab2-57d0-4689-b88a-48c8c494432f\", \"code\": \"WO000005\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"30.000000\", \"output_qty\": \"0.000000\", \"status\": \"已取消\", \"priority\": \"未设置\", \"due_date\": null, \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:12.162Z\"}, {\"id\": \"49c5b053-9d33-497f-aecb-752b558e070d\", \"code\": \"WO000004\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"10.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"加急\", \"due_date\": \"2026-11-15\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:24:24.697Z\"}, {\"id\": \"f99275de-57c3-4955-909b-7d7ecdc520f0\", \"code\": \"WO000003\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"10.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"加急\", \"due_date\": \"2026-11-15\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:23:06.444Z\"}, {\"id\": \"73a1581f-41ae-4371-a04f-0eb06fddedb5\", \"code\": \"WO000002\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"10.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"加急\", \"due_date\": \"2026-11-15\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:22:52.368Z\"}, {\"id\": \"a7d84681-4c63-4474-8147-46cf0c224e5b\", \"code\": \"WO000001\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"10.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"未设置\", \"due_date\": null, \"tasks\": 1, \"created_at\": \"2026-10-28T07:13:25.996Z\"}], \"total\": 8, \"page\": 1}",
+   "id": "m1a1816d9b118874bb",
+   "at": 1793172806417
+  },
+  {
+   "role": "assistant",
+   "content": "最新的是 WO000008（本地验收样例产品-demo-a，计划 12），当前未开始，交货日期为空。今天 2026-10-28 周三，下周五是 **2026-11-06**。\n\n我把这张单的交货日期改成 2026-11-06、优先级改成加急：",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816d9b12363bd7",
+   "tool_calls": [
+    {
+     "id": "call_00_jtOyzKuJWSIUVhKhn7Ly6852",
+     "type": "function",
+     "function": {
+      "name": "mes_update_work_order",
+      "arguments": "{\"work_order_id\": \"c6883fa1-a067-4129-883d-a1aa5d8ac7a8\", \"due_date\": \"2026-11-06\", \"priority\": \"urgent\"}"
+     }
+    }
+   ],
+   "id": "m1a1816da1f5d68087",
+   "at": 1793172808181
+  },
+  {
+   "role": "event",
+   "kind": "approval",
+   "content": "✅ 已批准：修改加工单\n加工单：WO000008（本地验收样例产品-demo-a）\n交货日期：未填 → 2026-11-06\n优先级：未设置 → 加急",
+   "id": "m1a1816da5c351d6a5",
+   "at": 1793172809155
+  },
+  {
+   "role": "tool",
+   "tool_call_id": "call_00_jtOyzKuJWSIUVhKhn7Ly6852",
+   "name": "mes_update_work_order",
+   "content": "{\"ok\": true, \"work_order\": {\"id\": \"c6883fa1-a067-4129-883d-a1aa5d8ac7a8\", \"code\": \"WO000008\", \"product\": \"本地验收样例产品-demo-a\", \"plan_qty\": \"12.000000\", \"output_qty\": \"0.000000\", \"status\": \"未开始\", \"priority\": \"加急\", \"due_date\": \"2026-11-06\", \"tasks\": 1, \"created_at\": \"2026-10-28T07:29:48.722Z\", \"planned_start\": null, \"planned_end\": null, \"note\": \"\"}}",
+   "id": "m1a1816da7ab383d72",
+   "at": 1793172809643
+  },
+  {
+   "role": "assistant",
+   "content": "改好了。\n\n- 加工单：WO000008（本地验收样例产品-demo-a，计划数 12）\n- 交货日期：2026-11-06（下周五）\n- 优先级：加急\n- 状态：未开始\n\n要不要顺便把计划开始、计划结束也一起定下来？",
+   "model": "deepseek-chat",
+   "provider": "mes-env",
+   "stream": "st1a1816da7ad77c904",
+   "id": "m1a1816dad1bd7790e",
+   "at": 1793172811035
+  }
+ ],
+ "mes": true,
+ "owner": "eb7c8ef9-858b-427d-8656-0b55c995cfef:54f83a7d-0bc1-429b-ba70-ddc8a96057f7"
+}

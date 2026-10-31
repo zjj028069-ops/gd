@@ -1,0 +1,21 @@
+/* 平台管理后台：外壳、列表、详情全部沿用原系统 kgd.css，这里只放少量补充 */
+.plat-app .plat-menu-ico { display: inline-flex; width: 18px; justify-content: center; font-size: 16px; }
+.plat-muted { color: #8a94a6; font-size: 12px; }
+.plat-warn { color: #d97706; }
+.plat-danger { color: #dc2626 !important; cursor: pointer; }
+.plat-empty { padding: 24px 0; color: #8a94a6; }
+.plat-empty span { font-size: 12px; }
+.plat-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+.plat-section { margin: 4px 0 10px; padding-top: 10px; border-top: 1px dashed #e5e9f0; color: #6b7280; font-size: 13px; }
+.plat-secret code { padding: 4px 10px; border-radius: 4px; background: #f3f6fb; font-size: 16px; letter-spacing: 0.5px; user-select: all; }
+.plat-notice, .plat-error { margin: 0 0 12px; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+.plat-notice { background: #eef5ff; color: #2f5fb3; }
+.plat-error { background: #fff1f0; color: #cf1322; }
+.plat-hint { margin-top: 14px; font-size: 12px; color: #8a94a6; line-height: 1.6; }
+.plat-app .kgd-toolbar { align-items: center; }
+@media (max-width: 900px) { .plat-grid { grid-template-columns: 1fr; } }
+/* 密码弹窗：一行一项，账号/密码不换行 */
+.kgd-detail-grid.plat-secret { grid-template-columns: 1fr; gap: 10px; margin: 6px 0 14px; }
+.kgd-detail-grid.plat-secret div { align-items: center; }
+.kgd-detail-grid.plat-secret dt { min-width: 40px; }
+.kgd-detail-grid.plat-secret code { white-space: nowrap; }

@@ -1,0 +1,15 @@
+.wh-stock-tabs { margin-bottom: 12px; }
+.wh-stock-tabs button { margin-right: 8px; padding: 4px 12px; border: 1px solid #d9d9d9; background: #fff; cursor: pointer; border-radius: 4px; }
+.wh-stock-tabs button.on { color: #1890ff; border-color: #1890ff; }
+.wh-progress-cell { display: inline-flex; align-items: center; gap: 8px; min-width: 140px; }
+.wh-progress-cell .ant-progress { width: 80px; margin: 0; }
+.wh-setting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.wh-setting-card { border: 1px solid #f0f0f0; padding: 16px; border-radius: 8px; }
+.wh-form-tip { color: #888; font-size: 12px; margin-bottom: 8px; }
+.wh-row-over { background: #fff1f0 !important; }
+.wh-qty-over,
+.wh-qty-over.ant-input { background: #fff1f0 !important; }
+.wh-row-missing { background: #fafafa !important; color: #bbb; }
+.wh-bill-modal .kgd-form { display: grid; grid-template-columns: 120px 1fr; gap: 8px 12px; align-items: center; max-width: 960px; }
+.wh-stock-alarm { margin-left: 6px; font-size: 12px; color: #fa8c16; }
+.wh-stock-alarm.high { color: #f5222d; }

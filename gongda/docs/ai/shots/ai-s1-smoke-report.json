@@ -1,0 +1,77 @@
+{
+  "ok": true,
+  "version": "SEDRIC01 v1.0.25",
+  "base": "release/sedric-v1.0.23",
+  "feature": "ai-s1-factory-ask",
+  "api": "http://127.0.0.1:3011",
+  "web": "http://127.0.0.1:5183",
+  "shell": "http://127.0.0.1:5180",
+  "shots": {
+    "sidebar": "/workspace/docs/ai/shots/ai-s1-sidebar.png",
+    "cards": "/workspace/docs/ai/shots/ai-s1-triple-cards.png",
+    "mes": "/workspace/docs/ai/shots/ai-s1-mes-deeplink.png"
+  },
+  "results": [
+    {
+      "title": "VERSION 为 v1.0.25",
+      "ok": true,
+      "reason": "SEDRIC01 v1.0.25"
+    },
+    {
+      "title": "chat-shell/version.json 为 1.0.25 / ai-s1-factory-ask",
+      "ok": true,
+      "reason": "{\"name\":\"SEDRIC01\",\"version\":\"1.0.25\",\"display\":\"SEDRIC01 v1.0.25\",\"feature\":\"ai-s1-factory-ask\",\"base\":\"release/sedric-v1.0.23\"}"
+    },
+    {
+      "title": "API 问应收 → money 卡片（非 FAQ）",
+      "ok": true,
+      "reason": "{\"answer\":\"应收合计 ¥0.00，已收 ¥0.00，未收 ¥0.00；应付合计 ¥0.00，已付 ¥0.00，未付 ¥0.00。\",\"cards\":[{\"title\":\"应收合计\",\"value\":\"¥0.00\",\"action_path\":\"/customer_financier/list\",\"action_label\":\"去处理\"},{\"title\":\"已收\",\"value\":\"¥0.00\",\"action_path\":\"/customer_financier/"
+    },
+    {
+      "title": "API 问进度 → progress + 深链",
+      "ok": true,
+      "reason": "{\"answer\":\"当前共有 0 张加工单，其中在产 0 张（生产中 0、暂停 0），未开始 0 张，已完成 0 张。\",\"cards\":[{\"title\":\"加工单总数\",\"value\":\"0\",\"action_path\":\"/inside_produce_bill/list\",\"action_label\":\"去处理\"},{\"title\":\"在产（生产中+暂停）\",\"value\":\"0\",\"h"
+    },
+    {
+      "title": "API 问工资待审 → wage + 深链",
+      "ok": true,
+      "reason": "{\"answer\":\"本期工资源账合计 ¥0.00；报工待审 0 笔；待结（已审未结算） 0 笔、约 ¥0.00；已结 0 笔、约 ¥0.00。\",\"cards\":[{\"title\":\"本期工资源账合计\",\"value\":\"¥0.00\",\"action_path\":\"/work_repoty_record/list\",\"action_label\":\"去处理\"},{\"title\":\"报工待审笔数\","
+    },
+    {
+      "title": "API 查一下三本账 → triple 三卡 books",
+      "ok": true,
+      "reason": "{\"intent\":\"triple\",\"books\":[{\"intent\":\"progress\",\"path\":\"/inside_produce_bill/list\"},{\"intent\":\"money\",\"path\":\"/customer_financier/list\"},{\"intent\":\"wage\",\"path\":\"/work_repoty_record/list\"}]}"
+    },
+    {
+      "title": "briefing stub 形状",
+      "ok": true,
+      "reason": "{\"supported\":[\"manual_triple\"],\"push\":\"reserved\",\"channels\":[\"chat_manual\",\"push_reserved\"],\"message\":\"晨报/异常推送接口已预留；本冲刺请用聊天「查一下三本账」手动拉取只读摘要。\",\"sample_subscribe\":{\"channel\":\"push_re"
+    },
+    {
+      "title": "现网毛玻璃侧栏 .kgd-sidebar-primary（非旧壳）",
+      "ok": true,
+      "reason": "primary=14 labels=工作台▾|数据大屏▸|报表中心▸|客户管理▸|精益生产▸|生产管理▸|设备维保▸|供应/采购▸"
+    },
+    {
+      "title": "聊天壳一次出三本账卡片",
+      "ok": true,
+      "reason": "books=3"
+    },
+    {
+      "title": "去处理按钮带 MES 深链",
+      "ok": true,
+      "reason": "/inside_produce_bill/list"
+    },
+    {
+      "title": "去处理打开对应 MES iframe 路由",
+      "ok": true,
+      "reason": "/app/inside_produce_bill/list"
+    },
+    {
+      "title": "MES 页可见模块标题（毛玻璃侧栏壳）",
+      "ok": true,
+      "reason": "赛\n赛德瑞科\n工作台\n▸\n数据大屏\n▸\n报表中心\n▸\n客户管理\n▸\n精益生产\n▸\n生产管理\n▾\n项目管理\n生产计划\n▸\n加工单\n生产排产\n生产任务\n报工记录\n质检中心\n▸\n外协加工\n▸\n成本分摊\n机台管理\n工序管理\n岗位安排\n不良品项\n工艺路线\n工序附加组件\n溯源码管理\n报工工作"
+    }
+  ],
+  "at": "2026-10-20T13:59:18.581Z"
+}

@@ -1,0 +1,40 @@
+{
+  "target": "public",
+  "steps": [
+    {
+      "step": "open-page",
+      "ok": true,
+      "detail": "http://129.204.53.109/app/customer/quotation"
+    },
+    {
+      "step": "assets",
+      "ok": true,
+      "detail": [
+        "index-BylzSco9.js",
+        "index-C0wuyz4P.css"
+      ]
+    },
+    {
+      "step": "empty-tip-message",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "step": "empty-tip-inline",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "step": "modal-stays",
+      "ok": true,
+      "detail": true
+    },
+    {
+      "step": "save-ok",
+      "ok": true,
+      "detail": "公网冒烟1159"
+    }
+  ],
+  "at": "2026-10-20T09:28:52.273Z",
+  "viewName": "公网冒烟1159"
+}

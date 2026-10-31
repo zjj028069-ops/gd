@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "title": "API parse 成功",
+      "ok": true,
+      "reason": "steps=5"
+    },
+    {
+      "title": "API cancel 成功",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "AI 中心可见",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "图纸拆单卡片可见",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "进入图纸拆单页",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "上传后出现工序预览",
+      "ok": true,
+      "reason": ""
+    },
+    {
+      "title": "截图已保存",
+      "ok": true,
+      "reason": "/Users/allen/SEDRIC01-preview/docs/ai/shots/ai5-drawing.png"
+    }
+  ]
+}

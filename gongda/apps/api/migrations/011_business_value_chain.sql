@@ -1,0 +1,89 @@
+-- Fourth-step source-backed purchasing, quality, costing and settlements.
+ALTER TABLE work_orders ADD COLUMN cost_required boolean NOT NULL DEFAULT false;
+ALTER TABLE production_reports DROP CONSTRAINT production_reports_wage_status_check;
+ALTER TABLE production_reports ADD CONSTRAINT production_reports_wage_status_check CHECK(wage_status IN ('unpriced','priced'));
+ALTER TABLE production_reports ADD COLUMN wage_snapshot jsonb;
+ALTER TABLE production_reports ADD COLUMN effective_seconds integer NOT NULL DEFAULT 0 CHECK(effective_seconds BETWEEN 0 AND 2678400);
+ALTER TABLE stock_balances ADD COLUMN held_qty numeric(20,6) NOT NULL DEFAULT 0 CHECK(held_qty>=0);
+ALTER TABLE stock_balances ADD COLUMN blocked_qty numeric(20,6) NOT NULL DEFAULT 0 CHECK(blocked_qty>=0);
+ALTER TABLE stock_balances ADD COLUMN reserved_qty numeric(20,6) NOT NULL DEFAULT 0 CHECK(reserved_qty>=0);
+ALTER TABLE stock_balances ADD COLUMN released_value_cents numeric(30,0) DEFAULT 0 CHECK(released_value_cents>=0);
+ALTER TABLE stock_balances ADD COLUMN held_value_cents numeric(30,0) NOT NULL DEFAULT 0 CHECK(held_value_cents>=0);
+ALTER TABLE stock_balances ADD COLUMN blocked_value_cents numeric(30,0) NOT NULL DEFAULT 0 CHECK(blocked_value_cents>=0);
+ALTER TABLE stock_balances ADD COLUMN last_cost_event_id uuid;
+ALTER TABLE stock_balances ADD CONSTRAINT stock_quality_conservation CHECK(held_qty+blocked_qty+reserved_qty<=on_hand);
+UPDATE stock_balances SET released_value_cents=NULL WHERE on_hand>0;
+ALTER TABLE stock_ledger DROP CONSTRAINT stock_ledger_source_type_check;
+ALTER TABLE stock_ledger ADD CONSTRAINT stock_ledger_source_type_check CHECK(source_type IN ('adjustment','material_issue','fg_receipt','shipment','purchase_receipt','supplement_issue'));
+CREATE UNIQUE INDEX stock_ledger_one_reversal ON stock_ledger(tenant_id,reversal_of) WHERE reversal_of IS NOT NULL;
+ALTER TABLE inspections DROP CONSTRAINT inspections_state_check;
+ALTER TABLE inspections ADD CONSTRAINT inspections_state_check CHECK(state IN ('pending','completed','reversed','cancelled'));
+
+CREATE TABLE suppliers (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,name text NOT NULL,active boolean NOT NULL DEFAULT true,created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,code),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE purchase_orders (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,supplier_id uuid NOT NULL,order_date date NOT NULL,due_date date NOT NULL,note text NOT NULL DEFAULT '',approval text NOT NULL DEFAULT 'pending' CHECK(approval IN ('pending','approved','rejected')),lifecycle text NOT NULL DEFAULT 'open' CHECK(lifecycle IN ('open','closed','cancelled')),created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,code),FOREIGN KEY(tenant_id,supplier_id) REFERENCES suppliers(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE purchase_order_lines (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+order_id uuid NOT NULL,line_no integer NOT NULL,product_id uuid NOT NULL,unit_id uuid NOT NULL,quantity numeric(20,6) NOT NULL CHECK(quantity>0),unit_price numeric(21,7) NOT NULL CHECK(unit_price>=0),amount_cents numeric(30,0) NOT NULL CHECK(amount_cents>=0),requires_inspection boolean NOT NULL DEFAULT true,product_snapshot jsonb NOT NULL,received_qty numeric(20,6) NOT NULL DEFAULT 0 CHECK(received_qty>=0 AND received_qty<=quantity),UNIQUE(tenant_id,id),UNIQUE(tenant_id,order_id,line_no),FOREIGN KEY(tenant_id,order_id) REFERENCES purchase_orders(tenant_id,id),FOREIGN KEY(tenant_id,product_id) REFERENCES products(tenant_id,id),FOREIGN KEY(tenant_id,unit_id) REFERENCES units(tenant_id,id));
+
+CREATE TABLE purchase_receipts (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,order_id uuid NOT NULL,warehouse_id uuid NOT NULL,approval text NOT NULL DEFAULT 'pending' CHECK(approval IN ('pending','approved','rejected','reversed')),created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,code),FOREIGN KEY(tenant_id,order_id) REFERENCES purchase_orders(tenant_id,id),FOREIGN KEY(tenant_id,warehouse_id) REFERENCES warehouses(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE purchase_receipt_lines (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+receipt_id uuid NOT NULL,purchase_line_id uuid NOT NULL,product_id uuid NOT NULL,unit_id uuid NOT NULL,quantity numeric(20,6) NOT NULL CHECK(quantity>0),unit_price numeric(21,7) NOT NULL,amount_cents numeric(30,0) NOT NULL CHECK(amount_cents>=0),requires_inspection boolean NOT NULL,UNIQUE(tenant_id,id),UNIQUE(tenant_id,receipt_id,purchase_line_id),FOREIGN KEY(tenant_id,receipt_id) REFERENCES purchase_receipts(tenant_id,id),FOREIGN KEY(tenant_id,purchase_line_id) REFERENCES purchase_order_lines(tenant_id,id),FOREIGN KEY(tenant_id,product_id) REFERENCES products(tenant_id,id),FOREIGN KEY(tenant_id,unit_id) REFERENCES units(tenant_id,id));
+
+CREATE TABLE incoming_inspections (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,receipt_line_id uuid NOT NULL,quantity numeric(20,6) NOT NULL CHECK(quantity>0),sample_qty numeric(20,6) NOT NULL DEFAULT 0 CHECK(sample_qty>=0 AND sample_qty<=quantity),sample_good numeric(20,6) NOT NULL DEFAULT 0 CHECK(sample_good>=0),sample_defect numeric(20,6) NOT NULL DEFAULT 0 CHECK(sample_defect>=0),released_qty numeric(20,6) NOT NULL DEFAULT 0 CHECK(released_qty>=0),blocked_qty numeric(20,6) NOT NULL DEFAULT 0 CHECK(blocked_qty>=0),state text NOT NULL DEFAULT 'pending' CHECK(state IN ('pending','completed','reversed')),conclusion text NOT NULL DEFAULT 'pending' CHECK(conclusion IN ('pending','pass','fail','partial')),reason text NOT NULL DEFAULT '',created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),FOREIGN KEY(tenant_id,receipt_line_id) REFERENCES purchase_receipt_lines(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id),CHECK(sample_good+sample_defect=sample_qty),CHECK(released_qty+blocked_qty<=quantity),CHECK(conclusion<>'fail' OR released_qty=0));
+
+CREATE TABLE stock_cost_events (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+stock_ledger_id uuid,warehouse_id uuid NOT NULL,product_id uuid NOT NULL,unit_id uuid NOT NULL,event_key text NOT NULL,source_type text NOT NULL,source_id uuid NOT NULL,amount_cents numeric(30,0),direction text NOT NULL CHECK(direction IN ('in','out','transfer')),before_data jsonb NOT NULL,after_data jsonb NOT NULL,reversal_of uuid,created_by uuid NOT NULL,posted_at timestamptz NOT NULL DEFAULT now(),UNIQUE(tenant_id,id),UNIQUE(tenant_id,event_key),UNIQUE(tenant_id,stock_ledger_id),FOREIGN KEY(tenant_id,stock_ledger_id) REFERENCES stock_ledger(tenant_id,id),FOREIGN KEY(tenant_id,warehouse_id) REFERENCES warehouses(tenant_id,id),FOREIGN KEY(tenant_id,product_id) REFERENCES products(tenant_id,id),FOREIGN KEY(tenant_id,unit_id) REFERENCES units(tenant_id,id),FOREIGN KEY(tenant_id,reversal_of) REFERENCES stock_cost_events(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+CREATE UNIQUE INDEX stock_cost_event_one_reversal ON stock_cost_events(tenant_id,reversal_of) WHERE reversal_of IS NOT NULL;
+
+CREATE TABLE mrp_batches (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,work_order_id uuid NOT NULL,work_order_version integer NOT NULL,bom_version_id uuid NOT NULL,state text NOT NULL DEFAULT 'calculated' CHECK(state IN ('calculated','reserved','released')),inputs jsonb NOT NULL,created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,code),FOREIGN KEY(tenant_id,work_order_id) REFERENCES work_orders(tenant_id,id),FOREIGN KEY(tenant_id,bom_version_id) REFERENCES bom_versions(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE mrp_lines (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+batch_id uuid NOT NULL,material_id uuid NOT NULL,product_id uuid NOT NULL,unit_id uuid NOT NULL,required_qty numeric(20,6) NOT NULL,available_qty numeric(20,6) NOT NULL,shortage_qty numeric(20,6) NOT NULL,transferred_qty numeric(20,6) NOT NULL DEFAULT 0,CHECK(required_qty>=0 AND available_qty>=0 AND shortage_qty>=0 AND transferred_qty>=0 AND transferred_qty<=shortage_qty),UNIQUE(tenant_id,id),UNIQUE(tenant_id,batch_id,material_id),FOREIGN KEY(tenant_id,batch_id) REFERENCES mrp_batches(tenant_id,id),FOREIGN KEY(tenant_id,material_id) REFERENCES work_order_materials(tenant_id,id),FOREIGN KEY(tenant_id,product_id) REFERENCES products(tenant_id,id),FOREIGN KEY(tenant_id,unit_id) REFERENCES units(tenant_id,id));
+ALTER TABLE purchase_order_lines ADD COLUMN mrp_line_id uuid; ALTER TABLE purchase_order_lines ADD FOREIGN KEY(tenant_id,mrp_line_id) REFERENCES mrp_lines(tenant_id,id);
+
+CREATE TABLE stock_reservations (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+batch_id uuid NOT NULL,work_order_id uuid NOT NULL,warehouse_id uuid NOT NULL,product_id uuid NOT NULL,unit_id uuid NOT NULL,quantity numeric(20,6) NOT NULL,remaining_qty numeric(20,6) NOT NULL,consumed_qty numeric(20,6) NOT NULL DEFAULT 0,released_qty numeric(20,6) NOT NULL DEFAULT 0,created_at timestamptz NOT NULL DEFAULT now(),UNIQUE(tenant_id,id),FOREIGN KEY(tenant_id,batch_id) REFERENCES mrp_batches(tenant_id,id),FOREIGN KEY(tenant_id,work_order_id) REFERENCES work_orders(tenant_id,id),FOREIGN KEY(tenant_id,warehouse_id) REFERENCES warehouses(tenant_id,id),FOREIGN KEY(tenant_id,product_id) REFERENCES products(tenant_id,id),FOREIGN KEY(tenant_id,unit_id) REFERENCES units(tenant_id,id),CHECK(remaining_qty>=0 AND consumed_qty>=0 AND released_qty>=0 AND quantity=remaining_qty+consumed_qty+released_qty));
+
+CREATE TABLE reservation_consumptions (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+reservation_id uuid NOT NULL,event_key text NOT NULL,quantity numeric(20,6) NOT NULL CHECK(quantity>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,reservation_id,event_key),FOREIGN KEY(tenant_id,reservation_id) REFERENCES stock_reservations(tenant_id,id));
+
+CREATE TABLE wage_rules (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,product_id uuid,process_ids uuid[] NOT NULL CHECK(cardinality(process_ids)>0),mode text NOT NULL CHECK(mode IN ('piece','time')),active boolean NOT NULL DEFAULT true,current_revision integer NOT NULL DEFAULT 1,created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,code),FOREIGN KEY(tenant_id,product_id) REFERENCES products(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE wage_rule_versions (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+rule_id uuid NOT NULL,revision integer NOT NULL CHECK(revision>0),rate numeric(21,7) NOT NULL CHECK(rate>=0),product_id uuid,process_ids uuid[] NOT NULL,mode text NOT NULL CHECK(mode IN ('piece','time')),created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),UNIQUE(tenant_id,id),UNIQUE(tenant_id,rule_id,revision),FOREIGN KEY(tenant_id,rule_id) REFERENCES wage_rules(tenant_id,id),FOREIGN KEY(tenant_id,product_id) REFERENCES products(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE wage_events (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+report_id uuid NOT NULL,work_order_id uuid NOT NULL,worker_id uuid NOT NULL,event_key text NOT NULL,amount_cents numeric(30,0) NOT NULL,calculation_snapshot jsonb NOT NULL,reversal_of uuid,created_by uuid NOT NULL,posted_at timestamptz NOT NULL DEFAULT now(),UNIQUE(tenant_id,id),UNIQUE(tenant_id,event_key),FOREIGN KEY(tenant_id,report_id) REFERENCES production_reports(tenant_id,id),FOREIGN KEY(tenant_id,work_order_id) REFERENCES work_orders(tenant_id,id),FOREIGN KEY(tenant_id,worker_id) REFERENCES memberships(tenant_id,user_id),FOREIGN KEY(tenant_id,reversal_of) REFERENCES wage_events(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE open_items (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+kind text NOT NULL CHECK(kind IN ('receivable','payable')),party_id uuid NOT NULL,source_type text NOT NULL,source_id uuid NOT NULL,event_key text NOT NULL,amount_cents numeric(30,0) NOT NULL CHECK(amount_cents>=0),allocated_cents numeric(30,0) NOT NULL DEFAULT 0 CHECK(allocated_cents>=0 AND allocated_cents<=amount_cents),reversed boolean NOT NULL DEFAULT false,created_at timestamptz NOT NULL DEFAULT now(),UNIQUE(tenant_id,id),UNIQUE(tenant_id,event_key));
+
+CREATE TABLE payments (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,kind text NOT NULL CHECK(kind IN ('receivable','payable')),party_id uuid NOT NULL,amount_cents numeric(30,0) NOT NULL CHECK(amount_cents>0),payment_date date NOT NULL,method text NOT NULL DEFAULT 'manual',reference text NOT NULL DEFAULT '',approval text NOT NULL DEFAULT 'pending' CHECK(approval IN ('pending','approved','rejected','reversed')),created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,code),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE payment_allocations (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+payment_id uuid NOT NULL,open_item_id uuid NOT NULL,amount_cents numeric(30,0) NOT NULL CHECK(amount_cents>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,payment_id,open_item_id),FOREIGN KEY(tenant_id,payment_id) REFERENCES payments(tenant_id,id),FOREIGN KEY(tenant_id,open_item_id) REFERENCES open_items(tenant_id,id));
+
+CREATE TABLE financial_events (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+open_item_id uuid NOT NULL,payment_id uuid,event_key text NOT NULL,debt_cents numeric(30,0) NOT NULL DEFAULT 0,settled_cents numeric(30,0) NOT NULL DEFAULT 0,reversal_of uuid,created_by uuid NOT NULL,posted_at timestamptz NOT NULL DEFAULT now(),UNIQUE(tenant_id,id),UNIQUE(tenant_id,event_key),FOREIGN KEY(tenant_id,open_item_id) REFERENCES open_items(tenant_id,id),FOREIGN KEY(tenant_id,payment_id) REFERENCES payments(tenant_id,id),FOREIGN KEY(tenant_id,reversal_of) REFERENCES financial_events(tenant_id,id),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE wage_settlements (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+code text NOT NULL,state text NOT NULL DEFAULT 'approved' CHECK(state IN ('approved','reversed')),reason text NOT NULL DEFAULT '',created_by uuid NOT NULL,created_at timestamptz NOT NULL DEFAULT now(),version integer NOT NULL DEFAULT 1 CHECK(version>0),UNIQUE(tenant_id,id),UNIQUE(tenant_id,code),FOREIGN KEY(tenant_id,created_by) REFERENCES memberships(tenant_id,user_id));
+
+CREATE TABLE wage_settlement_lines (id uuid PRIMARY KEY DEFAULT gen_random_uuid(),tenant_id uuid NOT NULL REFERENCES tenants(id),
+settlement_id uuid NOT NULL,wage_event_id uuid NOT NULL,UNIQUE(tenant_id,id),UNIQUE(tenant_id,settlement_id,wage_event_id),FOREIGN KEY(tenant_id,settlement_id) REFERENCES wage_settlements(tenant_id,id),FOREIGN KEY(tenant_id,wage_event_id) REFERENCES wage_events(tenant_id,id));
+
+DO $$ DECLARE t text; BEGIN FOREACH t IN ARRAY ARRAY['suppliers','purchase_orders','purchase_order_lines','purchase_receipts','purchase_receipt_lines','incoming_inspections','stock_cost_events','mrp_batches','mrp_lines','stock_reservations','reservation_consumptions','wage_rules','wage_rule_versions','wage_events','open_items','payments','payment_allocations','financial_events','wage_settlements','wage_settlement_lines'] LOOP
+EXECUTE format('ALTER TABLE %I ENABLE ROW LEVEL SECURITY',t); EXECUTE format('ALTER TABLE %I FORCE ROW LEVEL SECURITY',t);
+EXECUTE format('CREATE POLICY %I ON %I TO gd_tenant USING (tenant_id::text = nullif(current_setting(''app.tenant_id'',true),'''')) WITH CHECK (tenant_id::text = nullif(current_setting(''app.tenant_id'',true),''''))',t||'_tenant',t);
+END LOOP; END $$;
+GRANT SELECT,INSERT ON stock_cost_events,reservation_consumptions,wage_rule_versions,wage_events,financial_events TO gd_tenant;
+GRANT SELECT,INSERT,UPDATE ON suppliers,purchase_orders,purchase_order_lines,purchase_receipts,purchase_receipt_lines,incoming_inspections,mrp_batches,mrp_lines,stock_reservations,wage_rules,open_items,payments,payment_allocations,wage_settlements,wage_settlement_lines TO gd_tenant;
